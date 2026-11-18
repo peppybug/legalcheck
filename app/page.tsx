@@ -11,6 +11,8 @@ import type { CountryDb } from "@/lib/db";
 import type { CountrySources } from "@/lib/sources";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+// Lookup service for questions that aren't in the database (worker/). Set at build time; empty = database only.
+const LOOKUP_URL = process.env.NEXT_PUBLIC_LOOKUP_URL ?? "";
 
 const flagOf = (code: string) => COUNTRIES.find((c) => c.code === code)?.flag ?? "";
 
@@ -28,6 +30,8 @@ export default function Home() {
   const [activity, setActivity] = useState("");
   const [country, setCountry] = useState("US");
   const [db, setDb] = useState<AnswerDb | null>(null);
+  const [loading, setLoading] = useState(false);
+  const lookupId = useRef(0);
   const [sourcesDb, setSourcesDb] = useState<CountryDb | null>(null);
   const [error, setError] = useState("");
   const [result, setResult] = useState<CheckResult | null>(null);
@@ -87,18 +91,46 @@ export default function Home() {
     };
   }, []);
 
-  // Searches run in the browser against the answers file. Nothing is sent anywhere.
-  function check(text: string, code: string, key: string | null = null) {
+  // 1. reviewed answers in the database, 2. built-in serious crimes, 3. the live lookup service.
+  async function check(text: string, code: string, key: string | null = null) {
     if (!db || text.trim().length < 2) return;
+    const id = ++lookupId.current;
     setActivity(text);
     setCountry(code);
     setActive(key);
+    setError("");
+    windowRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+
     const found = findAnswer(db.answers, text, code);
     const crime = found.answer ? null : findCrime(text);
     const answer = found.answer ?? (crime && crimeAnswer(crime, text, code));
-    setResult(answer);
-    setMissing(answer ? null : { activity: text, country: code, others: found.others });
-    windowRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (answer || !LOOKUP_URL || text.trim().length < 3) {
+      setLoading(false);
+      setResult(answer);
+      setMissing(answer ? null : { activity: text, country: code, others: found.others });
+      return;
+    }
+
+    setResult(null);
+    setMissing(null);
+    setLoading(true);
+    try {
+      const res = await fetch(`${LOOKUP_URL}/check`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ activity: text, country: code }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (id !== lookupId.current) return; // a newer search started meanwhile
+      if (!res.ok) throw new Error(data.error ?? "Something went wrong. Please try again.");
+      setResult(data as CheckResult);
+    } catch (err) {
+      if (id !== lookupId.current) return;
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+      setMissing({ activity: text, country: code, others: found.others });
+    } finally {
+      if (id === lookupId.current) setLoading(false);
+    }
   }
 
   // Links from the law library open a specific answer: /?a=<activity>&c=<country>
@@ -166,8 +198,8 @@ export default function Home() {
                 </option>
               ))}
             </select>
-            <button className="btn" type="submit" disabled={!db}>
-              Check the law
+            <button className="btn" type="submit" disabled={!db || loading}>
+              {loading ? "Checking…" : "Check the law"}
             </button>
           </form>
           <p className="try">
@@ -178,7 +210,7 @@ export default function Home() {
               </button>
             ))}
           </p>
-          <p className="sub-note">Your search stays in your browser. Every answer cites the laws it’s based on.</p>
+          <p className="sub-note">Ask about anything. Every answer cites the laws it’s based on.</p>
         </div>
 
         <div className="wrap window-wrap" id="check" ref={windowRef}>
@@ -222,9 +254,10 @@ export default function Home() {
               </div>
               <div className="main-pane" aria-live="polite">
                 {error && <p className="err-box">{error}</p>}
-                {result && <Result r={result} sources={sourcesFor(result.country)} />}
-                {missing && <Missing {...missing} onPick={(r) => check(r.activity, r.country, r.activity + r.country)} />}
-                {!error && !result && !missing && <Empty onFocus={() => inputRef.current?.focus()} />}
+                {loading && <Loading activity={activity} country={country} />}
+                {result && !loading && <Result r={result} sources={sourcesFor(result.country)} />}
+                {missing && !loading && <Missing {...missing} onPick={(r) => check(r.activity, r.country, r.activity + r.country)} />}
+                {!error && !loading && !result && !missing && <Empty onFocus={() => inputRef.current?.focus()} />}
               </div>
             </div>
           </div>
@@ -278,7 +311,7 @@ export default function Home() {
                   <h3>Type what you want to do</h3>
                   <p>Describe the activity in your own words and pick the country you’re in, or the one you’re travelling to.</p>
                   <ul>
-                    <li>Stays in your browser</li>
+                    <li>Any activity</li>
                     <li>{COUNTRIES.length} countries</li>
                   </ul>
                 </li>
@@ -306,8 +339,9 @@ export default function Home() {
               <div className="rv">
                 <h3>General information, not legal advice</h3>
                 <p>
-                  Answers are researched with AI and reviewed by a person, but can still be wrong or miss local rules. If the
-                  stakes are high, read the cited law or ask a lawyer.
+                  Answers are researched with AI. Database answers are reviewed by a person; instant answers are marked as not
+                  reviewed. Either can be wrong or miss local rules, so if the stakes are high, read the cited law or ask a
+                  lawyer.
                 </p>
               </div>
               <div className="rv d1">
@@ -328,8 +362,10 @@ export default function Home() {
                 <summary>Where do the answers come from?</summary>
                 <p>
                   Each answer is researched with AI from current public legal sources, preferring official legislation databases
-                  and government websites, and summarised in plain language. A person reviews every answer before it’s published.
-                  The laws it relies on are listed under every answer.
+                  and government websites, and summarised in plain language. Answers in our database are reviewed by a person
+                  before they’re published. If you ask something that isn’t in the database yet, we research it on the spot and
+                  clearly mark it as an instant AI answer that hasn’t been reviewed. The laws each answer relies on are listed
+                  under it.
                 </p>
               </details>
               <details>
@@ -363,15 +399,17 @@ export default function Home() {
               <details>
                 <summary>Do you see what I search?</summary>
                 <p>
-                  No. All answers are downloaded to your browser and the search happens there. What you type is never sent to
-                  us or anyone else.
+                  Searches for answers already in our database happen in your browser and aren’t sent anywhere. If you ask
+                  something new, the activity and country (nothing else about you) are sent to our lookup service to research
+                  it. See the <Link href="/privacy">privacy policy</Link>.
                 </p>
               </details>
               <details>
-                <summary>Why isn’t my activity there?</summary>
+                <summary>What’s the difference between reviewed and instant answers?</summary>
                 <p>
-                  Answers are researched in advance and the database is still growing. If yours is missing,{" "}
-                  <Link href="/contact">suggest it</Link> and it can be added to the next update.
+                  Reviewed answers were researched in advance and checked by a person. Instant answers are researched by AI the
+                  moment you ask and haven’t been checked yet, so treat them with more care. Popular questions are added to the
+                  reviewed database over time, and you can <Link href="/contact">suggest one</Link>.
                 </p>
               </details>
             </div>
@@ -471,6 +509,25 @@ function Missing({
   );
 }
 
+function Loading({ activity, country }: { activity: string; country: string }) {
+  return (
+    <div className="loading">
+      <p className="result-label">
+        {flagOf(country)} {countryName(country)}
+      </p>
+      <h3>{activity}</h3>
+      <p className="muted">
+        This one isn’t in our reviewed database yet, so we’re researching it now. This usually takes 20 to 40 seconds.
+      </p>
+      <div className="bars" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+      </div>
+    </div>
+  );
+}
+
 function Result({ r, sources }: { r: CheckResult; sources?: CountrySources }) {
   return (
     <article className="result">
@@ -565,6 +622,12 @@ function Result({ r, sources }: { r: CheckResult; sources?: CountrySources }) {
               </span>
             ))}{" "}
             · <Link href={`/laws?c=${r.country}`}>Law library</Link>
+          </p>
+        )}
+        {r.live && (
+          <p className="live-note">
+            <b>Instant AI answer, not yet reviewed by a person.</b> Researched just now from public legal sources. Check the
+            cited law before relying on it.
           </p>
         )}
         {r.general ? (

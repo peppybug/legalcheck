@@ -14,8 +14,8 @@ export default function Terms() {
       <h2>What the site provides</h2>
       <p>
         Legalcheck provides summaries of whether an activity is legal in a country, based on public legal sources, with
-        references to the laws they rely on. Summaries are researched with AI and reviewed by a person before publication. It is
-        free to use.
+        references to the laws they rely on. Summaries are researched with AI. Answers in our database are reviewed by a person;
+        instant answers to new questions are generated on the spot, aren’t reviewed, and are marked as such. It is free to use.
       </p>
 
       <h2>Not legal advice</h2>
@@ -25,7 +25,8 @@ export default function Terms() {
           create a lawyer–client relationship.
         </li>
         <li>
-          Answers are researched with AI and reviewed by a person, but may still be wrong, incomplete or out of date. Laws change, and local rules may differ from
+          Answers are researched with AI and may be wrong, incomplete or out of date, especially instant answers that haven’t
+          been reviewed. Laws change, and local rules may differ from
           national law. Always check the cited source, and ask a qualified lawyer before relying on an answer for anything
           important.
         </li>
@@ -38,7 +39,8 @@ export default function Terms() {
 
       <h2>Fair use</h2>
       <p>
-        Please don’t try to disrupt the site or use it to plan harm to others. You may quote and link to answers. If you reuse a
+        Please don’t try to disrupt the site, get around the limit on new questions, send automated requests, or use it to plan
+        harm to others. You may quote and link to answers. If you reuse a
         large part of the answers, please credit this site and the original sources.
       </p>
 

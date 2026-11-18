@@ -39,9 +39,10 @@ export default function About() {
       <p>
         Each answer is researched with an AI model (Claude, made by Anthropic) from current public legal sources, preferring
         official legislation databases and government websites, and summarised in plain language. Every answer is then
-        reviewed by a person before it’s published on the site. Answers are re-checked at
+        reviewed by a person before it’s added to our database. If you ask something that isn’t in the database yet, we
+        research it on the spot and mark it clearly as an instant AI answer that hasn’t been reviewed. Database answers are
+        re-checked at
         least twice a year so new acts and amendments are picked up, and the date of the last check is shown with every answer.
-        When you search, everything happens in your browser.
       </p>
 
       <h2>What this site is not</h2>
@@ -51,8 +52,8 @@ export default function About() {
           situation. For anything serious, talk to a qualified lawyer.
         </li>
         <li>
-          <strong>Not always right.</strong> Answers are researched with AI and reviewed by a person, but they can still be
-          wrong, incomplete or out of date. Always check the cited law when it matters.
+          <strong>Not always right.</strong> Answers are researched with AI. Even reviewed answers can be wrong,
+          incomplete or out of date, and instant answers haven’t been reviewed at all. Always check the cited law when it matters.
         </li>
         <li>
           <strong>Not complete.</strong> Answers are researched in advance, so not every activity and country is covered yet.

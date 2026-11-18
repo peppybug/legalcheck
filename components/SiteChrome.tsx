@@ -99,8 +99,8 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="fine">
-          © 2026 Legalcheck. Covers {COUNTRIES.length} countries. Answers are based on public sources, researched with AI
-          and reviewed by a person, and may be incomplete or out of date. Not legal advice.
+          © 2026 Legalcheck. Covers {COUNTRIES.length} countries. Answers are researched with AI from public sources; database
+          answers are reviewed by a person, instant answers are not. Answers may be incomplete or out of date. Not legal advice.
         </p>
       </div>
     </footer>

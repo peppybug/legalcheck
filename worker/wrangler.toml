@@ -1,0 +1,16 @@
+# Legalcheck lookup service: answers questions that aren't in the reviewed database.
+# Deployed by .github/workflows/deploy-worker.yml. The API key is a Worker secret (ANTHROPIC_API_KEY).
+name = "legalcheck-lookup"
+main = "index.ts"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+# Websites allowed to call this service (comma-separated).
+ALLOWED_ORIGINS = "https://peppybug.github.io,https://legalcheck.app,https://www.legalcheck.app,http://localhost:3000"
+
+# Per-visitor limit on new lookups (cached answers don't count).
+[[ratelimits]]
+name = "LIMITER"
+namespace_id = "1001"
+simple = { limit = 5, period = 60 }

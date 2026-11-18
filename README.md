@@ -2,8 +2,13 @@
 
 Type an activity, pick a country, and get a quick answer on whether it's legal there, with the laws it's based on.
 
-Hosted on **GitHub Pages**. Like Has it been Breached?, it's a static site: every answer lives in
-`public/data/answers.json` and searches run in the visitor's browser.
+The site is hosted on **GitHub Pages**. A search is answered from, in order:
+
+1. **The reviewed database** (`public/data/answers.json`), searched in the visitor's browser.
+2. **Built-in serious crimes** (`lib/crimes.ts`): murder, theft, assault and so on are illegal everywhere, answered instantly.
+3. **The lookup service** (`worker/`, a Cloudflare Worker): anything else is researched on the spot by Claude with web search
+   and shown as an *instant AI answer, not yet reviewed by a person*. It holds the API key, caches answers for 30 days and
+   allows 5 new questions per visitor per minute.
 
 ## The database
 
@@ -31,7 +36,23 @@ That's about 6,200 answers in total, built up run by run.
 | `.github/workflows/deploy.yml` | Builds the static site (`out/`) and deploys it to GitHub Pages on every push and after each refresh. |
 | `/laws` (Law library) | Browse a country's official sources, the laws behind its answers, and all its answers by category. |
 
-## Setup on GitHub
+## Setup: the lookup service (so any question works)
+
+1. Create a free account at cloudflare.com. Copy your **Account ID** (Workers & Pages overview page) and create an
+   **API token** with the *Edit Cloudflare Workers* template (My Profile → API Tokens).
+2. In GitHub, **Settings → Secrets and variables → Actions → Secrets**, add `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
+   and `ANTHROPIC_API_KEY`.
+3. **Actions → Deploy lookup service → Run workflow.** The log ends with the service URL, like
+   `https://legalcheck-lookup.<your-subdomain>.workers.dev`.
+4. **Settings → Secrets and variables → Actions → Variables**, add `LOOKUP_URL` with that URL (no trailing slash).
+5. **Actions → Deploy site to Pages → Run workflow.** Searches for anything now work.
+
+**Set a monthly spend limit** in the Anthropic Console (Settings → Limits). The service is public, and every new question
+costs a Claude request with web searches; the per-visitor limit slows abuse but doesn't cap your bill.
+
+If you use a custom domain, add it to `ALLOWED_ORIGINS` in `worker/wrangler.toml`.
+
+## Setup: the reviewed database
 
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 2. **Settings → Secrets and variables → Actions → New repository secret:** `ANTHROPIC_API_KEY` (get a key at platform.claude.com).

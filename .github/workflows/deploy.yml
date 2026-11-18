@@ -33,6 +33,8 @@ jobs:
         env:
           # "/legalcheck" on peppybug.github.io, empty once a custom domain like legalcheck.app is set
           NEXT_PUBLIC_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          # Lookup service URL (repository variable, set after the worker's first deploy). Empty = database answers only.
+          NEXT_PUBLIC_LOOKUP_URL: ${{ vars.LOOKUP_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out

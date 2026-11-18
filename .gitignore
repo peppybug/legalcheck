@@ -6,3 +6,7 @@ node_modules
 next-env.d.ts
 out
 review-summary.md
+worker/.dev.vars
+worker/node_modules
+.wrangler
+worker/.wrangler

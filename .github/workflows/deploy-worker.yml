@@ -1,0 +1,47 @@
+# Deploys the lookup service (worker/) to Cloudflare Workers.
+# Needs repository secrets: CLOUDFLARE_API_TOKEN (template "Edit Cloudflare Workers"), CLOUDFLARE_ACCOUNT_ID,
+# and ANTHROPIC_API_KEY (passed to the worker as a secret).
+name: Deploy lookup service
+
+on:
+  push:
+    branches: ["main"]
+    paths: ["worker/**", "lib/**", ".github/workflows/deploy-worker.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Check Cloudflare secrets
+        id: check
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::warning::CLOUDFLARE_API_TOKEN isn't set, so the lookup service wasn't deployed. See README."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Install
+        if: steps.check.outputs.skip != 'true'
+        run: npm ci && npm ci --prefix worker
+      - name: Deploy
+        if: steps.check.outputs.skip != 'true'
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+          wranglerVersion: "4.155.0"
+          secrets: |
+            ANTHROPIC_API_KEY
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

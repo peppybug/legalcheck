@@ -9,8 +9,8 @@ export default function Privacy() {
       <h1>Privacy policy</h1>
       <p className="updated">Last updated 18 November 2026</p>
       <p className="lead">
-        Short version: we don’t ask for your personal details, we don’t use cookies or tracking, and your searches never leave
-        your browser.
+        Short version: we don’t ask for your personal details and we don’t use cookies or tracking. Searches for answers we
+        already have stay in your browser; new questions are sent to our lookup service to be researched.
       </p>
 
       <h2>Who is responsible</h2>
@@ -21,14 +21,24 @@ export default function Privacy() {
 
       <h2>Your searches</h2>
       <p>
-        When you search, all answers are downloaded to your browser and the search happens there. What you type and the country
-        you pick are not sent to us or to anyone else, and we don’t store them.
+        When you search, our database of answers is downloaded to your browser and the search happens there first. If there’s
+        an answer, nothing is sent anywhere.
+      </p>
+      <p>
+        If there isn’t, the activity you typed and the country you picked are sent to our lookup service (running on
+        Cloudflare), which asks Anthropic’s Claude API to research it. The answer is cached for up to 30 days so the next person
+        asking the same question gets it quickly. It isn’t linked to you. Don’t type names or other personal details into the
+        search box.
+      </p>
+      <p>
+        To stop abuse, the lookup service briefly uses your IP address to limit how many new questions can be asked per minute.
+        It isn’t stored or used for anything else.
       </p>
 
       <h2>How answers are made</h2>
       <p>
-        Answers are researched in advance with Anthropic’s Claude API, from a list of activities and countries we choose, and
-        reviewed by a person before they’re published. No visitor data is sent to Anthropic. If you suggest an activity by email, we may add the activity and country (but
+        Database answers are researched in advance with Anthropic’s Claude API, from a list of activities and countries we
+        choose, and reviewed by a person before they’re published. Instant answers are researched as described above. If you suggest an activity by email, we may add the activity and country (but
         nothing about you) to that list.
       </p>
 
@@ -55,6 +65,24 @@ export default function Privacy() {
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td>Cloudflare Workers (Cloudflare, Inc.)</td>
+              <td>Runs the lookup service for new questions</td>
+              <td>
+                <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">
+                  Cloudflare privacy policy
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Anthropic (Claude API)</td>
+              <td>Researches new questions (receives only the activity and country)</td>
+              <td>
+                <a href="https://www.anthropic.com/legal/privacy" rel="noopener">
+                  Anthropic privacy policy
+                </a>
+              </td>
+            </tr>
             <tr>
               <td>GitHub Pages (GitHub, Inc.)</td>
               <td>Hosts the website</td>

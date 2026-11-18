@@ -1,8 +1,15 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { z } from "zod";
 
-const client = new Anthropic();
 const MODEL = "claude-opus-5-5";
+
+// Created on first use. Node scripts read ANTHROPIC_API_KEY from the environment;
+// the Cloudflare Worker passes its secret in with setApiKey().
+let client: Anthropic | null = null;
+export function setApiKey(apiKey: string) {
+  client = new Anthropic({ apiKey });
+}
+const getClient = () => (client ??= new Anthropic());
 
 export class ResearchError extends Error {}
 
@@ -22,7 +29,7 @@ export async function research<S extends z.ZodTypeAny>(opts: {
 
   // Web search runs server-side; a long search can come back as pause_turn and needs a resume.
   for (let turn = 0; turn < 4; turn++) {
-    const response = await client.beta.messages.create({
+    const response = await getClient().beta.messages.create({
       model: MODEL,
       max_tokens: 16000,
       betas: ["server-side-fallback-2026-07-01"],

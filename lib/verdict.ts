@@ -29,4 +29,6 @@ export type CheckResult = Verdict & {
   sources: { title: string; url: string }[];
   /** Built-in general answer (serious crimes), not researched for this country. */
   general?: boolean;
+  /** Researched on the spot by the lookup service; not reviewed by a person yet. */
+  live?: boolean;
 };
