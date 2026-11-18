@@ -38,10 +38,14 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         run: |
-          status=$(curl -s https://api.cloudflare.com/client/v4/user/tokens/verify \
-            -H "Authorization: Bearer $(echo -n "$CLOUDFLARE_API_TOKEN" | tr -d '[:space:]')" | jq -r '.result.status // "invalid"')
-          echo "Token status: $status"
-          if [ "$status" != "active" ]; then
+          token=$(printf '%s' "$CLOUDFLARE_API_TOKEN" | tr -d '[:space:]')
+          account=$(grep -oP '^account_id = "\K[^"]+' worker/wrangler.toml)
+          echo "Token length: ${#token} characters (Cloudflare tokens are usually 40)"
+          user=$(curl -s https://api.cloudflare.com/client/v4/user/tokens/verify -H "Authorization: Bearer $token" | jq -r '.result.status // .errors[0].message // "invalid"')
+          acct=$(curl -s "https://api.cloudflare.com/client/v4/accounts/$account/tokens/verify" -H "Authorization: Bearer $token" | jq -r '.result.status // .errors[0].message // "invalid"')
+          echo "As a personal (user) token: $user"
+          echo "As an account token: $acct"
+          if [ "$user" != "active" ] && [ "$acct" != "active" ]; then
             echo "::error::Cloudflare doesn't accept CLOUDFLARE_API_TOKEN. Copy the token value again (not the token ID) and update the secret."
             exit 1
           fi
