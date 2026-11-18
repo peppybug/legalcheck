@@ -218,3 +218,11 @@ export const COUNTRY_CODES = new Set(Object.keys(NAMES));
 export function countryName(code: string) {
   return NAMES[code] ?? code;
 }
+
+// Country names that take "the" inside a sentence ("in the United States").
+const WITH_THE = new Set(["US", "GB", "NL", "PH", "AE", "BS", "GM", "CF", "CD", "CG", "DO", "MH", "SB", "KM", "MV", "VA"]);
+
+/** Country name for use mid-sentence, e.g. "the Netherlands". */
+export function inCountry(code: string) {
+  return (WITH_THE.has(code) ? "the " : "") + countryName(code);
+}

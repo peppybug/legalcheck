@@ -27,4 +27,6 @@ export type CheckResult = Verdict & {
   activity: string;
   checkedAt: string;
   sources: { title: string; url: string }[];
+  /** Built-in general answer (serious crimes), not researched for this country. */
+  general?: boolean;
 };

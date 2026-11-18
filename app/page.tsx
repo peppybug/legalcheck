@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { COUNTRIES, countryName } from "@/lib/countries";
+import { COUNTRIES, countryName, inCountry } from "@/lib/countries";
 import type { CheckResult } from "@/lib/verdict";
 import { SiteHeader, SiteFooter, CONTACT_EMAIL } from "@/components/SiteChrome";
 import { findAnswer, type AnswerDb } from "@/lib/match";
+import { findCrime, crimeAnswer } from "@/lib/crimes";
 import type { CountryDb } from "@/lib/db";
 import type { CountrySources } from "@/lib/sources";
 
@@ -92,9 +93,11 @@ export default function Home() {
     setActivity(text);
     setCountry(code);
     setActive(key);
-    const { answer, others } = findAnswer(db.answers, text, code);
+    const found = findAnswer(db.answers, text, code);
+    const crime = found.answer ? null : findCrime(text);
+    const answer = found.answer ?? (crime && crimeAnswer(crime, text, code));
     setResult(answer);
-    setMissing(answer ? null : { activity: text, country: code, others });
+    setMissing(answer ? null : { activity: text, country: code, others: found.others });
     windowRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
@@ -442,7 +445,7 @@ function Missing({
       </p>
       <h3>{activity}</h3>
       <p className="muted">
-        We haven’t researched this one for {countryName(country)} yet. Try different words, or suggest it and it can be added
+        We haven’t researched this one for {inCountry(country)} yet. Try different words, or suggest it and it can be added
         to the next update.
       </p>
       {others.length > 0 && (
@@ -564,7 +567,14 @@ function Result({ r, sources }: { r: CheckResult; sources?: CountrySources }) {
             · <Link href={`/laws?c=${r.country}`}>Law library</Link>
           </p>
         )}
-        <p className="checked">Checked {new Date(r.checkedAt).toLocaleDateString()} · Not legal advice</p>
+        {r.general ? (
+          <p className="checked">
+            General answer for a crime that’s illegal in every country. The specific law for {inCountry(r.country)} hasn’t
+            been researched yet · Not legal advice
+          </p>
+        ) : (
+          <p className="checked">Checked {new Date(r.checkedAt).toLocaleDateString()} · Not legal advice</p>
+        )}
       </div>
     </article>
   );

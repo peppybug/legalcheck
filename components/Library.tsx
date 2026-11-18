@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { COUNTRIES, countryName } from "@/lib/countries";
+import { COUNTRIES, inCountry } from "@/lib/countries";
 import { loadJson, type AnswerDb, type CountryDb, type LawDb, type Categories } from "@/lib/db";
 import type { CheckResult } from "@/lib/verdict";
 
@@ -100,7 +100,7 @@ export default function Library() {
 
       {view && (
         <>
-          <h2>Where {countryName(country)} publishes its laws</h2>
+          <h2>Where {cap(inCountry(country))} publishes its laws</h2>
           {view.sources ? (
             <div className="card lib-sources">
               <dl className="lib-meta">
@@ -161,7 +161,7 @@ export default function Library() {
               </p>
             </div>
           ) : (
-            <p className="muted">The law sources for {countryName(country)} haven’t been researched yet.</p>
+            <p className="muted">The law sources for {inCountry(country)} haven’t been researched yet.</p>
           )}
 
           <h2>Laws behind our answers</h2>
@@ -194,10 +194,10 @@ export default function Library() {
               ))}
             </ul>
           ) : (
-            <p className="muted">No laws indexed for {countryName(country)} yet. They’re added as answers are researched.</p>
+            <p className="muted">No laws indexed for {inCountry(country)} yet. They’re added as answers are researched.</p>
           )}
 
-          <h2>Answers for {countryName(country)}</h2>
+          <h2>Answers for {inCountry(country)}</h2>
           {view.groups.length ? (
             view.groups.map(([cat, list]) => (
               <section key={cat} className="lib-group">
@@ -213,7 +213,7 @@ export default function Library() {
               </section>
             ))
           ) : (
-            <p className="muted">No answers for {countryName(country)} yet.</p>
+            <p className="muted">No answers for {inCountry(country)} yet.</p>
           )}
         </>
       )}
@@ -230,3 +230,5 @@ function MaybeLink({ name, url }: { name: string; url: string }) {
     <>{name}</>
   );
 }
+
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
