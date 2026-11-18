@@ -1,75 +1,124 @@
 /**
- * Researches answers with Claude and saves them to public/data/answers.json.
- * Run by .github/workflows/refresh-answers.yml, or locally: ANTHROPIC_API_KEY=... npm run generate
+ * Builds the Legalcheck database in public/data/:
+ *   countries.json  official law sources per country (researched with Claude + web search)
+ *   answers.json    legality answers per activity and country (researched with Claude + web search)
+ *   laws.json       every law cited in the answers, de-duplicated per country (built locally, no API calls)
  *
- *   MAX            how many answers to research this run (default 40)
- *   REFRESH_DAYS   re-research answers older than this (default 180)
+ * Run by .github/workflows/refresh-answers.yml, or locally: ANTHROPIC_API_KEY=... npm run generate
+ *   MAX            answers to research this run (default 40)
+ *   MAX_COUNTRIES  country source entries to research this run (default 20)
+ *   REFRESH_DAYS   re-research anything older than this (default 180)
  */
-import { readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { runCheck } from "../lib/check";
+import { researchCountry, type CountrySources } from "../lib/sources";
+import { buildLaws } from "../lib/laws";
 import { answerKey, type AnswerDb } from "../lib/match";
-import { COUNTRY_CODES } from "../lib/countries";
+import { COUNTRIES, COUNTRY_CODES } from "../lib/countries";
+import type { CheckResult } from "../lib/verdict";
 
-const DB_PATH = "public/data/answers.json";
+const DIR = "public/data";
 const MAX = Number(process.env.MAX ?? 40);
+const MAX_COUNTRIES = Number(process.env.MAX_COUNTRIES ?? 20);
 const REFRESH_DAYS = Number(process.env.REFRESH_DAYS ?? 180);
 const CONCURRENCY = 3;
+const staleBefore = Date.now() - REFRESH_DAYS * 86_400_000;
+const isStale = (iso?: string) => !iso || Date.parse(iso) < staleBefore;
 
 type Pair = { activity: string; country: string };
-const config = JSON.parse(readFileSync("data/checks.json", "utf8")) as {
-  activities: string[];
-  countries: string[];
-  extra: Pair[];
-};
+type Config = { categories: Record<string, string[]>; countries: "all" | string[]; priority: string[]; extra: Pair[] };
 
-const pairs: Pair[] = [
-  ...config.extra,
-  ...config.activities.flatMap((activity) => config.countries.map((country) => ({ activity, country }))),
-].filter((p) => {
-  if (COUNTRY_CODES.has(p.country)) return true;
-  console.warn(`Skipping unknown country code ${p.country}`);
+function readJson<T>(path: string, fallback: T): T {
+  return existsSync(path) ? (JSON.parse(readFileSync(path, "utf8")) as T) : fallback;
+}
+function writeJson(path: string, data: unknown) {
+  writeFileSync(path, JSON.stringify(data, null, 1) + "\n");
+}
+
+async function pool<T>(items: T[], work: (item: T) => Promise<void>) {
+  const queue = [...items];
+  await Promise.all(
+    Array.from({ length: CONCURRENCY }, async () => {
+      for (let item = queue.shift(); item !== undefined; item = queue.shift()) await work(item);
+    }),
+  );
+}
+
+const config = readJson<Config>("data/checks.json", { categories: {}, countries: [], priority: [], extra: [] });
+const activities = Object.values(config.categories).flat();
+const allCodes = config.countries === "all" ? COUNTRIES.map((c) => c.code) : config.countries;
+const ordered = [...new Set([...config.priority, ...allCodes])].filter((c) => {
+  if (COUNTRY_CODES.has(c)) return true;
+  console.warn(`Skipping unknown country code ${c}`);
   return false;
 });
 
-const db = JSON.parse(readFileSync(DB_PATH, "utf8")) as AnswerDb;
-const byKey = new Map(db.answers.map((a) => [answerKey(a.activity, a.country), a]));
-const staleBefore = Date.now() - REFRESH_DAYS * 86_400_000;
+let failed = 0;
+let done = 0;
 
-const todo = pairs
-  .filter((p) => {
-    const existing = byKey.get(answerKey(p.activity, p.country));
-    return !existing || Date.parse(existing.checkedAt) < staleBefore;
-  })
-  .slice(0, MAX);
+// 1. Country law sources
+const countriesPath = `${DIR}/countries.json`;
+const countryDb = readJson<{ updatedAt: string | null; countries: CountrySources[] }>(countriesPath, {
+  updatedAt: null,
+  countries: [],
+});
+const byCountry = new Map(countryDb.countries.map((c) => [c.country, c]));
+const countryTodo = ordered.filter((c) => isStale(byCountry.get(c)?.checkedAt)).slice(0, MAX_COUNTRIES);
+console.log(`Countries: ${byCountry.size}/${ordered.length} saved, researching ${countryTodo.length}.`);
 
-console.log(`${pairs.length} pairs configured, ${byKey.size} answers saved, researching ${todo.length} now.`);
+const saveCountries = () =>
+  writeJson(countriesPath, {
+    updatedAt: new Date().toISOString(),
+    countries: [...byCountry.values()].sort((a, b) => a.country.localeCompare(b.country)),
+  });
 
-function save() {
+await pool(countryTodo, async (code) => {
+  try {
+    byCountry.set(code, await researchCountry(code));
+    saveCountries();
+    console.log(`✓ sources ${code}`);
+    done++;
+  } catch (err) {
+    console.error(`✗ sources ${code}:`, err instanceof Error ? err.message : err);
+    failed++;
+  }
+});
+
+// 2. Legality answers: extra pairs, then each country in priority order with every activity
+const answersPath = `${DIR}/answers.json`;
+const answerDb = readJson<AnswerDb>(answersPath, { updatedAt: null, answers: [] });
+const byKey = new Map(answerDb.answers.map((a) => [answerKey(a.activity, a.country), a]));
+const pairs: Pair[] = [...config.extra, ...ordered.flatMap((country) => activities.map((activity) => ({ activity, country })))];
+const answerTodo = pairs.filter((p) => isStale(byKey.get(answerKey(p.activity, p.country))?.checkedAt)).slice(0, MAX);
+console.log(`Answers: ${byKey.size}/${pairs.length} saved, researching ${answerTodo.length}.`);
+
+const saveAnswers = () => {
   const answers = [...byKey.values()].sort(
     (a, b) => a.activity.localeCompare(b.activity) || a.country.localeCompare(b.country),
   );
-  writeFileSync(DB_PATH, JSON.stringify({ updatedAt: new Date().toISOString(), answers }, null, 1) + "\n");
-}
+  writeJson(answersPath, { updatedAt: new Date().toISOString(), answers });
+  return answers;
+};
 
-let done = 0;
-let failed = 0;
-const queue = [...todo];
-await Promise.all(
-  Array.from({ length: CONCURRENCY }, async () => {
-    for (let p = queue.shift(); p; p = queue.shift()) {
-      try {
-        const result = await runCheck(p.activity, p.country);
-        byKey.set(answerKey(p.activity, p.country), result);
-        save();
-        console.log(`✓ ${p.activity} · ${p.country}: ${result.verdict}`);
-        done++;
-      } catch (err) {
-        console.error(`✗ ${p.activity} · ${p.country}:`, err instanceof Error ? err.message : err);
-        failed++;
-      }
-    }
-  }),
-);
+await pool(answerTodo, async (p) => {
+  try {
+    const result = await runCheck(p.activity, p.country);
+    byKey.set(answerKey(p.activity, p.country), result);
+    saveAnswers();
+    console.log(`✓ ${p.activity} · ${p.country}: ${result.verdict}`);
+    done++;
+  } catch (err) {
+    console.error(`✗ ${p.activity} · ${p.country}:`, err instanceof Error ? err.message : err);
+    failed++;
+  }
+});
+
+// 3. Law index, rebuilt from all answers
+const answers: CheckResult[] = [...byKey.values()];
+const laws = buildLaws(answers);
+writeJson(`${DIR}/laws.json`, { updatedAt: new Date().toISOString(), laws });
+writeJson(`${DIR}/categories.json`, config.categories);
+console.log(`Laws: ${laws.length} indexed.`);
 
 console.log(`Done: ${done} researched, ${failed} failed.`);
 if (failed && !done) process.exit(1);

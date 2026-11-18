@@ -4,7 +4,7 @@ import { COUNTRIES } from "@/lib/countries";
 export const CONTACT_EMAIL = "contactolivierjanssen@gmail.com";
 export const OWNER = "Olivier B Janssen";
 
-type Page = "home" | "about" | "contact" | "privacy" | "terms";
+type Page = "home" | "about" | "contact" | "privacy" | "terms" | "laws";
 
 function Logo() {
   return (
@@ -28,6 +28,11 @@ export function SiteHeader({ current }: { current: Page }) {
             </li>
             <li>
               <Link href="/#check">Popular</Link>
+            </li>
+            <li>
+              <Link href="/laws" aria-current={cur("laws")}>
+                Law library
+              </Link>
             </li>
             <li className="hide-sm">
               <Link href="/#faq">FAQ</Link>
@@ -61,6 +66,9 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="/#check">Popular checks</Link>
+              </li>
+              <li>
+                <Link href="/laws">Law library</Link>
               </li>
               <li>
                 <Link href="/#faq">FAQ</Link>

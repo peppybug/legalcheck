@@ -1,9 +1,8 @@
-import Anthropic from "@anthropic-ai/sdk";
+import type Anthropic from "@anthropic-ai/sdk";
 import { VerdictSchema, VERDICTS, type CheckResult } from "./verdict";
 import { countryName } from "./countries";
+import { research } from "./research";
 
-const client = new Anthropic();
-const MODEL = "claude-opus-5-5";
 
 const SYSTEM = `You are the research engine behind Legalcheck.app. A visitor names an everyday activity and a country, and you tell them, quickly and plainly, whether it is legal there.
 
@@ -61,73 +60,12 @@ const submitVerdictTool: Anthropic.Beta.BetaTool = {
   },
 };
 
-export class CheckError extends Error {
-  constructor(message: string, public status = 500) {
-    super(message);
-  }
-}
-
 export async function runCheck(activity: string, countryCode: string): Promise<CheckResult> {
-  const country = countryName(countryCode);
-  const messages: Anthropic.Beta.BetaMessageParam[] = [
-    {
-      role: "user",
-      content: `Country: ${country} (${countryCode})\nToday's date: ${new Date().toISOString().slice(0, 10)}\n\n<activity>\n${activity}\n</activity>`,
-    },
-  ];
-  const sources = new Map<string, string>();
-
-  // Web search runs server-side; a long search can come back as pause_turn and needs a resume.
-  for (let turn = 0; turn < 4; turn++) {
-    const response = await client.beta.messages.create({
-      model: MODEL,
-      max_tokens: 16000,
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default",
-      output_config: { effort: "medium" },
-      system: SYSTEM,
-      tools: [
-        { type: "web_search_20260209", name: "web_search", max_uses: 6 },
-        submitVerdictTool,
-      ],
-      tool_choice: { type: "auto" },
-      messages,
-    });
-
-    for (const block of response.content) {
-      if (block.type === "web_search_tool_result" && Array.isArray(block.content)) {
-        for (const r of block.content) sources.set(r.url, r.title);
-      }
-    }
-
-    if (response.stop_reason === "refusal") {
-      throw new CheckError("We can't answer this one. Try rephrasing the activity.", 422);
-    }
-
-    const call = response.content.find(
-      (b): b is Anthropic.Beta.BetaToolUseBlock => b.type === "tool_use" && b.name === "submit_verdict",
-    );
-    if (call) {
-      const parsed = VerdictSchema.safeParse(call.input);
-      if (!parsed.success) throw new CheckError("The answer came back malformed. Please try again.");
-      return {
-        ...parsed.data,
-        country: countryCode,
-        activity,
-        checkedAt: new Date().toISOString(),
-        sources: [...sources].slice(0, 8).map(([url, title]) => ({ url, title })),
-      };
-    }
-
-    if (response.stop_reason === "pause_turn") {
-      messages.push({ role: "assistant", content: response.content });
-      continue;
-    }
-
-    // Finished without calling the tool: nudge once.
-    messages.push({ role: "assistant", content: response.content });
-    messages.push({ role: "user", content: "Please call submit_verdict with your answer now." });
-  }
-
-  throw new CheckError("The research took too long. Please try again.", 504);
+  const { data, sources } = await research({
+    system: SYSTEM,
+    prompt: `Country: ${countryName(countryCode)} (${countryCode})\nToday's date: ${new Date().toISOString().slice(0, 10)}\n\n<activity>\n${activity}\n</activity>`,
+    tool: submitVerdictTool,
+    schema: VerdictSchema,
+  });
+  return { ...data, country: countryCode, activity, checkedAt: new Date().toISOString(), sources };
 }

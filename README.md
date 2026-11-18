@@ -5,17 +5,31 @@ Type an activity, pick a country, and get a quick answer on whether it's legal t
 Hosted on **GitHub Pages**. Like Has it been Breached?, it's a static site: every answer lives in
 `public/data/answers.json` and searches run in the visitor's browser.
 
+## The database
+
+Everything lives in `public/data/` as JSON, versioned in git and loaded by the browser:
+
+| File | Contents | Built by |
+|---|---|---|
+| `countries.json` | Official law sources for each of the 200 countries: legislation portals, official gazette, constitution, legal system, languages, regional-law note | Claude + web search |
+| `answers.json` | Legality answers per activity and country: verdict, headline, summary, conditions, penalties, regional differences, cited laws, sources, confidence | Claude + web search |
+| `laws.json` | Every act cited in the answers, de-duplicated per country, with official URL, year, sections cited and which answers use it | Built from `answers.json`, no API calls |
+| `categories.json` | Activity categories, copied from `data/checks.json` | Copied |
+
+The database **links to** the official law texts rather than copying them: full national law collections run to millions of
+pages in 100+ languages, aren't all published as open data, and wouldn't fit on GitHub Pages (1 GB limit).
+
+`data/checks.json` lists the ~30 activities (in 8 categories) to research in **every country**, priority countries first.
+That's about 6,200 answers in total, built up run by run.
+
 ## How it works
 
 | Part | What it does |
 |---|---|
-| `data/checks.json` | The activities and countries to research. Every activity is checked in every listed country, plus the `extra` pairs. |
-| `scripts/generate.ts` (`npm run generate`) | Asks Claude (`claude-opus-5-5`, with web search) to research each pair that's missing or older than 180 days, and saves the answers to `public/data/answers.json`. |
-| `.github/workflows/refresh-answers.yml` | Runs the generator every Monday (and on demand) with up to 40 answers per run, then commits the answers. |
-| `.github/workflows/deploy.yml` | Builds the site with `next build` (static export to `out/`) and deploys it to GitHub Pages on every push and after each refresh. |
-
-Each answer has a verdict (`legal` · `illegal` · `restricted` · `depends` · `unclear`), a headline, a plain-language summary,
-conditions, penalties, regional differences, the cited laws with year and official URL, the sources searched, and a confidence level.
+| `scripts/generate.ts` (`npm run generate`) | Researches missing or outdated (180+ days) country sources and answers, then rebuilds `laws.json`. |
+| `.github/workflows/refresh-answers.yml` | Runs the generator every Monday and on demand (default: 20 countries + 40 answers per run) and commits `public/data/`. |
+| `.github/workflows/deploy.yml` | Builds the static site (`out/`) and deploys it to GitHub Pages on every push and after each refresh. |
+| `/laws` (Law library) | Browse a country's official sources, the laws behind its answers, and all its answers by category. |
 
 ## Setup on GitHub
 
@@ -26,8 +40,9 @@ conditions, penalties, regional differences, the cited laws with year and offici
 The site is served at `https://peppybug.github.io/legalcheck/`. To use `legalcheck.app`, add it under **Settings → Pages → Custom
 domain** and point the domain's DNS at GitHub Pages; the deploy workflow then builds without the `/legalcheck` path automatically.
 
-**Cost control:** every answer uses Claude plus a few web searches. `MAX` (answers per run) and `REFRESH_DAYS` cap how much each
-run does; both can be changed when you start the workflow by hand.
+**Cost control:** every country entry and answer uses Claude plus a few web searches. `MAX` (answers per run),
+`MAX_COUNTRIES` and `REFRESH_DAYS` cap how much each run does; all three can be changed when you start the workflow by hand.
+At the defaults, the weekly run researches 60 items, so covering every country takes a long time; raise `MAX` to go faster.
 
 ## Run locally
 

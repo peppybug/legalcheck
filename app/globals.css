@@ -292,3 +292,27 @@ header.site nav a[aria-current="page"]{color:var(--ink);font-weight:600;text-dec
 footer.site{margin-top:72px}
 @media(max-width:820px){.cards{grid-template-columns:1fr}.page{padding-top:32px}}
 .others{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+
+/* ---------- law library ---------- */
+.lib-totals{margin:24px 0}
+.lib-totals dd{font:700 1.3rem var(--display)}
+.lib-pick{display:flex;flex-direction:column;gap:4px;max-width:320px;margin:8px 0 0}
+.lib-pick span{font-size:.85rem;font-weight:600;color:var(--muted)}
+.lib-pick select{min-height:48px;padding:0 12px;border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);font:500 1rem var(--body);color:var(--ink)}
+.lib-meta{display:flex;flex-wrap:wrap;gap:8px 32px;margin:0 0 4px}
+.lib-meta dt{font-size:.82rem;color:var(--muted)}
+.lib-meta dd{margin:0;font-weight:600}
+.lib-links{margin:16px 0 0}
+.lib-laws{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.lib-laws .card{padding:16px 18px}
+.lib-laws h3{margin:0 0 4px;font-size:1.05rem}
+.lib-laws p{margin:0;font-size:.93rem}
+.lib-cited{margin-top:6px!important}
+.lib-group h3{margin:24px 0 8px;font-size:1rem;color:var(--muted);font-family:var(--body);font-weight:600}
+.lib-group ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.lib-group li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 2px;border-bottom:1px solid var(--line)}
+.lib-group li a{font-weight:500}
+.library section{padding:0;border:0}
+@media(max-width:620px){.lib-group li{flex-direction:column;align-items:flex-start;gap:4px}}
+.official{margin:16px 0 0;font-size:.9rem;color:var(--muted)}
+.lib-totals>div{background:var(--surface);border:1px solid var(--line)}

@@ -6,6 +6,8 @@ import { COUNTRIES, countryName } from "@/lib/countries";
 import type { CheckResult } from "@/lib/verdict";
 import { SiteHeader, SiteFooter, CONTACT_EMAIL } from "@/components/SiteChrome";
 import { findAnswer, type AnswerDb } from "@/lib/match";
+import type { CountryDb } from "@/lib/db";
+import type { CountrySources } from "@/lib/sources";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -25,6 +27,7 @@ export default function Home() {
   const [activity, setActivity] = useState("");
   const [country, setCountry] = useState("US");
   const [db, setDb] = useState<AnswerDb | null>(null);
+  const [sourcesDb, setSourcesDb] = useState<CountryDb | null>(null);
   const [error, setError] = useState("");
   const [result, setResult] = useState<CheckResult | null>(null);
   const [missing, setMissing] = useState<{ activity: string; country: string; others: CheckResult[] } | null>(null);
@@ -41,6 +44,10 @@ export default function Home() {
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then(setDb)
       .catch(() => setError("Couldn’t load the answers. Please refresh the page."));
+    fetch(`${BASE}/data/countries.json`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then(setSourcesDb)
+      .catch(() => {});
 
     // Scroll reveal: fade sections up as they come into view.
     const els = document.querySelectorAll(".rv");
@@ -91,6 +98,17 @@ export default function Home() {
     windowRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
+  // Links from the law library open a specific answer: /?a=<activity>&c=<country>
+  useEffect(() => {
+    if (!db) return;
+    const params = new URLSearchParams(location.search);
+    const a = params.get("a");
+    const c = params.get("c");
+    if (a && c && COUNTRIES.some((x) => x.code === c)) check(a, c, a + c);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [db]);
+
+  const sourcesFor = (code: string) => sourcesDb?.countries.find((c) => c.country === code);
   const popular = db?.answers ?? [];
   const countriesCovered = new Set(popular.map((a) => a.country)).size;
 
@@ -201,7 +219,7 @@ export default function Home() {
               </div>
               <div className="main-pane" aria-live="polite">
                 {error && <p className="err-box">{error}</p>}
-                {result && <Result r={result} />}
+                {result && <Result r={result} sources={sourcesFor(result.country)} />}
                 {missing && <Missing {...missing} onPick={(r) => check(r.activity, r.country, r.activity + r.country)} />}
                 {!error && !result && !missing && <Empty onFocus={() => inputRef.current?.focus()} />}
               </div>
@@ -449,7 +467,7 @@ function Missing({
   );
 }
 
-function Result({ r }: { r: CheckResult }) {
+function Result({ r, sources }: { r: CheckResult; sources?: CountrySources }) {
   return (
     <article className="result">
       <p className="result-label">
@@ -526,6 +544,24 @@ function Result({ r }: { r: CheckResult }) {
               ))}
             </ul>
           </details>
+        )}
+        {sources && sources.portals.length > 0 && (
+          <p className="official">
+            Read the law yourself:{" "}
+            {sources.portals.slice(0, 2).map((p, i) => (
+              <span key={p.url || p.name}>
+                {i > 0 && " · "}
+                {p.url ? (
+                  <a href={p.url} target="_blank" rel="noreferrer">
+                    {p.name}
+                  </a>
+                ) : (
+                  p.name
+                )}
+              </span>
+            ))}{" "}
+            · <Link href={`/laws?c=${r.country}`}>Law library</Link>
+          </p>
         )}
         <p className="checked">Checked {new Date(r.checkedAt).toLocaleDateString()} · Not legal advice</p>
       </div>

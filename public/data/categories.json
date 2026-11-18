@@ -1,0 +1,49 @@
+{
+ "Outdoors & travel": [
+  "Wild camping",
+  "Flying a drone in a park",
+  "Metal detecting on public land",
+  "Swimming in a river or lake",
+  "Picking wild mushrooms"
+ ],
+ "On the road": [
+  "Jaywalking",
+  "Riding an e-scooter on the pavement",
+  "Using a radar detector in a car",
+  "Using a phone hands-free while driving",
+  "Hitchhiking"
+ ],
+ "Alcohol, tobacco & drugs": [
+  "Drinking alcohol in public",
+  "Vaping",
+  "Possessing cannabis for personal use",
+  "Smoking in a bar or restaurant"
+ ],
+ "Animals": [
+  "Owning a pet fox",
+  "Feeding pigeons",
+  "Keeping chickens in a garden",
+  "Fishing without a licence"
+ ],
+ "Home & property": [
+  "Collecting rainwater",
+  "Growing vegetables in the front garden",
+  "Installing a security camera that films the street",
+  "Renting out a room short-term"
+ ],
+ "Personal items": [
+  "Carrying a pocket knife",
+  "Carrying pepper spray for self-defence",
+  "Setting off fireworks"
+ ],
+ "Online & media": [
+  "Using a VPN",
+  "Recording a phone call without telling the other person",
+  "Downloading copyrighted films for personal use"
+ ],
+ "Public life": [
+  "Sunbathing topless",
+  "Busking on the street",
+  "Chewing gum"
+ ]
+}
