@@ -33,14 +33,30 @@ jobs:
       - name: Install
         if: steps.check.outputs.skip != 'true'
         run: npm ci && npm ci --prefix worker
+      - name: Check the Cloudflare token
+        if: steps.check.outputs.skip != 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          status=$(curl -s https://api.cloudflare.com/client/v4/user/tokens/verify \
+            -H "Authorization: Bearer $(echo -n "$CLOUDFLARE_API_TOKEN" | tr -d '[:space:]')" | jq -r '.result.status // "invalid"')
+          echo "Token status: $status"
+          if [ "$status" != "active" ]; then
+            echo "::error::Cloudflare doesn't accept CLOUDFLARE_API_TOKEN. Copy the token value again (not the token ID) and update the secret."
+            exit 1
+          fi
       - name: Deploy
         if: steps.check.outputs.skip != 'true'
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          workingDirectory: worker
-          wranglerVersion: "4.155.0"
-          secrets: |
-            ANTHROPIC_API_KEY
+        working-directory: worker
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npx wrangler deploy
+      - name: Upload the Anthropic API key to the worker
+        if: steps.check.outputs.skip != 'true'
+        working-directory: worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then echo "::warning::ANTHROPIC_API_KEY isn't set; lookups won't work until it is."; exit 0; fi
+          printf '%s' "$ANTHROPIC_API_KEY" | npx wrangler secret put ANTHROPIC_API_KEY
