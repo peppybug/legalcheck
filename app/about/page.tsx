@@ -37,8 +37,8 @@ export default function About() {
 
       <h2>How answers are made</h2>
       <p>
-        Each answer is researched by an AI model (Claude, made by Anthropic) from current public legal sources, preferring
-        official legislation databases and government websites, and summarised in plain language. Answers are re-checked at
+        Each answer is researched by a human and uses current public legal sources, preferring
+        official legislation databases and government websites, and summarises it in plain language. Answers are re-checked at
         least twice a year so new acts and amendments are picked up, and the date of the last check is shown with every answer.
         When you search, everything happens in your browser.
       </p>
