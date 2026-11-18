@@ -55,6 +55,9 @@ const ordered = [...new Set([...config.priority, ...allCodes])].filter((c) => {
 
 let failed = 0;
 let done = 0;
+const reviewCountries: CountrySources[] = [];
+const reviewAnswers: { result: CheckResult; previous?: CheckResult }[] = [];
+const failures: string[] = [];
 
 // 1. Country law sources
 const countriesPath = `${DIR}/countries.json`;
@@ -74,12 +77,15 @@ const saveCountries = () =>
 
 await pool(countryTodo, async (code) => {
   try {
-    byCountry.set(code, await researchCountry(code));
+    const result = await researchCountry(code);
+    byCountry.set(code, result);
+    reviewCountries.push(result);
     saveCountries();
     console.log(`✓ sources ${code}`);
     done++;
   } catch (err) {
     console.error(`✗ sources ${code}:`, err instanceof Error ? err.message : err);
+    failures.push(`Law sources for ${code}`);
     failed++;
   }
 });
@@ -103,12 +109,14 @@ const saveAnswers = () => {
 await pool(answerTodo, async (p) => {
   try {
     const result = await runCheck(p.activity, p.country);
+    reviewAnswers.push({ result, previous: byKey.get(answerKey(p.activity, p.country)) });
     byKey.set(answerKey(p.activity, p.country), result);
     saveAnswers();
     console.log(`✓ ${p.activity} · ${p.country}: ${result.verdict}`);
     done++;
   } catch (err) {
     console.error(`✗ ${p.activity} · ${p.country}:`, err instanceof Error ? err.message : err);
+    failures.push(`${p.activity} · ${p.country}`);
     failed++;
   }
 });
@@ -120,5 +128,58 @@ writeJson(`${DIR}/laws.json`, { updatedAt: new Date().toISOString(), laws });
 writeJson(`${DIR}/categories.json`, config.categories);
 console.log(`Laws: ${laws.length} indexed.`);
 
+writeReviewSummary();
 console.log(`Done: ${done} researched, ${failed} failed.`);
 if (failed && !done) process.exit(1);
+
+/** Markdown summary of this run for the review pull request (review-summary.md, not committed). */
+function writeReviewSummary() {
+  const link = (name: string, url: string) => (url ? `[${name}](${url})` : name);
+  const lines: string[] = [
+    "Research from this run. **Nothing is published until this pull request is merged.**",
+    "",
+    "Check each item against the linked official sources. To fix something, edit `public/data/*.json` on this branch",
+    "(then re-run `npm run generate` with `MAX=0 MAX_COUNTRIES=0` locally, or just fix `laws.json` too); to drop an item, delete it from the JSON.",
+    "",
+    `**${reviewAnswers.length} answers · ${reviewCountries.length} countries' law sources · ${failures.length} failed**`,
+  ];
+  if (reviewAnswers.length) {
+    lines.push("", "## Answers", "");
+    for (const { result: r, previous } of reviewAnswers) {
+      const changed = previous && previous.verdict !== r.verdict ? ` ⚠️ was **${previous.verdict}**` : previous ? " (refresh)" : "";
+      lines.push(
+        `<details><summary><b>${r.activity} · ${r.country}</b>: ${r.verdict} (${r.confidence})${changed}</summary>`,
+        "",
+        `**${r.headline}**`,
+        "",
+        r.summary,
+        ...(r.conditions.length ? ["", `Conditions: ${r.conditions.join("; ")}`] : []),
+        ...(r.penalties ? ["", `Penalties: ${r.penalties}`] : []),
+        ...(r.regional_variation ? ["", `Regional: ${r.regional_variation}`] : []),
+        "",
+        "Laws: " + (r.laws.map((l) => link([l.name, l.section, l.year].filter(Boolean).join(" · "), l.url)).join("; ") || "none cited"),
+        "",
+        "</details>",
+      );
+    }
+  }
+  if (reviewCountries.length) {
+    lines.push("", "## Country law sources", "");
+    for (const c of reviewCountries) {
+      lines.push(
+        `- **${c.country}** (${c.confidence}): ` +
+          [
+            ...c.portals.map((p) => link(p.name, p.url)),
+            c.gazette_name && `Gazette: ${link(c.gazette_name, c.gazette_url)}`,
+            c.constitution_name && `Constitution: ${link(c.constitution_name, c.constitution_url)}`,
+          ]
+            .filter(Boolean)
+            .join(" · "),
+      );
+    }
+  }
+  if (failures.length) lines.push("", "## Failed (will be retried next run)", "", ...failures.map((f) => `- ${f}`));
+  let body = lines.join("\n");
+  if (body.length > 60000) body = body.slice(0, 60000) + "\n\n… summary truncated; see the JSON diff for the rest.";
+  writeFileSync("review-summary.md", body + "\n");
+}

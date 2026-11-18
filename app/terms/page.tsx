@@ -13,8 +13,9 @@ export default function Terms() {
 
       <h2>What the site provides</h2>
       <p>
-        Legalcheck provides AI-generated summaries of whether an activity is legal in a country, based on public legal sources,
-        with references to the laws they rely on. It is free to use.
+        Legalcheck provides summaries of whether an activity is legal in a country, based on public legal sources, with
+        references to the laws they rely on. Summaries are researched with AI and reviewed by a person before publication. It is
+        free to use.
       </p>
 
       <h2>Not legal advice</h2>
@@ -24,7 +25,7 @@ export default function Terms() {
           create a lawyer–client relationship.
         </li>
         <li>
-          Answers are written by AI and may be wrong, incomplete or out of date. Laws change, and local rules may differ from
+          Answers are researched with AI and reviewed by a person, but may still be wrong, incomplete or out of date. Laws change, and local rules may differ from
           national law. Always check the cited source, and ask a qualified lawyer before relying on an answer for anything
           important.
         </li>

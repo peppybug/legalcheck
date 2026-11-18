@@ -4,10 +4,6 @@ name: Deploy site to Pages
 on:
   push:
     branches: ["main"]
-  # Redeploy after the answers have been refreshed (that workflow's commit can't trigger a push run).
-  workflow_run:
-    workflows: ["Refresh answers"]
-    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -24,8 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22

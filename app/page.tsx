@@ -303,8 +303,8 @@ export default function Home() {
               <div className="rv">
                 <h3>General information, not legal advice</h3>
                 <p>
-                  Answers are researched by AI from public legal sources and can be wrong or miss local rules. If the stakes
-                  are high, read the cited law or ask a lawyer.
+                  Answers are researched with AI and reviewed by a person, but can still be wrong or miss local rules. If the
+                  stakes are high, read the cited law or ask a lawyer.
                 </p>
               </div>
               <div className="rv d1">
@@ -324,8 +324,9 @@ export default function Home() {
               <details>
                 <summary>Where do the answers come from?</summary>
                 <p>
-                  Each answer is researched by a human that uses current public legal sources, preferring official legislation databases
-                  and government websites, then summarises in plain language. The laws it relied on are listed under every answer.
+                  Each answer is researched with AI from current public legal sources, preferring official legislation databases
+                  and government websites, and summarised in plain language. A person reviews every answer before it’s published.
+                  The laws it relies on are listed under every answer.
                 </p>
               </details>
               <details>

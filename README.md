@@ -27,7 +27,7 @@ That's about 6,200 answers in total, built up run by run.
 | Part | What it does |
 |---|---|
 | `scripts/generate.ts` (`npm run generate`) | Researches missing or outdated (180+ days) country sources and answers, then rebuilds `laws.json`. |
-| `.github/workflows/refresh-answers.yml` | Runs the generator every Monday and on demand (default: 20 countries + 40 answers per run) and commits `public/data/`. |
+| `.github/workflows/refresh-answers.yml` | Runs the generator every Monday and on demand (default: 20 countries + 40 answers per run) and opens a **pull request for review** with a readable summary. Nothing goes live until you merge it. |
 | `.github/workflows/deploy.yml` | Builds the static site (`out/`) and deploys it to GitHub Pages on every push and after each refresh. |
 | `/laws` (Law library) | Browse a country's official sources, the laws behind its answers, and all its answers by category. |
 
@@ -35,7 +35,10 @@ That's about 6,200 answers in total, built up run by run.
 
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 2. **Settings → Secrets and variables → Actions → New repository secret:** `ANTHROPIC_API_KEY` (get a key at platform.claude.com).
-3. **Actions → Refresh answers → Run workflow** to research the first batch. Run it again (or wait for Monday) until all pairs are done.
+3. **Settings → Actions → General → Workflow permissions:** switch on *Allow GitHub Actions to create and approve pull requests*.
+4. **Actions → Refresh answers → Run workflow** to research the first batch.
+5. **Review the pull request** it opens: each answer and country is listed with its verdict, summary and links to the official
+   sources. Fix or delete anything wrong on the PR branch, then merge. Merging deploys the site.
 
 The site is served at `https://peppybug.github.io/legalcheck/`. To use `legalcheck.app`, add it under **Settings → Pages → Custom
 domain** and point the domain's DNS at GitHub Pages; the deploy workflow then builds without the `/legalcheck` path automatically.

@@ -1,6 +1,10 @@
-# Builds the Legalcheck database: researches country law sources and legality answers with Claude,
-# rebuilds the law index, and commits everything in public/data/.
-# Needs the repository secret ANTHROPIC_API_KEY (Settings → Secrets and variables → Actions).
+# Researches country law sources and legality answers with Claude, then opens a pull request for review.
+# Nothing is published until a person reviews and merges the pull request (merging triggers the deploy).
+#
+# Needs:
+#   - repository secret ANTHROPIC_API_KEY (Settings → Secrets and variables → Actions)
+#   - Settings → Actions → General → Workflow permissions:
+#     "Allow GitHub Actions to create and approve pull requests" switched on
 name: Refresh answers
 
 on:
@@ -20,6 +24,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: refresh-answers
@@ -36,18 +41,25 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Research answers
+      - name: Research
         run: npm run generate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MAX: ${{ inputs.max || '40' }}
           MAX_COUNTRIES: ${{ inputs.max_countries || '20' }}
           REFRESH_DAYS: ${{ inputs.refresh_days || '180' }}
-      - name: Commit updated answers
+      - name: Open a pull request for review
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
+          git add public/data
+          if git diff --cached --quiet; then echo "Nothing new to review"; exit 0; fi
+          branch="review/$(date -u +%Y-%m-%d-%H%M)"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data
-          git diff --cached --quiet && { echo "No changes"; exit 0; }
-          git commit -m "Refresh database"
-          git push
+          git switch -c "$branch"
+          git commit -q -m "Research for review $(date -u +%Y-%m-%d)"
+          git push -u origin "$branch"
+          gh pr create --base main --head "$branch" \
+            --title "Review: new research $(date -u +%Y-%m-%d)" \
+            --body-file review-summary.md

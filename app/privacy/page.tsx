@@ -27,8 +27,8 @@ export default function Privacy() {
 
       <h2>How answers are made</h2>
       <p>
-        Answers are researched in advance by Anthropic’s Claude API, from a list of activities and countries we choose. No
-        visitor data is sent to Anthropic. If you suggest an activity by email, we may add the activity and country (but
+        Answers are researched in advance with Anthropic’s Claude API, from a list of activities and countries we choose, and
+        reviewed by a person before they’re published. No visitor data is sent to Anthropic. If you suggest an activity by email, we may add the activity and country (but
         nothing about you) to that list.
       </p>
 
