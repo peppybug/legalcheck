@@ -12,31 +12,55 @@ The site is hosted on **GitHub Pages**. A search is answered from, in order:
 
 ## The database
 
-Everything lives in `public/data/` as JSON, versioned in git and loaded by the browser:
-
 | File | Contents | Built by |
 |---|---|---|
-| `countries.json` | Official law sources for each of the 200 countries: legislation portals, official gazette, constitution, legal system, languages, regional-law note | Claude + web search |
-| `answers.json` | Legality answers per activity and country: verdict, headline, summary, conditions, penalties, regional differences, cited laws, sources, confidence | Claude + web search |
-| `laws.json` | Every act cited in the answers, de-duplicated per country, with official URL, year, sections cited and which answers use it | Built from `answers.json`, no API calls |
-| `categories.json` | Activity categories, copied from `data/checks.json` | Copied |
+| `data/db/answers.json` | Master copy of every legality answer (not served to visitors) | Claude + web search |
+| `public/data/answers/XX.json` | The answers for one country; the site loads only the country being looked at | Split from the master |
+| `public/data/laws/XX.json` | Every act cited in that country's answers, with official URL, year, sections and which answers use it | Built from the answers |
+| `public/data/index.json` | Which activities exist in which countries, plus totals | Built from the answers |
+| `public/data/countries.json` | Official law sources per country: legislation portals, gazette, constitution, legal system, languages | Claude + web search |
+| `public/data/categories.json` | Activity categories, copied from `data/checks.json` | Copied |
 
 The database **links to** the official law texts rather than copying them: full national law collections run to millions of
 pages in 100+ languages, aren't all published as open data, and wouldn't fit on GitHub Pages (1 GB limit).
 
-`data/checks.json` lists the ~30 activities (in 8 categories) to research in **every country**, priority countries first.
-That's about 6,200 answers in total, built up run by run.
+### What's researched
+
+`data/checks.json` lists **50 activities in 8 categories**, checked in **all 200 countries** (priority countries first):
+
+- **Serious crimes**: murder, theft, assault, drunk driving, bribery, buying stolen goods (with each country's actual law)
+- **Myth: people think it's legal**: e.g. recording a call without consent, taking sand from the beach, running out of fuel on the motorway
+- **Myth: people think it's illegal**: e.g. driving barefoot, sleeping in your car, filming police in public
+- Everyday topics: outdoors, on the road, alcohol and drugs, home and animals, public life
+
+The two *Myth* categories feed the **"Surprising laws"** list on the home page: myths that don't hold in the visitor's country.
+Until a country is researched, serious crimes still get an instant general answer from `lib/crimes.ts`.
+
+### Cost
+
+Research only runs when you start it. Rough cost per answer: **Opus 5.5 about $0.15–0.25, Sonnet 5.5 about $0.07–0.12**
+(check the Usage page in the Claude Console for real numbers after the first run).
+
+| Scope | Answers | Sonnet 5.5 | Opus 5.5 |
+|---|---|---|---|
+| One country | 50 | ~$4–6 | ~$8–13 |
+| 30 priority countries | 1,500 | ~$105–180 | ~$225–375 |
+| All 200 countries | 10,000 | ~$700–1,200 | ~$1,500–2,500 |
+
+Answers are re-checked only after 180 days, so after the first build you pay again only for refreshes.
 
 ## How it works
 
 | Part | What it does |
 |---|---|
 | `scripts/generate.ts` (`npm run generate`) | Researches missing or outdated (180+ days) country sources and answers, then rebuilds `laws.json`. |
-| `.github/workflows/refresh-answers.yml` | Runs the generator every Monday and on demand (default: 20 countries + 40 answers per run) and opens a **pull request for review** with a readable summary. Nothing goes live until you merge it. |
+| `.github/workflows/refresh-answers.yml` | Runs the generator **when you start it** (pick the model, how many answers and countries) and opens a **pull request for review** with a readable summary. Nothing goes live until you merge it. |
 | `.github/workflows/deploy.yml` | Builds the static site (`out/`) and deploys it to GitHub Pages on every push and after each refresh. |
 | `/laws` (Law library) | Browse a country's official sources, the laws behind its answers, and all its answers by category. |
 
-## Setup: the lookup service (so any question works)
+## Optional: the lookup service (so any question works)
+
+Not needed for the database-only setup. Without `LOOKUP_URL`, the site answers from the database and the crimes list for free.
 
 1. Create a free account at cloudflare.com and put your **Account ID** in `worker/wrangler.toml` (`account_id`). Create an
    **API token** with the *Edit Cloudflare Workers* template (My Profile → API Tokens).
@@ -56,7 +80,8 @@ If you use a custom domain, add it to `ALLOWED_ORIGINS` in `worker/wrangler.toml
 1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 2. **Settings → Secrets and variables → Actions → New repository secret:** `ANTHROPIC_API_KEY` (get a key at platform.claude.com).
 3. **Settings → Actions → General → Workflow permissions:** switch on *Allow GitHub Actions to create and approve pull requests*.
-4. **Actions → Refresh answers → Run workflow** to research the first batch.
+4. **Actions → Refresh answers → Run workflow** to research the first batch. Start small (e.g. `max` = 50, one country's
+   worth) to see the real cost, then increase it.
 5. **Review the pull request** it opens: each answer and country is listed with its verdict, summary and links to the official
    sources. Fix or delete anything wrong on the PR branch, then merge. Merging deploys the site.
 

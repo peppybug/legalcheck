@@ -46,3 +46,22 @@ export function findAnswer(answers: CheckResult[], activity: string, country: st
   }
   return { answer: best, others: [...others.values()] };
 }
+
+export type DbIndex = {
+  updatedAt: string | null;
+  answerCount: number;
+  lawCount: number;
+  countries: Record<string, number>;
+  activities: Record<string, string[]>;
+};
+
+/** Other countries with an answer for a similar activity, from the index (no per-country files needed). */
+export function findOthers(index: DbIndex, activity: string, country: string) {
+  const q = tokens(activity);
+  const out = new Map<string, { activity: string; country: string }>();
+  for (const [name, codes] of Object.entries(index.activities)) {
+    if (score(q, tokens(name)) < 0.6) continue;
+    for (const code of codes) if (code !== country && !out.has(code)) out.set(code, { activity: name, country: code });
+  }
+  return [...out.values()].slice(0, 12);
+}

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { COUNTRIES, inCountry } from "@/lib/countries";
-import { loadJson, type AnswerDb, type CountryDb, type LawDb, type Categories } from "@/lib/db";
+import { loadJson, loadIndex, loadCountryAnswers, loadCountryLaws, type DbIndex, type CountryDb, type LawDb, type Categories } from "@/lib/db";
 import type { CheckResult } from "@/lib/verdict";
 
 const LABELS: Record<CheckResult["verdict"], string> = {
@@ -19,24 +19,34 @@ const answerHref = (a: { activity: string; country: string }) =>
 
 export default function Library() {
   const [country, setCountry] = useState("US");
-  const [data, setData] = useState<{ answers: AnswerDb; countries: CountryDb; laws: LawDb; categories: Categories } | null>(
-    null,
-  );
+  const [data, setData] = useState<{ index: DbIndex; countries: CountryDb; categories: Categories } | null>(null);
+  const [answers, setAnswers] = useState<CheckResult[]>([]);
+  const [laws, setLaws] = useState<LawDb["laws"]>([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
     const fromUrl = new URLSearchParams(location.search).get("c");
     const region = fromUrl ?? new Intl.Locale(navigator.language).maximize().region;
     if (region && COUNTRIES.some((c) => c.code === region)) setCountry(region);
-    Promise.all([
-      loadJson<AnswerDb>("answers"),
-      loadJson<CountryDb>("countries"),
-      loadJson<LawDb>("laws"),
-      loadJson<Categories>("categories").catch(() => ({})),
-    ])
-      .then(([answers, countries, laws, categories]) => setData({ answers, countries, laws, categories }))
+    Promise.all([loadIndex(), loadJson<CountryDb>("countries"), loadJson<Categories>("categories").catch(() => ({}))])
+      .then(([index, countries, categories]) => setData({ index, countries, categories }))
       .catch(() => setError("Couldn’t load the library. Please refresh the page."));
   }, []);
+
+  useEffect(() => {
+    if (!data) return;
+    let current = true;
+    Promise.all([loadCountryAnswers(country, data.index), data.index.countries[country] ? loadCountryLaws(country) : null]).then(
+      ([a, l]) => {
+        if (!current) return;
+        setAnswers(a.answers);
+        setLaws(l?.laws ?? []);
+      },
+    );
+    return () => {
+      current = false;
+    };
+  }, [data, country]);
 
   function pick(code: string) {
     setCountry(code);
@@ -46,8 +56,6 @@ export default function Library() {
   const view = useMemo(() => {
     if (!data) return null;
     const sources = data.countries.countries.find((c) => c.country === country) ?? null;
-    const laws = data.laws.laws.filter((l) => l.country === country);
-    const answers = data.answers.answers.filter((a) => a.country === country);
     const groups = Object.entries(data.categories)
       .map(([cat, acts]) => [cat, answers.filter((a) => acts.includes(a.activity))] as const)
       .filter(([, list]) => list.length);
@@ -55,12 +63,12 @@ export default function Library() {
     const other = answers.filter((a) => !grouped.has(a));
     if (other.length) groups.push(["Other", other]);
     return { sources, laws, answers, groups };
-  }, [data, country]);
+  }, [data, country, answers, laws]);
 
   const totals = data && {
     countries: data.countries.countries.length,
-    laws: data.laws.laws.length,
-    answers: data.answers.answers.length,
+    laws: data.index.lawCount,
+    answers: data.index.answerCount,
   };
 
   return (
@@ -201,7 +209,7 @@ export default function Library() {
           {view.groups.length ? (
             view.groups.map(([cat, list]) => (
               <section key={cat} className="lib-group">
-                <h3>{cat}</h3>
+                <h3>{cat.replace(/^Myth: people think it's /, "Common myth: people think it’s ")}</h3>
                 <ul>
                   {list.map((a) => (
                     <li key={a.activity}>

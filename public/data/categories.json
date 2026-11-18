@@ -1,4 +1,38 @@
 {
+ "Serious crimes": [
+  "Murder",
+  "Theft",
+  "Assault",
+  "Drunk driving",
+  "Bribing a police officer",
+  "Buying stolen goods"
+ ],
+ "Myth: people think it's legal": [
+  "Downloading copyrighted films for personal use",
+  "Recording a phone call without telling the other person",
+  "Taking sand or shells from the beach",
+  "Picking wild flowers in nature",
+  "Driving with headphones on",
+  "Running out of fuel on the motorway",
+  "Swearing in public",
+  "Not carrying ID",
+  "Flashing headlights to warn of a speed trap",
+  "Leaving your engine running while parked",
+  "Kissing in public",
+  "Feeding pigeons"
+ ],
+ "Myth: people think it's illegal": [
+  "Driving barefoot",
+  "Sleeping in your car",
+  "Collecting rainwater",
+  "Eating while driving",
+  "Filming police officers in public",
+  "Using a VPN",
+  "Riding a horse on public roads",
+  "Busking on the street",
+  "Owning a pet fox",
+  "Carrying a pocket knife"
+ ],
  "Outdoors & travel": [
   "Wild camping",
   "Flying a drone in a park",
@@ -19,31 +53,16 @@
   "Possessing cannabis for personal use",
   "Smoking in a bar or restaurant"
  ],
- "Animals": [
-  "Owning a pet fox",
-  "Feeding pigeons",
+ "Home, animals & property": [
   "Keeping chickens in a garden",
-  "Fishing without a licence"
- ],
- "Home & property": [
-  "Collecting rainwater",
-  "Growing vegetables in the front garden",
+  "Fishing without a licence",
   "Installing a security camera that films the street",
   "Renting out a room short-term"
  ],
- "Personal items": [
-  "Carrying a pocket knife",
-  "Carrying pepper spray for self-defence",
-  "Setting off fireworks"
- ],
- "Online & media": [
-  "Using a VPN",
-  "Recording a phone call without telling the other person",
-  "Downloading copyrighted films for personal use"
- ],
  "Public life": [
+  "Setting off fireworks",
+  "Carrying pepper spray for self-defence",
   "Sunbathing topless",
-  "Busking on the street",
   "Chewing gum"
  ]
 }

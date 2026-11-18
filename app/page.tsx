@@ -5,9 +5,9 @@ import Link from "next/link";
 import { COUNTRIES, countryName, inCountry } from "@/lib/countries";
 import type { CheckResult } from "@/lib/verdict";
 import { SiteHeader, SiteFooter, CONTACT_EMAIL } from "@/components/SiteChrome";
-import { findAnswer, type AnswerDb } from "@/lib/match";
+import { findAnswer, findOthers, type DbIndex } from "@/lib/match";
 import { findCrime, crimeAnswer } from "@/lib/crimes";
-import type { CountryDb } from "@/lib/db";
+import { loadIndex, loadCountryAnswers, loadJson, type CountryDb, type Categories } from "@/lib/db";
 import type { CountrySources } from "@/lib/sources";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -29,13 +29,15 @@ const LABELS: Record<CheckResult["verdict"], string> = {
 export default function Home() {
   const [activity, setActivity] = useState("");
   const [country, setCountry] = useState("US");
-  const [db, setDb] = useState<AnswerDb | null>(null);
+  const [index, setIndex] = useState<DbIndex | null>(null);
+  const [countryAnswers, setCountryAnswers] = useState<CheckResult[]>([]);
+  const [categories, setCategories] = useState<Categories>({});
   const [loading, setLoading] = useState(false);
   const lookupId = useRef(0);
   const [sourcesDb, setSourcesDb] = useState<CountryDb | null>(null);
   const [error, setError] = useState("");
   const [result, setResult] = useState<CheckResult | null>(null);
-  const [missing, setMissing] = useState<{ activity: string; country: string; others: CheckResult[] } | null>(null);
+  const [missing, setMissing] = useState<{ activity: string; country: string; others: Others } | null>(null);
   const [active, setActive] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const windowRef = useRef<HTMLDivElement>(null);
@@ -45,14 +47,9 @@ export default function Home() {
     const region = new Intl.Locale(navigator.language).maximize().region;
     if (region && COUNTRIES.some((c) => c.code === region)) setCountry(region);
 
-    fetch(`${BASE}/data/answers.json`)
-      .then((r) => (r.ok ? r.json() : Promise.reject()))
-      .then(setDb)
-      .catch(() => setError("Couldn’t load the answers. Please refresh the page."));
-    fetch(`${BASE}/data/countries.json`)
-      .then((r) => (r.ok ? r.json() : null))
-      .then(setSourcesDb)
-      .catch(() => {});
+    loadIndex().then(setIndex);
+    loadJson<CountryDb>("countries").then(setSourcesDb).catch(() => {});
+    loadJson<Categories>("categories").then(setCategories).catch(() => {});
 
     // Scroll reveal: fade sections up as they come into view.
     const els = document.querySelectorAll(".rv");
@@ -91,9 +88,19 @@ export default function Home() {
     };
   }, []);
 
+  // The sidebar and "surprising laws" show the selected country's answers.
+  useEffect(() => {
+    if (!index) return;
+    let current = true;
+    loadCountryAnswers(country, index).then((db) => current && setCountryAnswers(db.answers));
+    return () => {
+      current = false;
+    };
+  }, [index, country]);
+
   // 1. reviewed answers in the database, 2. built-in serious crimes, 3. the live lookup service.
   async function check(text: string, code: string, key: string | null = null) {
-    if (!db || text.trim().length < 2) return;
+    if (!index || text.trim().length < 2) return;
     const id = ++lookupId.current;
     setActivity(text);
     setCountry(code);
@@ -101,7 +108,9 @@ export default function Home() {
     setError("");
     windowRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
 
-    const found = findAnswer(db.answers, text, code);
+    const list = (await loadCountryAnswers(code, index)).answers;
+    if (id !== lookupId.current) return;
+    const found = { answer: findAnswer(list, text, code).answer, others: findOthers(index, text, code) };
     const crime = found.answer ? null : findCrime(text);
     const answer = found.answer ?? (crime && crimeAnswer(crime, text, code));
     if (answer || !LOOKUP_URL || text.trim().length < 3) {
@@ -135,17 +144,18 @@ export default function Home() {
 
   // Links from the law library open a specific answer: /?a=<activity>&c=<country>
   useEffect(() => {
-    if (!db) return;
+    if (!index) return;
     const params = new URLSearchParams(location.search);
     const a = params.get("a");
     const c = params.get("c");
     if (a && c && COUNTRIES.some((x) => x.code === c)) check(a, c, a + c);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [db]);
+  }, [index]);
 
   const sourcesFor = (code: string) => sourcesDb?.countries.find((c) => c.country === code);
-  const popular = db?.answers ?? [];
-  const countriesCovered = new Set(popular.map((a) => a.country)).size;
+  const popular = countryAnswers;
+  const countriesCovered = index ? Object.keys(index.countries).length : 0;
+  const surprises = surprisingLaws(countryAnswers, categories);
 
   return (
     <>
@@ -198,7 +208,7 @@ export default function Home() {
                 </option>
               ))}
             </select>
-            <button className="btn" type="submit" disabled={!db || loading}>
+            <button className="btn" type="submit" disabled={!index || loading}>
               {loading ? "Checking…" : "Check the law"}
             </button>
           </form>
@@ -228,7 +238,7 @@ export default function Home() {
             </div>
             <div className="win-body">
               <div className="side">
-                <h2>Popular checks</h2>
+                <h2>Answers for {countryName(country)}</h2>
                 <ul className="browse" aria-label="Answers in the database">
                   {popular.map((p) => {
                     const key = p.activity + p.country;
@@ -236,19 +246,17 @@ export default function Home() {
                       <li key={key}>
                         <button type="button" aria-pressed={active === key} onClick={() => check(p.activity, p.country, key)}>
                           <b>{p.activity}</b>
-                          <small>
-                            {flagOf(p.country)} {countryName(p.country)}
-                          </small>
+                          <small>{LABELS[p.verdict]}</small>
                         </button>
                       </li>
                     );
                   })}
                 </ul>
-                {db && (
+                {index && (
                   <p className="count">
                     {popular.length
-                      ? `${popular.length} answers in ${countriesCovered} countries`
-                      : "Answers are being researched. Check back soon."}
+                      ? `${popular.length} answers for ${inCountry(country)} · ${index.answerCount} in ${countriesCovered} countries`
+                      : `No answers for ${inCountry(country)} yet. Crimes are always answered.`}
                   </p>
                 )}
               </div>
@@ -257,7 +265,12 @@ export default function Home() {
                 {loading && <Loading activity={activity} country={country} />}
                 {result && !loading && <Result r={result} sources={sourcesFor(result.country)} />}
                 {missing && !loading && <Missing {...missing} onPick={(r) => check(r.activity, r.country, r.activity + r.country)} />}
-                {!error && !loading && !result && !missing && <Empty onFocus={() => inputRef.current?.focus()} />}
+                {!error && !loading && !result && !missing && <Empty
+                    country={country}
+                    surprises={surprises}
+                    onPick={(r) => check(r.activity, r.country, r.activity + r.country)}
+                    onFocus={() => inputRef.current?.focus()}
+                  />}
               </div>
             </div>
           </div>
@@ -438,11 +451,70 @@ export default function Home() {
   );
 }
 
-function Empty({ onFocus }: { onFocus: () => void }) {
+type Others = { activity: string; country: string }[];
+
+/** Myths from data/checks.json whose real answer in this country goes against what people assume. */
+function surprisingLaws(answers: CheckResult[], categories: Categories) {
+  const thoughtLegal = new Set(categories["Myth: people think it's legal"] ?? []);
+  const thoughtIllegal = new Set(categories["Myth: people think it's illegal"] ?? []);
+  return {
+    notAllowed: answers.filter((a) => thoughtLegal.has(a.activity) && (a.verdict === "illegal" || a.verdict === "restricted")),
+    allowed: answers.filter((a) => thoughtIllegal.has(a.activity) && a.verdict === "legal"),
+  };
+}
+
+function Empty({
+  country,
+  surprises,
+  onPick,
+  onFocus,
+}: {
+  country: string;
+  surprises: ReturnType<typeof surprisingLaws>;
+  onPick: (r: CheckResult) => void;
+  onFocus: () => void;
+}) {
+  const hasSurprises = surprises.notAllowed.length + surprises.allowed.length > 0;
   return (
     <div className="empty">
       <h3>Ask about anything you want to do.</h3>
-      <p className="muted">Pick a popular check on the left, or type your own activity above. You’ll get one of these answers:</p>
+      {hasSurprises ? (
+        <>
+          <p className="muted">Or start with what surprises most people in {inCountry(country)}:</p>
+          <div className="surprises">
+            {surprises.notAllowed.length > 0 && (
+              <div>
+                <p className="sp-head v-illegal">You might think it’s fine, but it isn’t</p>
+                <ul>
+                  {surprises.notAllowed.slice(0, 6).map((a) => (
+                    <li key={a.activity}>
+                      <button type="button" onClick={() => onPick(a)}>
+                        {a.activity}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {surprises.allowed.length > 0 && (
+              <div>
+                <p className="sp-head v-legal">You might think it’s illegal, but it’s allowed</p>
+                <ul>
+                  {surprises.allowed.slice(0, 6).map((a) => (
+                    <li key={a.activity}>
+                      <button type="button" onClick={() => onPick(a)}>
+                        {a.activity}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </>
+      ) : (
+        <>
+          <p className="muted">Pick a check on the left, or type your own activity above. You’ll get one of these answers:</p>
       <ul className="legend-list">
         <li>
           <span className="verdict v-legal">Legal</span> Allowed for adults, no permission needed.
@@ -457,6 +529,8 @@ function Empty({ onFocus }: { onFocus: () => void }) {
           <span className="verdict v-depends">It depends</span> Turns on your situation or region.
         </li>
       </ul>
+        </>
+      )}
       <button type="button" className="btn ghost sm" onClick={onFocus}>
         Type your own
       </button>
@@ -472,8 +546,8 @@ function Missing({
 }: {
   activity: string;
   country: string;
-  others: CheckResult[];
-  onPick: (r: CheckResult) => void;
+  others: Others;
+  onPick: (r: { activity: string; country: string }) => void;
 }) {
   const subject = encodeURIComponent(`Suggestion: ${activity} in ${countryName(country)}`);
   return (

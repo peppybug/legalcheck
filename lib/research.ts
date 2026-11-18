@@ -1,7 +1,8 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { z } from "zod";
 
-const MODEL = "claude-opus-5-5";
+// Override with CLAUDE_MODEL (the refresh workflow lets you pick claude-opus-5-5 or claude-sonnet-5-5).
+const MODEL = (typeof process !== "undefined" && process.env?.CLAUDE_MODEL) || "claude-opus-5-5";
 
 // Created on first use. Node scripts read ANTHROPIC_API_KEY from the environment;
 // the Cloudflare Worker passes its secret in with setApiKey().
