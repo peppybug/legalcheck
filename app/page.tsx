@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { COUNTRIES, countryName } from "@/lib/countries";
 import type { CheckResult } from "@/lib/verdict";
+import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 
 const flagOf = (code: string) => COUNTRIES.find((c) => c.code === code)?.flag ?? "";
 
@@ -111,27 +112,7 @@ export default function Home() {
       <a className="skip" href="#top">
         Skip to content
       </a>
-      <header className="site">
-        <div className="wrap bar">
-          <a className="logo" href="./" aria-label="Legalcheck home">
-            <i aria-hidden="true">§</i>
-            <span>Legalcheck</span>
-          </a>
-          <nav aria-label="Main">
-            <ul>
-              <li className="hide-sm">
-                <a href="#how">How it works</a>
-              </li>
-              <li>
-                <a href="#check">Popular</a>
-              </li>
-              <li>
-                <a href="#faq">FAQ</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader current="home" />
 
       <main id="top">
         <div className="wrap hero">
@@ -392,52 +373,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site">
-        <div className="wrap">
-          <div className="foot">
-            <div>
-              <a className="logo" href="./" aria-label="Legalcheck home">
-                <i aria-hidden="true">§</i>
-                <span>Legalcheck</span>
-              </a>
-              <p className="tag">Before you do it, check the law.</p>
-            </div>
-            <div>
-              <h2>Product</h2>
-              <ul>
-                <li>
-                  <a href="#how">How it works</a>
-                </li>
-                <li>
-                  <a href="#check">Popular checks</a>
-                </li>
-                <li>
-                  <a href="#faq">FAQ</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2>Coverage</h2>
-              <ul>
-                <li>{COUNTRIES.length} countries</li>
-                <li>National law</li>
-                <li>Regional notes</li>
-              </ul>
-            </div>
-            <div>
-              <h2>Legal</h2>
-              <ul>
-                <li>Not legal advice</li>
-                <li>Sources on every answer</li>
-              </ul>
-            </div>
-          </div>
-          <p className="fine">
-            © 2026 Legalcheck. Answers are based on public sources, researched with AI, and may be incomplete or out of date.
-            Not legal advice.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
