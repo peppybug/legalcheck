@@ -3,19 +3,29 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Legalcheck: is it legal here?",
-  description: "Type an activity, pick a country, and get a quick answer on whether it's legal, with the laws behind it.",
+  description:
+    "Type an activity, pick a country, and get a quick answer on whether it's legal there, with the laws behind it.",
+  openGraph: {
+    siteName: "Legalcheck",
+    title: "Legalcheck: is it legal here?",
+    description: "Before you do it, check the law.",
+  },
+  icons: { icon: "/favicon.svg" },
 };
 
-export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f6f3ec" },
-    { media: "(prefers-color-scheme: dark)", color: "#16150f" },
-  ],
-};
+export const viewport: Viewport = { themeColor: "#F4F1EC" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
