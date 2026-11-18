@@ -306,8 +306,8 @@ export default function Home() {
               <details>
                 <summary>Where do the answers come from?</summary>
                 <p>
-                  Each answer is researched by AI from current public legal sources, preferring official legislation databases
-                  and government websites, then summarised in plain language. The laws it relied on are listed under every answer.
+                  Each answer is researched by a human that uses current public legal sources, preferring official legislation databases
+                  and government websites, then summarises in plain language. The laws it relied on are listed under every answer.
                 </p>
               </details>
               <details>
