@@ -3,6 +3,7 @@
  * POST /check {activity, country} → a freshly researched answer, marked live (not reviewed by a person).
  * Answers are cached for 30 days per data centre, and each visitor gets a limited number of new lookups.
  */
+import Anthropic from "@anthropic-ai/sdk";
 import { runCheck } from "../lib/check";
 import { setApiKey, ResearchError } from "../lib/research";
 import { COUNTRY_CODES } from "../lib/countries";
@@ -64,6 +65,13 @@ export default {
     } catch (err) {
       console.error(err);
       if (err instanceof ResearchError) return json({ error: "We couldn’t research this one. Try rephrasing it." }, 422);
+      // Say which setup problem it is (never echo keys or upstream messages to visitors).
+      if (err instanceof Anthropic.AuthenticationError) return json({ error: "The service isn’t set up correctly.", code: "api_key_invalid" }, 503);
+      if (err instanceof Anthropic.PermissionDeniedError) return json({ error: "The service isn’t set up correctly.", code: "api_permission" }, 503);
+      if (err instanceof Anthropic.RateLimitError) return json({ error: "We’re busy right now. Try again in a minute.", code: "rate_limited" }, 503);
+      if (err instanceof Anthropic.BadRequestError && /credit|billing|balance/i.test(err.message))
+        return json({ error: "The service is temporarily unavailable.", code: "out_of_credit" }, 503);
+      if (err instanceof Anthropic.APIError) return json({ error: "Something went wrong. Please try again in a minute.", code: `api_${err.status}` }, 502);
       return json({ error: "Something went wrong. Please try again in a minute." }, 502);
     }
   },
