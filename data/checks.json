@@ -1,0 +1,23 @@
+{
+  "_comment": "Activity x country pairs the refresh workflow researches. Every activity is checked in every country listed, plus the extra pairs. Add to these lists to grow the database.",
+  "activities": [
+    "Wild camping",
+    "Flying a drone in a park",
+    "Drinking alcohol in public",
+    "Jaywalking",
+    "Setting off fireworks",
+    "Riding an e-scooter on the pavement",
+    "Collecting rainwater",
+    "Owning a pet fox",
+    "Feeding pigeons",
+    "Sunbathing topless",
+    "Carrying a pocket knife",
+    "Using a radar detector in a car"
+  ],
+  "countries": ["US", "GB", "DE", "FR", "NL", "BE", "ES", "IT", "NO", "SE", "CA", "AU", "JP", "SG", "TH"],
+  "extra": [
+    { "activity": "Chewing gum", "country": "SG" },
+    { "activity": "Vaping", "country": "TH" },
+    { "activity": "Eating on public transport", "country": "JP" }
+  ]
+}

@@ -9,8 +9,8 @@ export default function Privacy() {
       <h1>Privacy policy</h1>
       <p className="updated">Last updated 18 November 2026</p>
       <p className="lead">
-        Short version: we don’t ask for your personal details and we don’t use cookies or tracking. To answer your question,
-        what you type is sent to our server and to the AI service that researches the law.
+        Short version: we don’t ask for your personal details, we don’t use cookies or tracking, and your searches never leave
+        your browser.
       </p>
 
       <h2>Who is responsible</h2>
@@ -19,21 +19,17 @@ export default function Privacy() {
         <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </p>
 
-      <h2>Your questions</h2>
+      <h2>Your searches</h2>
       <p>
-        When you check an activity, the text you typed and the country you picked are sent to our server. The server passes
-        them to Anthropic’s Claude API, which searches the web and writes the answer. The question and answer are then saved
-        on our server for up to 30 days, so anyone asking the same question gets a fast reply. They are not linked to you.
-      </p>
-      <p>
-        Don’t type names, addresses or other personal details into the search box. It’s meant for activities, like “flying a
-        drone”, not personal stories.
+        When you search, all answers are downloaded to your browser and the search happens there. What you type and the country
+        you pick are not sent to us or to anyone else, and we don’t store them.
       </p>
 
-      <h2>Your IP address</h2>
+      <h2>How answers are made</h2>
       <p>
-        To stop abuse, the server counts how many new questions come from each IP address. The count is kept in memory for one
-        hour and then discarded. It isn’t written to a database or used for anything else.
+        Answers are researched in advance by Anthropic’s Claude API, from a list of activities and countries we choose. No
+        visitor data is sent to Anthropic. If you suggest an activity by email, we may add the activity and country (but
+        nothing about you) to that list.
       </p>
 
       <h2>What we don’t do</h2>
@@ -60,20 +56,11 @@ export default function Privacy() {
           </thead>
           <tbody>
             <tr>
+              <td>GitHub Pages (GitHub, Inc.)</td>
+              <td>Hosts the website</td>
               <td>
-                <span className="ph">Hosting provider</span>
-              </td>
-              <td>Hosts the website and runs the server</td>
-              <td>
-                <span className="ph">Link to their privacy policy</span>
-              </td>
-            </tr>
-            <tr>
-              <td>Anthropic (Claude API)</td>
-              <td>Receives your question and country, researches the law and writes the answer</td>
-              <td>
-                <a href="https://www.anthropic.com/legal/privacy" rel="noopener">
-                  Anthropic privacy policy
+                <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">
+                  GitHub privacy statement
                 </a>
               </td>
             </tr>

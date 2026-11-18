@@ -1,24 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { COUNTRIES, countryName } from "@/lib/countries";
 import type { CheckResult } from "@/lib/verdict";
-import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
+import { SiteHeader, SiteFooter, CONTACT_EMAIL } from "@/components/SiteChrome";
+import { findAnswer, type AnswerDb } from "@/lib/match";
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const flagOf = (code: string) => COUNTRIES.find((c) => c.code === code)?.flag ?? "";
-
-const POPULAR: { activity: string; country: string }[] = [
-  { activity: "Wild camping", country: "NO" },
-  { activity: "Chewing gum", country: "SG" },
-  { activity: "Flying a drone in a park", country: "JP" },
-  { activity: "Jaywalking", country: "US" },
-  { activity: "Drinking alcohol in public", country: "DE" },
-  { activity: "Setting off fireworks", country: "NL" },
-  { activity: "Riding an e-scooter on the pavement", country: "FR" },
-  { activity: "Owning a pet fox", country: "GB" },
-  { activity: "Feeding pigeons", country: "IT" },
-  { activity: "Collecting rainwater", country: "AU" },
-];
 
 const TRY = ["Wild camping", "Flying a drone", "Owning a pet fox"];
 
@@ -33,9 +24,10 @@ const LABELS: Record<CheckResult["verdict"], string> = {
 export default function Home() {
   const [activity, setActivity] = useState("");
   const [country, setCountry] = useState("US");
-  const [loading, setLoading] = useState(false);
+  const [db, setDb] = useState<AnswerDb | null>(null);
   const [error, setError] = useState("");
   const [result, setResult] = useState<CheckResult | null>(null);
+  const [missing, setMissing] = useState<{ activity: string; country: string; others: CheckResult[] } | null>(null);
   const [active, setActive] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const windowRef = useRef<HTMLDivElement>(null);
@@ -44,6 +36,11 @@ export default function Home() {
     document.documentElement.classList.add("js");
     const region = new Intl.Locale(navigator.language).maximize().region;
     if (region && COUNTRIES.some((c) => c.code === region)) setCountry(region);
+
+    fetch(`${BASE}/data/answers.json`)
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then(setDb)
+      .catch(() => setError("Couldn’t load the answers. Please refresh the page."));
 
     // Scroll reveal: fade sections up as they come into view.
     const els = document.querySelectorAll(".rv");
@@ -82,30 +79,20 @@ export default function Home() {
     };
   }, []);
 
-  async function check(text: string, code: string, key: string | null = null) {
-    if (text.trim().length < 3) return;
+  // Searches run in the browser against the answers file. Nothing is sent anywhere.
+  function check(text: string, code: string, key: string | null = null) {
+    if (!db || text.trim().length < 2) return;
     setActivity(text);
     setCountry(code);
     setActive(key);
-    setLoading(true);
-    setError("");
-    setResult(null);
+    const { answer, others } = findAnswer(db.answers, text, code);
+    setResult(answer);
+    setMissing(answer ? null : { activity: text, country: code, others });
     windowRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    try {
-      const res = await fetch("/api/check", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ activity: text, country: code }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(data.error ?? "Something went wrong. Please try again.");
-      setResult(data);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
-      setLoading(false);
-    }
   }
+
+  const popular = db?.answers ?? [];
+  const countriesCovered = new Set(popular.map((a) => a.country)).size;
 
   return (
     <>
@@ -142,7 +129,7 @@ export default function Home() {
               type="search"
               placeholder="What do you want to do?"
               autoComplete="off"
-              minLength={3}
+              minLength={2}
               maxLength={200}
               required
               value={activity}
@@ -158,8 +145,8 @@ export default function Home() {
                 </option>
               ))}
             </select>
-            <button className="btn" type="submit" disabled={loading}>
-              {loading ? "Checking…" : "Check the law"}
+            <button className="btn" type="submit" disabled={!db}>
+              Check the law
             </button>
           </form>
           <p className="try">
@@ -170,7 +157,7 @@ export default function Home() {
               </button>
             ))}
           </p>
-          <p className="sub-note">Every answer cites the laws it’s based on, with links to the source.</p>
+          <p className="sub-note">Your search stays in your browser. Every answer cites the laws it’s based on.</p>
         </div>
 
         <div className="wrap window-wrap" id="check" ref={windowRef}>
@@ -184,13 +171,13 @@ export default function Home() {
               <div className="win-title">
                 <b aria-hidden="true">§</b>Legality report
               </div>
-              <div className="win-hint">Researched live from current law</div>
+              <div className="win-hint">Researched from current law</div>
             </div>
             <div className="win-body">
               <div className="side">
                 <h2>Popular checks</h2>
-                <ul className="browse" aria-label="Popular checks">
-                  {POPULAR.map((p) => {
+                <ul className="browse" aria-label="Answers in the database">
+                  {popular.map((p) => {
                     const key = p.activity + p.country;
                     return (
                       <li key={key}>
@@ -204,18 +191,24 @@ export default function Home() {
                     );
                   })}
                 </ul>
-                <p className="count">{COUNTRIES.length} countries covered</p>
+                {db && (
+                  <p className="count">
+                    {popular.length
+                      ? `${popular.length} answers in ${countriesCovered} countries`
+                      : "Answers are being researched. Check back soon."}
+                  </p>
+                )}
               </div>
               <div className="main-pane" aria-live="polite">
-                {loading && <Loading activity={activity} country={country} />}
-                {error && !loading && <p className="err-box">{error}</p>}
-                {result && !loading && <Result r={result} />}
-                {!loading && !error && !result && <Empty onFocus={() => inputRef.current?.focus()} />}
+                {error && <p className="err-box">{error}</p>}
+                {result && <Result r={result} />}
+                {missing && <Missing {...missing} onPick={(r) => check(r.activity, r.country, r.activity + r.country)} />}
+                {!error && !result && !missing && <Empty onFocus={() => inputRef.current?.focus()} />}
               </div>
             </div>
           </div>
           <p className="muted rv" style={{ textAlign: "center", marginTop: 20 }}>
-            Answers are researched when you ask, so new laws show up without waiting for an update.
+            Missing an activity? <Link href="/contact">Suggest one</Link> and we’ll research it.
           </p>
         </div>
 
@@ -264,7 +257,7 @@ export default function Home() {
                   <h3>Type what you want to do</h3>
                   <p>Describe the activity in your own words and pick the country you’re in, or the one you’re travelling to.</p>
                   <ul>
-                    <li>Any activity</li>
+                    <li>Stays in your browser</li>
                     <li>{COUNTRIES.length} countries</li>
                   </ul>
                 </li>
@@ -313,15 +306,15 @@ export default function Home() {
               <details>
                 <summary>Where do the answers come from?</summary>
                 <p>
-                  Each check searches current public legal sources, preferring official legislation databases and government
-                  websites, then summarises what they say. The laws it relied on are listed under every answer.
+                  Each answer is researched by AI from current public legal sources, preferring official legislation databases
+                  and government websites, then summarised in plain language. The laws it relied on are listed under every answer.
                 </p>
               </details>
               <details>
                 <summary>How up to date is it?</summary>
                 <p>
-                  Answers are researched when they’re first asked, so new acts and amendments are picked up as soon as
-                  they’re published online. Popular answers are refreshed at least every 30 days.
+                  Every answer is researched from current legal sources and re-checked at least twice a year, so new acts
+                  and amendments are picked up. The date it was last checked is shown under each answer.
                 </p>
               </details>
               <details>
@@ -346,10 +339,17 @@ export default function Home() {
                 </p>
               </details>
               <details>
-                <summary>Do you store what I search?</summary>
+                <summary>Do you see what I search?</summary>
                 <p>
-                  Answers are cached so the next person asking the same question gets a fast reply. We don’t ask for an
-                  account or any personal details.
+                  No. All answers are downloaded to your browser and the search happens there. What you type is never sent to
+                  us or anyone else.
+                </p>
+              </details>
+              <details>
+                <summary>Why isn’t my activity there?</summary>
+                <p>
+                  Answers are researched in advance and the database is still growing. If yours is missing,{" "}
+                  <Link href="/contact">suggest it</Link> and it can be added to the next update.
                 </p>
               </details>
             </div>
@@ -404,19 +404,47 @@ function Empty({ onFocus }: { onFocus: () => void }) {
   );
 }
 
-function Loading({ activity, country }: { activity: string; country: string }) {
+function Missing({
+  activity,
+  country,
+  others,
+  onPick,
+}: {
+  activity: string;
+  country: string;
+  others: CheckResult[];
+  onPick: (r: CheckResult) => void;
+}) {
+  const subject = encodeURIComponent(`Suggestion: ${activity} in ${countryName(country)}`);
   return (
-    <div className="loading">
+    <div className="empty">
       <p className="result-label">
         {flagOf(country)} {countryName(country)}
       </p>
       <h3>{activity}</h3>
-      <p className="muted">Searching the law books… this usually takes 20 to 40 seconds.</p>
-      <div className="bars" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-      </div>
+      <p className="muted">
+        We haven’t researched this one for {countryName(country)} yet. Try different words, or suggest it and it can be added
+        to the next update.
+      </p>
+      {others.length > 0 && (
+        <>
+          <p className="muted" style={{ marginTop: 18 }}>
+            We do have a similar answer for:
+          </p>
+          <ul className="others">
+            {others.map((o) => (
+              <li key={o.country}>
+                <button type="button" className="btn ghost sm" onClick={() => onPick(o)}>
+                  {flagOf(o.country)} {countryName(o.country)}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      <a className="btn sm" href={`mailto:${CONTACT_EMAIL}?subject=${subject}`} style={{ marginTop: 18 }}>
+        Suggest this check
+      </a>
     </div>
   );
 }

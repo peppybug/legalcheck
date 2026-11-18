@@ -37,8 +37,8 @@ export default function Terms() {
 
       <h2>Fair use</h2>
       <p>
-        Please don’t try to disrupt the site, get around the limits on how many questions you can ask, or use it to plan harm to
-        others. Automated bulk use isn’t allowed. You may quote and link to answers.
+        Please don’t try to disrupt the site or use it to plan harm to others. You may quote and link to answers. If you reuse a
+        large part of the answers, please credit this site and the original sources.
       </p>
 
       <h2>Corrections</h2>

@@ -37,10 +37,10 @@ export default function About() {
 
       <h2>How answers are made</h2>
       <p>
-        When you ask a question, an AI model (Claude, made by Anthropic) searches current public legal sources, preferring
-        official legislation databases and government websites, and summarises what they say. Because the research happens
-        when you ask, new acts and amendments are picked up as soon as they’re published online. Answers are saved for up to
-        30 days so the next person asking the same question gets a fast reply.
+        Each answer is researched by an AI model (Claude, made by Anthropic) from current public legal sources, preferring
+        official legislation databases and government websites, and summarised in plain language. Answers are re-checked at
+        least twice a year so new acts and amendments are picked up, and the date of the last check is shown with every answer.
+        When you search, everything happens in your browser.
       </p>
 
       <h2>What this site is not</h2>
@@ -54,6 +54,10 @@ export default function About() {
           out of date. Always check the cited law when it matters.
         </li>
         <li>
+          <strong>Not complete.</strong> Answers are researched in advance, so not every activity and country is covered yet.
+          Missing one? <Link href="/contact">Suggest it</Link>.
+        </li>
+        <li>
           <strong>Not local.</strong> Answers cover national law, with notes on regional differences. City and municipal
           rules can be stricter.
         </li>
@@ -63,7 +67,7 @@ export default function About() {
       </ul>
 
       <h2>Free to use</h2>
-      <p>Checking is free and needs no account. There are no ads and no tracking.</p>
+      <p>Checking is free and needs no account. There are no ads, no cookies and no tracking.</p>
 
       <h2>Who runs it</h2>
       <p>

@@ -10,7 +10,6 @@ export const metadata: Metadata = {
     title: "Legalcheck: is it legal here?",
     description: "Before you do it, check the law.",
   },
-  icons: { icon: "/favicon.svg" },
 };
 
 export const viewport: Viewport = { themeColor: "#F4F1EC" };
