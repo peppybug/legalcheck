@@ -38,10 +38,9 @@ That's about 6,200 answers in total, built up run by run.
 
 ## Setup: the lookup service (so any question works)
 
-1. Create a free account at cloudflare.com. Copy your **Account ID** (Workers & Pages overview page) and create an
+1. Create a free account at cloudflare.com and put your **Account ID** in `worker/wrangler.toml` (`account_id`). Create an
    **API token** with the *Edit Cloudflare Workers* template (My Profile → API Tokens).
-2. In GitHub, **Settings → Secrets and variables → Actions → Secrets**, add `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`
-   and `ANTHROPIC_API_KEY`.
+2. In GitHub, **Settings → Secrets and variables → Actions → Secrets**, add `CLOUDFLARE_API_TOKEN` and `ANTHROPIC_API_KEY`.
 3. **Actions → Deploy lookup service → Run workflow.** The log ends with the service URL, like
    `https://legalcheck-lookup.<your-subdomain>.workers.dev`.
 4. **Settings → Secrets and variables → Actions → Variables**, add `LOOKUP_URL` with that URL (no trailing slash).
