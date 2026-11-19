@@ -1,0 +1,173 @@
+{
+ "updatedAt": "2026-11-19T18:11:27.532Z",
+ "answers": [
+  {
+   "verdict": "illegal",
+   "headline": "No. Since July 2015 it’s banned to drive with earphones, an earpiece or a headset in your ear.",
+   "summary": "The ban covers any sound device worn in or on the ear, including for phone calls, music or navigation. It applies to drivers of cars and motorcycles; motorcyclists may only use devices built into the helmet.",
+   "conditions": [],
+   "penalties": "A fine and points taken off your licence.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la route (Highway Code)",
+     "section": "Art. R412-6-1",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Driving with headphones on",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Téléphone au volant et suspension administrative du permis (2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/actualites/A19086"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. The limit is 0.5 g/l of blood, or 0.2 g/l for new and learner drivers.",
+   "summary": "It’s banned to drive with 0.5 g/l of alcohol in the blood or more (0.25 mg/l in breath). Drivers with a probationary licence and learners in accompanied driving have a limit of 0.2 g/l (0.10 mg/l in breath). From 0.8 g/l, or when visibly drunk, it’s a criminal offence (délit).",
+   "conditions": [
+    "General limit: 0.5 g/l blood (0.25 mg/l breath)",
+    "Probationary licence and accompanied driving: 0.2 g/l (0.10 mg/l breath)"
+   ],
+   "penalties": "Below 0.8 g/l: up to €750 (usually a €135 fixed fine), 6 points and possible suspension. 0.8 g/l or more: up to 3 years in prison and a €9,000 fine. Refusing a test: the same as 0.8 g/l or more.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la route (Highway Code)",
+     "section": "Art. R234-1 and L234-1",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Drunk driving",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Alcool au volant (vérifié le 27 août 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F36485"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes. In France no law requires you to have an ID card, let alone carry one.",
+   "summary": "No law obliges you to own or carry an identity card. If police check your identity, you can prove it by other means, such as a birth certificate, voter card or student card, but the check takes longer and you can be held for up to 4 hours while your identity is established.",
+   "conditions": [
+    "You may have to prove your identity some other way during a check"
+   ],
+   "penalties": "",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de procédure pénale (Code of Criminal Procedure)",
+     "section": "Art. 78-1 to 78-7 (identity checks)",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Not carrying ID",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Est-on obligé d'avoir une carte d'identité ? (vérifié le 5 août 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F11601"
+    },
+    {
+     "title": "Service-public.fr: Contrôle d'identité (vérifié le 19 août 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1036"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Using or possessing cannabis is a crime in France, usually punished with an on-the-spot €500 fine.",
+   "summary": "Using drugs, including cannabis, is a délit. If you’re caught using or with a small amount, police can issue a fixed fine without a trial. Larger amounts, hard drugs or a criminal record lead to court instead.",
+   "conditions": [],
+   "penalties": "Fixed fine: €500 (€400 if paid within 15 days, €1,000 if unpaid after 45 days). In court: up to 1 year in prison and a €3,750 fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la santé publique (Public Health Code)",
+     "section": "Art. L3421-1",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Possessing cannabis for personal use",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Que risque-t-on en cas d'usage de drogue ? (vérifié le 21 août 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33341"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Theft is a crime in France, with up to 3 years in prison and a €45,000 fine.",
+   "summary": "Simple theft (vol simple) is a délit. The penalty is the same if you give the item back afterwards or only attempted the theft. Theft with aggravating circumstances, such as violence or breaking in, is punished more heavily.",
+   "conditions": [],
+   "penalties": "Simple theft: up to 3 years in prison and a €45,000 fine; more with aggravating circumstances.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code pénal (Criminal Code)",
+     "section": "Art. 311-1 and 311-3 (vol)",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Theft",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Vol, cambriolage (vérifié le 19 juin 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1523"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Only through the car’s own system or speakers. Holding the phone, or using an earpiece, is banned.",
+   "summary": "Holding a phone while driving is banned, and so is wearing earphones, an earpiece or a headset. Using the car’s built-in hands-free system or loudspeaker isn’t covered by these bans, but you must still drive safely.",
+   "conditions": [
+    "Don’t hold the phone",
+    "No earphones, earpiece or headset"
+   ],
+   "penalties": "Holding a phone: €135 fixed fine and 3 points. A prefect can also suspend your licence for up to 6 months without waiting for a court.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la route (Highway Code)",
+     "section": "Art. R412-6-1",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Using a phone hands-free while driving",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Téléphone au volant et suspension administrative du permis (2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/actualites/A19086"
+    }
+   ]
+  }
+ ]
+}

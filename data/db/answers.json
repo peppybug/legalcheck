@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-19T18:03:01.290Z",
+ "updatedAt": "2026-11-19T18:11:27.531Z",
  "answers": [
   {
    "verdict": "illegal",
@@ -376,6 +376,410 @@
     {
      "title": "Straßenverkehrs-Ordnung, official text (last amended 30 January 2026)",
      "url": "https://www.gesetze-im-internet.de/stvo_2013/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Injuring someone is a crime in Spain, and even hitting someone without injuring them is punished with a fine.",
+   "summary": "Causing an injury that needs medical treatment is the crime of lesiones. Minor injuries and hitting someone without causing injury are punished with fines, but only if the victim files a complaint.",
+   "conditions": [],
+   "penalties": "Injury needing treatment: 3 months to 3 years in prison or a fine. Minor injury: a fine of 1–3 months. Hitting without injury: a fine of 1–2 months.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Código Penal (Criminal Code)",
+     "section": "Art. 147 (lesiones)",
+     "year": "2015",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a147"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Assault",
+   "checkedAt": "2026-11-19T18:11:26Z",
+   "sources": [
+    {
+     "title": "Código Penal, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Offering an official, including a police officer, a gift or payment is a crime in Spain.",
+   "summary": "Offering or giving any kind of gift or payment to an authority or public official, so they act against their duties, do or delay their job, or simply because of their position, is bribery (cohecho). The person paying gets the same prison and fine as the official.",
+   "conditions": [],
+   "penalties": "The same prison term and fine as the bribed official.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Código Penal (Criminal Code)",
+     "section": "Art. 424 (cohecho activo)",
+     "year": "2015",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a424"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Bribing a police officer",
+   "checkedAt": "2026-11-19T18:11:26Z",
+   "sources": [
+    {
+     "title": "Código Penal, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Buying goods you know were stolen is a crime in Spain.",
+   "summary": "Receiving, buying or hiding goods for gain, knowing they come from a crime against property, is handling stolen goods (receptación). The penalty is higher for items of cultural value, essential goods, or infrastructure such as cables.",
+   "conditions": [],
+   "penalties": "6 months to 2 years in prison; 1 to 3 years in aggravated cases.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Código Penal (Criminal Code)",
+     "section": "Art. 298 (receptación)",
+     "year": "2015",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a298"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Buying stolen goods",
+   "checkedAt": "2026-11-19T18:11:26Z",
+   "sources": [
+    {
+     "title": "Código Penal, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. It’s banned to drive wearing headphones, earphones or an audio headset.",
+   "summary": "Driving with any audio headset, earphones or similar device connected to a sound player or receiver is banned. The only exception is certified intercom or navigation systems built into motorcycle and moped helmets.",
+   "conditions": [],
+   "penalties": "A traffic fine and points off your licence.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Reglamento General de Circulación (road traffic rules)",
+     "section": "Art. 18.2",
+     "year": "2026",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a18"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Driving with headphones on",
+   "checkedAt": "2026-11-19T18:11:26Z",
+   "sources": [
+    {
+     "title": "Reglamento General de Circulación, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. The limit is 0.5 g/l of blood, or 0.3 g/l in your first two years and for professional drivers.",
+   "summary": "The limit is 0.5 g/l in blood (0.25 mg/l in breath) for drivers, including cyclists. It’s 0.3 g/l (0.15 mg/l in breath) for the first two years after getting your licence, and for drivers of trucks, buses, taxis, school transport and emergency vehicles. Above 1.2 g/l (0.60 mg/l in breath), or when under the influence, it’s a crime.",
+   "conditions": [
+    "General limit: 0.5 g/l blood (0.25 mg/l breath), cyclists included",
+    "New drivers (first 2 years) and professional drivers: 0.3 g/l (0.15 mg/l breath)"
+   ],
+   "penalties": "Over the limit: an administrative fine and points. Over 1.2 g/l or under the influence: 3–6 months in prison, a fine or community service, plus losing your licence for 1–4 years.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Reglamento General de Circulación (road traffic rules)",
+     "section": "Art. 20 (alcohol limits)",
+     "year": "2003",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a20"
+    },
+    {
+     "name": "Código Penal (Criminal Code)",
+     "section": "Art. 379 (driving under the influence)",
+     "year": "2010",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a379"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Drunk driving",
+   "checkedAt": "2026-11-19T18:11:26Z",
+   "sources": [
+    {
+     "title": "Reglamento General de Circulación, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514"
+    },
+    {
+     "title": "Código Penal, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Killing someone is punished with 10 to 25 years in prison in Spain, and up to life in the worst cases.",
+   "summary": "Killing someone is homicide (homicidio). It becomes murder (asesinato) with treachery, for payment, with cruelty, or to commit or hide another crime. Some murders, for example of a child under 16 or a vulnerable person, carry reviewable life imprisonment. Self-defence can be lawful in narrow circumstances.",
+   "conditions": [],
+   "penalties": "Homicide: 10–15 years. Murder: 15–25 years. Aggravated murder: reviewable life imprisonment.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Código Penal (Criminal Code)",
+     "section": "Art. 138 (homicidio)",
+     "year": "2015",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a138"
+    },
+    {
+     "name": "Código Penal (Criminal Code)",
+     "section": "Art. 139 (asesinato)",
+     "year": "2015",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a139"
+    },
+    {
+     "name": "Código Penal (Criminal Code)",
+     "section": "Art. 140 (prisión permanente revisable)",
+     "year": "2015",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a140"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Murder",
+   "checkedAt": "2026-11-19T18:11:26Z",
+   "sources": [
+    {
+     "title": "Código Penal, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Stealing is a crime in Spain: prison for items worth over €400, a fine below that.",
+   "summary": "Taking someone else’s movable property for gain, without the owner’s consent, is theft (hurto). Below €400 it’s usually punished with a fine, but repeat offenders with at least three earlier theft convictions get the prison penalty. Disabling alarms or security devices increases the penalty.",
+   "conditions": [],
+   "penalties": "Over €400: 6 to 18 months in prison. €400 or less: a fine of 1 to 3 months’ daily rates.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Código Penal (Criminal Code)",
+     "section": "Art. 234 (hurto)",
+     "year": "2026",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a234"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Theft",
+   "checkedAt": "2026-11-19T18:11:26Z",
+   "sources": [
+    {
+     "title": "Código Penal, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes, but only truly hands-free: without holding the phone and without earphones.",
+   "summary": "Using a mobile phone or other communication system while driving is banned, unless the communication happens without using your hands and without headphones or earphones. Screens with internet access or video are also banned while the vehicle moves.",
+   "conditions": [
+    "No hands",
+    "No headphones or earphones"
+   ],
+   "penalties": "Using a phone in your hand: a traffic fine and points off your licence.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Reglamento General de Circulación (road traffic rules)",
+     "section": "Art. 18.2",
+     "year": "2026",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a18"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Using a phone hands-free while driving",
+   "checkedAt": "2026-11-19T18:11:26Z",
+   "sources": [
+    {
+     "title": "Reglamento General de Circulación, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Since July 2015 it’s banned to drive with earphones, an earpiece or a headset in your ear.",
+   "summary": "The ban covers any sound device worn in or on the ear, including for phone calls, music or navigation. It applies to drivers of cars and motorcycles; motorcyclists may only use devices built into the helmet.",
+   "conditions": [],
+   "penalties": "A fine and points taken off your licence.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la route (Highway Code)",
+     "section": "Art. R412-6-1",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Driving with headphones on",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Téléphone au volant et suspension administrative du permis (2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/actualites/A19086"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. The limit is 0.5 g/l of blood, or 0.2 g/l for new and learner drivers.",
+   "summary": "It’s banned to drive with 0.5 g/l of alcohol in the blood or more (0.25 mg/l in breath). Drivers with a probationary licence and learners in accompanied driving have a limit of 0.2 g/l (0.10 mg/l in breath). From 0.8 g/l, or when visibly drunk, it’s a criminal offence (délit).",
+   "conditions": [
+    "General limit: 0.5 g/l blood (0.25 mg/l breath)",
+    "Probationary licence and accompanied driving: 0.2 g/l (0.10 mg/l breath)"
+   ],
+   "penalties": "Below 0.8 g/l: up to €750 (usually a €135 fixed fine), 6 points and possible suspension. 0.8 g/l or more: up to 3 years in prison and a €9,000 fine. Refusing a test: the same as 0.8 g/l or more.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la route (Highway Code)",
+     "section": "Art. R234-1 and L234-1",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Drunk driving",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Alcool au volant (vérifié le 27 août 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F36485"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes. In France no law requires you to have an ID card, let alone carry one.",
+   "summary": "No law obliges you to own or carry an identity card. If police check your identity, you can prove it by other means, such as a birth certificate, voter card or student card, but the check takes longer and you can be held for up to 4 hours while your identity is established.",
+   "conditions": [
+    "You may have to prove your identity some other way during a check"
+   ],
+   "penalties": "",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de procédure pénale (Code of Criminal Procedure)",
+     "section": "Art. 78-1 to 78-7 (identity checks)",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Not carrying ID",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Est-on obligé d'avoir une carte d'identité ? (vérifié le 5 août 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F11601"
+    },
+    {
+     "title": "Service-public.fr: Contrôle d'identité (vérifié le 19 août 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1036"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Using or possessing cannabis is a crime in France, usually punished with an on-the-spot €500 fine.",
+   "summary": "Using drugs, including cannabis, is a délit. If you’re caught using or with a small amount, police can issue a fixed fine without a trial. Larger amounts, hard drugs or a criminal record lead to court instead.",
+   "conditions": [],
+   "penalties": "Fixed fine: €500 (€400 if paid within 15 days, €1,000 if unpaid after 45 days). In court: up to 1 year in prison and a €3,750 fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la santé publique (Public Health Code)",
+     "section": "Art. L3421-1",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Possessing cannabis for personal use",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Que risque-t-on en cas d'usage de drogue ? (vérifié le 21 août 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33341"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Theft is a crime in France, with up to 3 years in prison and a €45,000 fine.",
+   "summary": "Simple theft (vol simple) is a délit. The penalty is the same if you give the item back afterwards or only attempted the theft. Theft with aggravating circumstances, such as violence or breaking in, is punished more heavily.",
+   "conditions": [],
+   "penalties": "Simple theft: up to 3 years in prison and a €45,000 fine; more with aggravating circumstances.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code pénal (Criminal Code)",
+     "section": "Art. 311-1 and 311-3 (vol)",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Theft",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Vol, cambriolage (vérifié le 19 juin 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F1523"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Only through the car’s own system or speakers. Holding the phone, or using an earpiece, is banned.",
+   "summary": "Holding a phone while driving is banned, and so is wearing earphones, an earpiece or a headset. Using the car’s built-in hands-free system or loudspeaker isn’t covered by these bans, but you must still drive safely.",
+   "conditions": [
+    "Don’t hold the phone",
+    "No earphones, earpiece or headset"
+   ],
+   "penalties": "Holding a phone: €135 fixed fine and 3 points. A prefect can also suspend your licence for up to 6 months without waiting for a court.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la route (Highway Code)",
+     "section": "Art. R412-6-1",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Using a phone hands-free while driving",
+   "checkedAt": "2026-11-19T18:10:21Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Téléphone au volant et suspension administrative du permis (2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/actualites/A19086"
     }
    ]
   },

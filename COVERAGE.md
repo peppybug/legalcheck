@@ -1,14 +1,16 @@
 # Coverage: hand-verified answers
 
 Every answer is checked against the official law text or an official government page and links to it.
+
+Sources by country: NL wetten.overheid.nl (XML repository), DE gesetze-im-internet.de, ES boe.es (consolidated-law API), FR service-public.gouv.fr (Légifrance blocks automated access).
 Work goes country by country through the EU (largest first), then the rest of the world.
 
 | # | Country | Verified answers | Status |
 |---|---|---|---|
 | 1 | DE | 12 / 50 | in progress |
-| 2 | FR | 0 / 50 | to do |
+| 2 | FR | 6 / 50 | in progress |
 | 3 | IT | 0 / 50 | to do |
-| 4 | ES | 0 / 50 | to do |
+| 4 | ES | 8 / 50 | in progress |
 | 5 | PL | 0 / 50 | to do |
 | 6 | RO | 0 / 50 | to do |
 | 7 | NL | 10 / 50 | in progress |

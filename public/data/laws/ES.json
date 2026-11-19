@@ -1,0 +1,73 @@
+{
+ "updatedAt": "2026-11-19T18:11:27.532Z",
+ "laws": [
+  {
+   "id": "ES:código penal criminal code",
+   "country": "ES",
+   "name": "Código Penal (Criminal Code)",
+   "year": "2026",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444#a147",
+   "sections": [
+    "Art. 147 (lesiones)",
+    "Art. 424 (cohecho activo)",
+    "Art. 298 (receptación)",
+    "Art. 379 (driving under the influence)",
+    "Art. 138 (homicidio)",
+    "Art. 139 (asesinato)",
+    "Art. 140 (prisión permanente revisable)",
+    "Art. 234 (hurto)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Assault",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Bribing a police officer",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Buying stolen goods",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Murder",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Theft",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "ES:reglamento general de circulación road traffic rules",
+   "country": "ES",
+   "name": "Reglamento General de Circulación (road traffic rules)",
+   "year": "2026",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a18",
+   "sections": [
+    "Art. 18.2",
+    "Art. 20 (alcohol limits)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Driving with headphones on",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Using a phone hands-free while driving",
+     "verdict": "legal"
+    }
+   ]
+  }
+ ]
+}

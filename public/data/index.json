@@ -1,37 +1,47 @@
 {
- "updatedAt": "2026-11-19T18:03:01.292Z",
- "answerCount": 22,
- "lawCount": 13,
+ "updatedAt": "2026-11-19T18:11:27.532Z",
+ "answerCount": 36,
+ "lawCount": 19,
  "countries": {
   "DE": 12,
+  "ES": 8,
+  "FR": 6,
   "NL": 10
  },
  "activities": {
   "Assault": [
    "DE",
+   "ES",
    "NL"
   ],
   "Bribing a police officer": [
    "DE",
+   "ES",
    "NL"
   ],
   "Buying stolen goods": [
    "DE",
+   "ES",
    "NL"
   ],
   "Drunk driving": [
    "DE",
+   "ES",
+   "FR",
    "NL"
   ],
   "Murder": [
    "DE",
+   "ES",
    "NL"
   ],
   "Not carrying ID": [
-   "DE"
+   "DE",
+   "FR"
   ],
   "Possessing cannabis for personal use": [
    "DE",
+   "FR",
    "NL"
   ],
   "Recording a phone call without telling the other person": [
@@ -47,11 +57,19 @@
   ],
   "Theft": [
    "DE",
+   "ES",
+   "FR",
    "NL"
   ],
   "Using a phone hands-free while driving": [
    "DE",
+   "ES",
+   "FR",
    "NL"
+  ],
+  "Driving with headphones on": [
+   "ES",
+   "FR"
   ]
  }
 }

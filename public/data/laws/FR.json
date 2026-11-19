@@ -1,0 +1,78 @@
+{
+ "updatedAt": "2026-11-19T18:11:27.532Z",
+ "laws": [
+  {
+   "id": "FR:code de la route highway code",
+   "country": "FR",
+   "name": "Code de la route (Highway Code)",
+   "year": "",
+   "url": "",
+   "sections": [
+    "Art. R412-6-1",
+    "Art. R234-1 and L234-1"
+   ],
+   "citedBy": [
+    {
+     "activity": "Driving with headphones on",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Using a phone hands-free while driving",
+     "verdict": "restricted"
+    }
+   ]
+  },
+  {
+   "id": "FR:code de la santé publique public health code",
+   "country": "FR",
+   "name": "Code de la santé publique (Public Health Code)",
+   "year": "",
+   "url": "",
+   "sections": [
+    "Art. L3421-1"
+   ],
+   "citedBy": [
+    {
+     "activity": "Possessing cannabis for personal use",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "FR:code de procédure pénale code of criminal procedure",
+   "country": "FR",
+   "name": "Code de procédure pénale (Code of Criminal Procedure)",
+   "year": "",
+   "url": "",
+   "sections": [
+    "Art. 78-1 to 78-7 (identity checks)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Not carrying ID",
+     "verdict": "legal"
+    }
+   ]
+  },
+  {
+   "id": "FR:code pénal criminal code",
+   "country": "FR",
+   "name": "Code pénal (Criminal Code)",
+   "year": "",
+   "url": "",
+   "sections": [
+    "Art. 311-1 and 311-3 (vol)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Theft",
+     "verdict": "illegal"
+    }
+   ]
+  }
+ ]
+}
