@@ -238,7 +238,7 @@ export default function Home() {
             </div>
             <div className="win-body">
               <div className="side">
-                <h2>Answers for {countryName(country)}</h2>
+                <h2>Answers for {inCountry(country)}</h2>
                 <ul className="browse" aria-label="Answers in the database">
                   {popular.map((p) => {
                     const key = p.activity + p.country;
@@ -255,7 +255,7 @@ export default function Home() {
                 {index && (
                   <p className="count">
                     {popular.length
-                      ? `${popular.length} answers for ${inCountry(country)} · ${index.answerCount} in ${countriesCovered} countries`
+                      ? `${popular.length} answers for ${inCountry(country)} · ${index.answerCount} in ${countriesCovered} ${countriesCovered === 1 ? "country" : "countries"}`
                       : `No answers for ${inCountry(country)} yet. Crimes are always answered.`}
                   </p>
                 )}
