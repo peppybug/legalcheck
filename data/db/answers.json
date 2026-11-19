@@ -1,6 +1,384 @@
 {
- "updatedAt": "2026-11-19T11:14:07.490Z",
+ "updatedAt": "2026-11-19T18:03:01.290Z",
  "answers": [
+  {
+   "verdict": "illegal",
+   "headline": "No. Physically harming someone is a crime in Germany, with up to 5 years in prison.",
+   "summary": "Assault (Körperverletzung) covers physically mistreating someone or damaging their health. Even an attempt is punishable. Self-defence (Notwehr) can be lawful.",
+   "conditions": [],
+   "penalties": "Up to 5 years in prison or a fine; more for dangerous or serious assault.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 223 (Körperverletzung)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__223.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Assault",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
+     "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Offering a police officer or other official a benefit to break their duties is a crime.",
+   "summary": "Offering, promising or giving a public official, including a police officer, an advantage in return for an act that breaks their duties is bribery (Bestechung).",
+   "conditions": [],
+   "penalties": "3 months to 5 years in prison; less in minor cases.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 334 (Bestechung)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__334.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Bribing a police officer",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
+     "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Buying something you know is stolen is a crime (handling stolen goods).",
+   "summary": "Buying or otherwise acquiring goods that someone else stole, to benefit yourself or another person, is handling stolen goods (Hehlerei). Unlike in some countries, German criminal law requires that you knew or accepted that the goods were stolen. Being merely careless isn’t a crime, but you may still have to give the goods back.",
+   "conditions": [],
+   "penalties": "Up to 5 years in prison or a fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 259 (Hehlerei)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__259.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Buying stolen goods",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
+     "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. The limit is 0.5‰ for drivers, and zero for new drivers and anyone under 21.",
+   "summary": "Driving a motor vehicle with 0.5‰ or more alcohol in the blood (0.25 mg/l in breath) is an offence. During the probation period and before age 21, drivers may not drink any alcohol before or while driving. Anyone, including cyclists, who drives any vehicle while unable to do so safely because of alcohol or drugs commits a crime, even below these limits.",
+   "conditions": [
+    "Limit: 0.5‰ in blood (0.25 mg/l in breath) for motor vehicles",
+    "New drivers in probation and under-21s: no alcohol at all",
+    "Cannabis: 3.5 ng/ml THC in blood serum"
+   ],
+   "penalties": "Over the limit: a fine and possible driving ban. Unable to drive safely: up to 1 year in prison or a fine, even on a bicycle.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Straßenverkehrsgesetz (StVG, Road Traffic Act)",
+     "section": "§ 24a (0.5‰ limit)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stvg/__24a.html"
+    },
+    {
+     "name": "Straßenverkehrsgesetz (StVG, Road Traffic Act)",
+     "section": "§ 24c (new drivers)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stvg/__24c.html"
+    },
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 316 (Trunkenheit im Verkehr)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__316.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Drunk driving",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Straßenverkehrsgesetz, official text (last amended 22 October 2026)",
+     "url": "https://www.gesetze-im-internet.de/stvg/"
+    },
+    {
+     "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
+     "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Murder is punished with life imprisonment in Germany.",
+   "summary": "Killing someone counts as murder (Mord) when it’s done with particular motives or methods, such as greed, cruelty, treachery or to cover up another crime. Other intentional killing is manslaughter (Totschlag). Self-defence can be lawful in narrow circumstances.",
+   "conditions": [],
+   "penalties": "Murder: life imprisonment. Manslaughter: at least 5 years, life in especially serious cases.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 211 (Mord)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__211.html"
+    },
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 212 (Totschlag)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__212.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Murder",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
+     "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes. Germans must own a valid ID card, but don’t have to carry it with them.",
+   "summary": "Germans aged 16 and over must have a valid ID card or passport and show it to authorities when asked, but the law doesn’t require carrying it at all times. If you can’t show it, police may take further steps to establish who you are.",
+   "conditions": [
+    "You must own a valid ID from age 16"
+   ],
+   "penalties": "Not owning a valid ID at all can be fined.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Personalausweisgesetz (PAuswG, ID Card Act)",
+     "section": "§ 1",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/pauswg/__1.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Not carrying ID",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Personalausweisgesetz, official text (last amended 16 July 2026)",
+     "url": "https://www.gesetze-im-internet.de/pauswg/"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Yes, for adults: up to 25 g in public and up to 50 g and 3 plants at home.",
+   "summary": "Since April 2024, adults may possess cannabis for their own use within these limits and grow up to three plants at home. Smoking it is banned near children, within sight of schools, playgrounds, youth facilities and sports grounds (within 100 m of the entrance), and in pedestrian zones between 07:00 and 20:00. Selling and passing it on stay illegal.",
+   "conditions": [
+    "Age 18 or over",
+    "Up to 25 g in public; up to 50 g at home",
+    "Up to 3 plants at home",
+    "No use near minors, schools or playgrounds; not in pedestrian zones 07:00–20:00"
+   ],
+   "penalties": "Possessing more than the limits is an offence or a crime depending on the amount.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Konsumcannabisgesetz (KCanG, Consumer Cannabis Act)",
+     "section": "§ 3 (possession)",
+     "year": "2024",
+     "url": "https://www.gesetze-im-internet.de/kcang/__3.html"
+    },
+    {
+     "name": "Konsumcannabisgesetz (KCanG, Consumer Cannabis Act)",
+     "section": "§ 5 (where not to use it)",
+     "year": "2024",
+     "url": "https://www.gesetze-im-internet.de/kcang/__5.html"
+    },
+    {
+     "name": "Konsumcannabisgesetz (KCanG, Consumer Cannabis Act)",
+     "section": "§ 9 (home growing)",
+     "year": "2024",
+     "url": "https://www.gesetze-im-internet.de/kcang/__9.html"
+    }
+   ],
+   "confidence": "medium",
+   "country": "DE",
+   "activity": "Possessing cannabis for personal use",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Konsumcannabisgesetz, official text",
+     "url": "https://www.gesetze-im-internet.de/kcang/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. In Germany, secretly recording someone’s private words is a crime, even in your own call.",
+   "summary": "Recording the non-public spoken words of another person without their permission is a crime, and so is using or sharing such a recording. This applies even if you take part in the conversation yourself. Ask for consent before recording.",
+   "conditions": [
+    "Allowed with the other person’s consent"
+   ],
+   "penalties": "Up to 3 years in prison or a fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 201 (Verletzung der Vertraulichkeit des Wortes)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__201.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Recording a phone call without telling the other person",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
+     "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Only at New Year: adults may set off ordinary fireworks on 31 December and 1 January.",
+   "summary": "Category F2 fireworks (ordinary New Year rockets and bangers) may only be sold to consumers from 29 to 31 December and set off by adults on 31 December and 1 January. Setting off fireworks right next to churches, hospitals, children’s homes and care homes is always banned.",
+   "conditions": [
+    "Age 18 or over",
+    "Only on 31 December and 1 January",
+    "Not near churches, hospitals, children’s or care homes"
+   ],
+   "penalties": "Setting off fireworks outside these rules can be fined.",
+   "regional_variation": "Local authorities can ban fireworks near fire-sensitive buildings, and ban bangers in densely populated areas, even on 31 December and 1 January.",
+   "laws": [
+    {
+     "name": "Erste Verordnung zum Sprengstoffgesetz (1. SprengV)",
+     "section": "§ 22 (sale)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/sprengv_1/__22.html"
+    },
+    {
+     "name": "Erste Verordnung zum Sprengstoffgesetz (1. SprengV)",
+     "section": "§ 23 (use)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/sprengv_1/__23.html"
+    },
+    {
+     "name": "Erste Verordnung zum Sprengstoffgesetz (1. SprengV)",
+     "section": "§ 24 (local bans)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/sprengv_1/__24.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Setting off fireworks",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "1. Sprengstoffverordnung, official text",
+     "url": "https://www.gesetze-im-internet.de/sprengv_1/"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Swearing itself isn’t illegal, but insulting someone is a crime in Germany.",
+   "summary": "Using bad language in general isn’t punished. Insulting a person (Beleidigung), for example calling someone names or giving the middle finger, is a crime, and it’s punished more heavily if done in public or online.",
+   "conditions": [],
+   "penalties": "Up to 1 year in prison or a fine; up to 2 years if done in public, online or with physical contact.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 185 (Beleidigung)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__185.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Swearing in public",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
+     "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Theft is a crime in Germany, with up to 5 years in prison.",
+   "summary": "Taking someone else’s movable property, intending to keep it unlawfully, is theft (Diebstahl). Even an attempt is punishable.",
+   "conditions": [],
+   "penalties": "Up to 5 years in prison or a fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 242 (Diebstahl)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stgb/__242.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Theft",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
+     "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes, as long as you don’t pick it up or hold it, and only use voice control or a quick glance.",
+   "summary": "Drivers may only use a phone or other electronic device if they don’t pick it up or hold it, and either use voice control and read-out functions or only glance at it briefly in a way suited to the traffic conditions.",
+   "conditions": [
+    "Don’t pick up or hold the device",
+    "Voice control, or only a brief glance"
+   ],
+   "penalties": "Using a hand-held phone while driving is fined, with penalty points.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Straßenverkehrs-Ordnung (StVO, road traffic rules)",
+     "section": "§ 23 (1a)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/__23.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Using a phone hands-free while driving",
+   "checkedAt": "2026-11-19T18:02:31Z",
+   "sources": [
+    {
+     "title": "Straßenverkehrs-Ordnung, official text (last amended 30 January 2026)",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/"
+    }
+   ]
+  },
   {
    "verdict": "illegal",
    "headline": "No. Assault is a crime in the Netherlands, with up to 3 years in prison, more if someone is badly hurt.",

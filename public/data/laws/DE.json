@@ -1,0 +1,142 @@
+{
+ "updatedAt": "2026-11-19T18:03:01.292Z",
+ "laws": [
+  {
+   "id": "DE:erste verordnung zum sprengstoffgesetz 1 sprengv",
+   "country": "DE",
+   "name": "Erste Verordnung zum Sprengstoffgesetz (1. SprengV)",
+   "year": "",
+   "url": "https://www.gesetze-im-internet.de/sprengv_1/__22.html",
+   "sections": [
+    "§ 22 (sale)",
+    "§ 23 (use)",
+    "§ 24 (local bans)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Setting off fireworks",
+     "verdict": "restricted"
+    }
+   ]
+  },
+  {
+   "id": "DE:konsumcannabisgesetz kcang consumer cannabis act",
+   "country": "DE",
+   "name": "Konsumcannabisgesetz (KCanG, Consumer Cannabis Act)",
+   "year": "2024",
+   "url": "https://www.gesetze-im-internet.de/kcang/__3.html",
+   "sections": [
+    "§ 3 (possession)",
+    "§ 5 (where not to use it)",
+    "§ 9 (home growing)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Possessing cannabis for personal use",
+     "verdict": "restricted"
+    }
+   ]
+  },
+  {
+   "id": "DE:personalausweisgesetz pauswg id card act",
+   "country": "DE",
+   "name": "Personalausweisgesetz (PAuswG, ID Card Act)",
+   "year": "",
+   "url": "https://www.gesetze-im-internet.de/pauswg/__1.html",
+   "sections": [
+    "§ 1"
+   ],
+   "citedBy": [
+    {
+     "activity": "Not carrying ID",
+     "verdict": "legal"
+    }
+   ]
+  },
+  {
+   "id": "DE:strafgesetzbuch stgb criminal code",
+   "country": "DE",
+   "name": "Strafgesetzbuch (StGB, Criminal Code)",
+   "year": "",
+   "url": "https://www.gesetze-im-internet.de/stgb/__223.html",
+   "sections": [
+    "§ 223 (Körperverletzung)",
+    "§ 334 (Bestechung)",
+    "§ 259 (Hehlerei)",
+    "§ 316 (Trunkenheit im Verkehr)",
+    "§ 211 (Mord)",
+    "§ 212 (Totschlag)",
+    "§ 201 (Verletzung der Vertraulichkeit des Wortes)",
+    "§ 185 (Beleidigung)",
+    "§ 242 (Diebstahl)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Assault",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Bribing a police officer",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Buying stolen goods",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Murder",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Recording a phone call without telling the other person",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Swearing in public",
+     "verdict": "restricted"
+    },
+    {
+     "activity": "Theft",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "DE:straßenverkehrs ordnung stvo road traffic rules",
+   "country": "DE",
+   "name": "Straßenverkehrs-Ordnung (StVO, road traffic rules)",
+   "year": "",
+   "url": "https://www.gesetze-im-internet.de/stvo_2013/__23.html",
+   "sections": [
+    "§ 23 (1a)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Using a phone hands-free while driving",
+     "verdict": "legal"
+    }
+   ]
+  },
+  {
+   "id": "DE:straßenverkehrsgesetz stvg road traffic act",
+   "country": "DE",
+   "name": "Straßenverkehrsgesetz (StVG, Road Traffic Act)",
+   "year": "",
+   "url": "https://www.gesetze-im-internet.de/stvg/__24a.html",
+   "sections": [
+    "§ 24a (0.5‰ limit)",
+    "§ 24c (new drivers)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    }
+   ]
+  }
+ ]
+}
