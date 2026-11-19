@@ -1,0 +1,143 @@
+{
+ "updatedAt": "2026-11-19T11:14:07.491Z",
+ "laws": [
+  {
+   "id": "NL:om aanwijzing opiumwet prosecution guideline",
+   "country": "NL",
+   "name": "OM Aanwijzing Opiumwet (prosecution guideline)",
+   "year": "2015",
+   "url": "https://www.om.nl/onderwerpen/b/beleidsregels/aanwijzingen/algemeen/aanwijzing-opiumwet-2015a003",
+   "sections": [
+    "2015A003"
+   ],
+   "citedBy": [
+    {
+     "activity": "Possessing cannabis for personal use",
+     "verdict": "restricted"
+    }
+   ]
+  },
+  {
+   "id": "NL:opiumwet opium act",
+   "country": "NL",
+   "name": "Opiumwet (Opium Act)",
+   "year": "2003",
+   "url": "https://wetten.overheid.nl/BWBR0001941",
+   "sections": [
+    "Art. 3 and art. 11"
+   ],
+   "citedBy": [
+    {
+     "activity": "Possessing cannabis for personal use",
+     "verdict": "restricted"
+    }
+   ]
+  },
+  {
+   "id": "NL:reglement verkeersregels en verkeerstekens 1990 rvv 1990",
+   "country": "NL",
+   "name": "Reglement verkeersregels en verkeerstekens 1990 (RVV 1990)",
+   "year": "2019",
+   "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0004825&hoofdstuk=II&paragraaf=30&artikel=61a",
+   "sections": [
+    "Art. 61a"
+   ],
+   "citedBy": [
+    {
+     "activity": "Using a phone hands-free while driving",
+     "verdict": "legal"
+    }
+   ]
+  },
+  {
+   "id": "NL:staatsblad 2026 168 ban amendment",
+   "country": "NL",
+   "name": "Staatsblad 2026, 168 (ban amendment)",
+   "year": "2026",
+   "url": "https://zoek.officielebekendmakingen.nl/stb-2026-168.html",
+   "sections": [],
+   "citedBy": [
+    {
+     "activity": "Setting off fireworks",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "NL:vuurwerkbesluit fireworks decree",
+   "country": "NL",
+   "name": "Vuurwerkbesluit (Fireworks Decree)",
+   "year": "2026",
+   "url": "https://wetten.overheid.nl/BWBR0013360",
+   "sections": [
+    "Art. 1.2.4 and art. 2.3.3"
+   ],
+   "citedBy": [
+    {
+     "activity": "Setting off fireworks",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "NL:wegenverkeerswet 1994 road traffic act",
+   "country": "NL",
+   "name": "Wegenverkeerswet 1994 (Road Traffic Act)",
+   "year": "1994",
+   "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0006622&hoofdstuk=II&paragraaf=1&artikel=8",
+   "sections": [
+    "Art. 8"
+   ],
+   "citedBy": [
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "NL:wetboek van strafrecht criminal code",
+   "country": "NL",
+   "name": "Wetboek van Strafrecht (Criminal Code)",
+   "year": "2025",
+   "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=XX&artikel=300",
+   "sections": [
+    "Art. 300 (mishandeling)",
+    "Art. 177 (actieve ambtelijke omkoping)",
+    "Art. 416 (opzetheling)",
+    "Art. 417bis (schuldheling)",
+    "Art. 289 (moord)",
+    "Art. 287 (doodslag)",
+    "Art. 139a (conversations)",
+    "Art. 139c (calls and data not meant for you)",
+    "Art. 310 (diefstal)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Assault",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Bribing a police officer",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Buying stolen goods",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Murder",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Recording a phone call without telling the other person",
+     "verdict": "legal"
+    },
+    {
+     "activity": "Theft",
+     "verdict": "illegal"
+    }
+   ]
+  }
+ ]
+}

@@ -1,4 +1,324 @@
 {
- "updatedAt": "2026-11-18T18:38:40.250Z",
- "answers": []
+ "updatedAt": "2026-11-19T11:14:07.490Z",
+ "answers": [
+  {
+   "verdict": "illegal",
+   "headline": "No. Assault is a crime in the Netherlands, with up to 3 years in prison, more if someone is badly hurt.",
+   "summary": "Assault (mishandeling) includes deliberately harming someone’s health. The penalty goes up if the victim is seriously injured or dies. Reasonable force in genuine self-defence (noodweer) can be lawful.",
+   "conditions": [],
+   "penalties": "Up to 3 years in prison; up to 4 years if it causes serious injury; up to 6 years if it causes death. Or a fine of the 4th category (€27,500).",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 300 (mishandeling)",
+     "year": "2006",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=XX&artikel=300"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Assault",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Wetboek van Strafrecht, official consolidated text (geldend vanaf 1 juli 2026)",
+     "url": "https://wetten.overheid.nl/BWBR0001854/2026-07-01"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Offering a police officer or any other public official a gift or favour to influence them is a crime.",
+   "summary": "It’s also a crime to give an official something as a reward for what they did or didn’t do in their job. Police officers count as public officials (ambtenaren).",
+   "conditions": [],
+   "penalties": "Up to 6 years in prison or a fine of the 5th category (€110,000).",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 177 (actieve ambtelijke omkoping)",
+     "year": "2025",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=VIII&artikel=177"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Bribing a police officer",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Wetboek van Strafrecht, official consolidated text (geldend vanaf 1 juli 2026)",
+     "url": "https://wetten.overheid.nl/BWBR0001854/2026-07-01"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Even if you didn’t know for sure, buying something you should have suspected was stolen is a crime.",
+   "summary": "Knowingly buying or keeping stolen goods is intentional handling (opzetheling). If you reasonably should have suspected it was stolen, for example because it was very cheap, had no receipt, or the seller acted oddly, it’s culpable handling (schuldheling), which is also a crime.",
+   "conditions": [],
+   "penalties": "Knowingly: up to 4 years in prison. Should have suspected: up to 1 year. Either can instead carry a fine of the 5th category (€110,000).",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 416 (opzetheling)",
+     "year": "1992",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=XXX&artikel=416"
+    },
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 417bis (schuldheling)",
+     "year": "1992",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=XXX&artikel=417bis"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Buying stolen goods",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Wetboek van Strafrecht, official consolidated text (geldend vanaf 1 juli 2026)",
+     "url": "https://wetten.overheid.nl/BWBR0001854/2026-07-01"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. You may not drive with more than 0.5‰ alcohol in your blood, or 0.2‰ if you’re a new driver.",
+   "summary": "The limit applies to anyone driving a vehicle, including cyclists. New drivers who got their first licence less than five years ago have a stricter limit of 0.2‰ when driving a motor vehicle. Driving under the influence of any substance that makes you unable to drive properly is also banned, whatever the reading.",
+   "conditions": [
+    "Limit: 0.5‰ in blood (220 µg/l in breath)",
+    "New drivers (first licence < 5 years): 0.2‰ in blood (88 µg/l in breath)"
+   ],
+   "penalties": "A fine, driving ban or prison, depending on how far over the limit you are. Above 0.8‰ the CBR can also require an education course.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wegenverkeerswet 1994 (Road Traffic Act)",
+     "section": "Art. 8",
+     "year": "1994",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0006622&hoofdstuk=II&paragraaf=1&artikel=8"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Drunk driving",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Wegenverkeerswet 1994, official consolidated text",
+     "url": "https://wetten.overheid.nl/BWBR0006622"
+    },
+    {
+     "title": "Rijksoverheid: Mag ik met alcohol op deelnemen aan het verkeer?",
+     "url": "https://www.rijksoverheid.nl/onderwerpen/verkeersveiligheid/vraag-en-antwoord/mag-ik-met-alcohol-op-deelnemen-aan-het-verkeer"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Murder is one of the most serious crimes in the Netherlands, punishable by life imprisonment.",
+   "summary": "Deliberately killing someone with premeditation is murder (moord). Deliberately killing someone without premeditation is manslaughter (doodslag). Using force in genuine self-defence can be lawful in narrow circumstances, which courts decide case by case.",
+   "conditions": [],
+   "penalties": "Murder: life imprisonment or up to 30 years. Manslaughter: up to 25 years. Either can instead carry a fine of the 5th category (€110,000).",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 289 (moord)",
+     "year": "2006",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=XIX&artikel=289"
+    },
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 287 (doodslag)",
+     "year": "2023",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=XIX&artikel=287"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Murder",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Wetboek van Strafrecht, official consolidated text (geldend vanaf 1 juli 2026)",
+     "url": "https://wetten.overheid.nl/BWBR0001854/2026-07-01"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Technically illegal, but possessing up to 5 grams for personal use isn’t prosecuted.",
+   "summary": "Possessing cannabis is banned under the Opium Act, but under the official toleration policy (gedoogbeleid) the public prosecutor doesn’t prosecute possession of up to 5 grams for personal use. Coffeeshops may sell up to 5 grams per person per day, only to adults, and in most places only to residents of the Netherlands. Growing and supplying cannabis are not tolerated.",
+   "conditions": [
+    "Up to 5 grams, for personal use",
+    "Coffeeshops: adults only, max 5 grams per day, usually residents only"
+   ],
+   "penalties": "Above 5 grams police can confiscate it and you can be prosecuted. Up to 30 grams: up to 1 month’s detention or a 2nd category fine (€5,500); more is punished more heavily.",
+   "regional_variation": "Some cities enforce the residents-only coffeeshop rule more strictly than others. Ten municipalities take part in a regulated-supply experiment.",
+   "laws": [
+    {
+     "name": "Opiumwet (Opium Act)",
+     "section": "Art. 3 and art. 11",
+     "year": "2003",
+     "url": "https://wetten.overheid.nl/BWBR0001941"
+    },
+    {
+     "name": "OM Aanwijzing Opiumwet (prosecution guideline)",
+     "section": "2015A003",
+     "year": "2015",
+     "url": "https://www.om.nl/onderwerpen/b/beleidsregels/aanwijzingen/algemeen/aanwijzing-opiumwet-2015a003"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Possessing cannabis for personal use",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Rijksoverheid: Gedoogbeleid softdrugs en coffeeshops",
+     "url": "https://www.rijksoverheid.nl/onderwerpen/drugs/gedoogbeleid-softdrugs-en-coffeeshops"
+    },
+    {
+     "title": "Opiumwet, official consolidated text",
+     "url": "https://wetten.overheid.nl/BWBR0001941"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes, if you take part in the call yourself. Secretly recording other people’s conversations is a crime.",
+   "summary": "Dutch criminal law only bans recording or tapping a conversation or call you’re not part of (and that isn’t meant for you). Recording your own call without saying so isn’t a crime. Sharing or publishing the recording is a separate question and can breach privacy rules.",
+   "conditions": [
+    "You must be a participant in the call"
+   ],
+   "penalties": "Recording a call you’re not part of: up to 2 years in prison or a fine of the 4th category (€27,500).",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 139a (conversations)",
+     "year": "2018",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=V&artikel=139a"
+    },
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 139c (calls and data not meant for you)",
+     "year": "2018",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=V&artikel=139c"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Recording a phone call without telling the other person",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Wetboek van Strafrecht, official consolidated text (geldend vanaf 1 juli 2026)",
+     "url": "https://wetten.overheid.nl/BWBR0001854/2026-07-01"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Since 1 August 2026 consumers may not buy, keep or set off fireworks, except small category F1 items like sparklers.",
+   "summary": "A national consumer fireworks ban took effect on 1 August 2026. Only local associations or foundations with an exemption from the mayor may set off fireworks at New Year, between 18:00 on 31 December and 02:00 on 1 January, under strict safety rules. Professional displays by licensed companies continue.",
+   "conditions": [
+    "Allowed: category F1 (e.g. sparklers) all year",
+    "Associations with a mayor’s exemption: New Year only, 18:00–02:00"
+   ],
+   "penalties": "Fireworks are confiscated and you can be fined; heavy or illegal fireworks are punished more severely.",
+   "regional_variation": "Mayors decide which local associations get an exemption.",
+   "laws": [
+    {
+     "name": "Vuurwerkbesluit (Fireworks Decree)",
+     "section": "Art. 1.2.4 and art. 2.3.3",
+     "year": "2026",
+     "url": "https://wetten.overheid.nl/BWBR0013360"
+    },
+    {
+     "name": "Staatsblad 2026, 168 (ban amendment)",
+     "section": "",
+     "year": "2026",
+     "url": "https://zoek.officielebekendmakingen.nl/stb-2026-168.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Setting off fireworks",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Rijksoverheid: Landelijk vuurwerkverbod voor consumenten dit jaar van kracht",
+     "url": "https://www.rijksoverheid.nl/actueel/nieuws/2026/07/01/landelijk-vuurwerkverbod-voor-consumenten-dit-jaar-van-kracht"
+    },
+    {
+     "title": "Rijksoverheid: Regels vuurwerk afsteken",
+     "url": "https://www.rijksoverheid.nl/themas/recht-veiligheid-en-defensie/vuurwerk/regels-vuurwerk"
+    },
+    {
+     "title": "Vuurwerkbesluit, official consolidated text",
+     "url": "https://wetten.overheid.nl/BWBR0013360"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Theft is a crime in the Netherlands, with up to 4 years in prison.",
+   "summary": "Taking something that belongs (partly) to someone else, intending to keep it unlawfully, is theft (diefstal). Theft with aggravating circumstances, such as breaking in or using violence, carries higher penalties under the following articles.",
+   "conditions": [],
+   "penalties": "Up to 4 years in prison or a fine of the 4th category (€27,500).",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 310 (diefstal)",
+     "year": "1984",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=XXII&artikel=310"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Theft",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "Wetboek van Strafrecht, official consolidated text (geldend vanaf 1 juli 2026)",
+     "url": "https://wetten.overheid.nl/BWBR0001854/2026-07-01"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes. The law only bans holding a phone or other device while driving.",
+   "summary": "Drivers of any vehicle, including cyclists, may not hold a mobile phone, tablet or media player while riding or driving. Using it hands-free, for example in a holder or through the car’s system, isn’t banned by this rule, but you must still drive safely.",
+   "conditions": [
+    "Don’t hold the device while the vehicle is moving"
+   ],
+   "penalties": "Holding a phone while driving is punished with a fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Reglement verkeersregels en verkeerstekens 1990 (RVV 1990)",
+     "section": "Art. 61a",
+     "year": "2019",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0004825&hoofdstuk=II&paragraaf=30&artikel=61a"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Using a phone hands-free while driving",
+   "checkedAt": "2026-11-19T11:13:41Z",
+   "sources": [
+    {
+     "title": "RVV 1990, official consolidated text",
+     "url": "https://wetten.overheid.nl/BWBR0004825"
+    }
+   ]
+  }
+ ]
 }

@@ -1,7 +1,40 @@
 {
- "updatedAt": "2026-11-18T18:38:40.250Z",
- "answerCount": 0,
- "lawCount": 0,
- "countries": {},
- "activities": {}
+ "updatedAt": "2026-11-19T11:14:07.491Z",
+ "answerCount": 10,
+ "lawCount": 7,
+ "countries": {
+  "NL": 10
+ },
+ "activities": {
+  "Assault": [
+   "NL"
+  ],
+  "Bribing a police officer": [
+   "NL"
+  ],
+  "Buying stolen goods": [
+   "NL"
+  ],
+  "Drunk driving": [
+   "NL"
+  ],
+  "Murder": [
+   "NL"
+  ],
+  "Possessing cannabis for personal use": [
+   "NL"
+  ],
+  "Recording a phone call without telling the other person": [
+   "NL"
+  ],
+  "Setting off fireworks": [
+   "NL"
+  ],
+  "Theft": [
+   "NL"
+  ],
+  "Using a phone hands-free while driving": [
+   "NL"
+  ]
+ }
 }

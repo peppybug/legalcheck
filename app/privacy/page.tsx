@@ -37,8 +37,8 @@ export default function Privacy() {
 
       <h2>How answers are made</h2>
       <p>
-        Database answers are researched in advance with Anthropic’s Claude API, from a list of activities and countries we
-        choose, and reviewed by a person before they’re published. Instant answers are researched as described above. If you suggest an activity by email, we may add the activity and country (but
+        Database answers are researched in advance by Claude, checked against official legal sources, and reviewed by a person
+        before they’re published. No visitor data is used for this. Instant answers are researched as described above. If you suggest an activity by email, we may add the activity and country (but
         nothing about you) to that list.
       </p>
 

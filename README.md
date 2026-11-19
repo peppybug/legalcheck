@@ -10,6 +10,19 @@ The site is hosted on **GitHub Pages**. A search is answered from, in order:
    and shown as an *instant AI answer, not yet reviewed by a person*. It holds the API key, caches answers for 30 days and
    allows 5 new questions per visitor per minute.
 
+## Adding answers (the Has it been Breached? way)
+
+Answers are added by hand, like records on Has it been Breached?: Claude researches each one in a Claude Code session,
+checks it against the official law text (for example the government's XML repository at
+`repository.officiele-overheidspublicaties.nl` for Dutch law) and official government pages, and adds it to
+`data/db/answers.json` with the exact articles and links. You review the commit; the deploy runs `npm run build-db` to split
+the master file into the per-country files the site loads. No API credit is needed for this.
+
+To add more, ask in a Claude Code session, e.g. "add the serious crimes and myths for Germany, verified with official sources".
+
+The automated pipeline below (`npm run generate`, the Refresh answers workflow and the lookup service) is optional and
+needs Anthropic API credit.
+
 ## The database
 
 | File | Contents | Built by |
