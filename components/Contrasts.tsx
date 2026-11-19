@@ -127,9 +127,9 @@ export function Compare({
             ))}
           </select>
         </div>
-        <ul className="cmp-grid">
-          {rows.map((r) => (
-            <li key={r.country}>
+        <ul className="cmp-grid" key={activity}>
+          {rows.map((r, i) => (
+            <li key={r.country} style={{ "--i": i } as React.CSSProperties}>
               <button type="button" className={`cmp-card v-${r.verdict}`} onClick={() => onPick(r)}>
                 <span className="cmp-country">
                   {flagOf(r.country)} {countryName(r.country)}

@@ -66,6 +66,14 @@ export default function Home() {
       { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
     );
     els.forEach((e) => reveal.observe(e));
+    // Sections that render later (e.g. once the data has loaded) get revealed too.
+    const late = new MutationObserver(() =>
+      document.querySelectorAll(".rv:not(.in):not([data-rv])").forEach((e) => {
+        e.setAttribute("data-rv", "");
+        reveal.observe(e);
+      }),
+    );
+    late.observe(document.body, { childList: true, subtree: true });
 
     // Scroll-driven steps: highlight the matching part of the illustration (wide screens only).
     const steps = document.querySelectorAll<HTMLElement>(".step");
@@ -86,6 +94,7 @@ export default function Home() {
 
     return () => {
       reveal.disconnect();
+      late.disconnect();
       stepper.disconnect();
     };
   }, []);
