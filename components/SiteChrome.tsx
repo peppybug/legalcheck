@@ -29,6 +29,9 @@ export function SiteHeader({ current }: { current: Page }) {
             <li>
               <Link href="/#check">Popular</Link>
             </li>
+            <li className="hide-sm">
+              <Link href="/#compare">Compare</Link>
+            </li>
             <li>
               <Link href="/laws" aria-current={cur("laws")}>
                 Law library
@@ -66,6 +69,9 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="/#check">Popular checks</Link>
+              </li>
+              <li>
+                <Link href="/#compare">Compare countries</Link>
               </li>
               <li>
                 <Link href="/laws">Law library</Link>

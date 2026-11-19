@@ -8,6 +8,7 @@ import { SiteHeader, SiteFooter, CONTACT_EMAIL } from "@/components/SiteChrome";
 import { findAnswer, findOthers, type DbIndex } from "@/lib/match";
 import { findCrime, crimeAnswer } from "@/lib/crimes";
 import { loadIndex, loadCountryAnswers, loadJson, type CountryDb, type Categories } from "@/lib/db";
+import { Evidence, Compare, findContrasts, type Contrast } from "@/components/Contrasts";
 import type { CountrySources } from "@/lib/sources";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -32,6 +33,7 @@ export default function Home() {
   const [index, setIndex] = useState<DbIndex | null>(null);
   const [countryAnswers, setCountryAnswers] = useState<CheckResult[]>([]);
   const [categories, setCategories] = useState<Categories>({});
+  const [contrasts, setContrasts] = useState<Contrast[] | null>(null);
   const [loading, setLoading] = useState(false);
   const lookupId = useRef(0);
   const [sourcesDb, setSourcesDb] = useState<CountryDb | null>(null);
@@ -87,6 +89,16 @@ export default function Home() {
       stepper.disconnect();
     };
   }, []);
+
+  // Hero "evidence": the same activity with opposite answers in different countries.
+  useEffect(() => {
+    if (!index) return;
+    const codes = Object.entries(index.countries)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 12)
+      .map(([c]) => c);
+    Promise.all(codes.map((c) => loadCountryAnswers(c, index))).then((dbs) => setContrasts(findContrasts(dbs.flatMap((d) => d.answers))));
+  }, [index]);
 
   // The sidebar and "surprising laws" show the selected country's answers.
   useEffect(() => {
@@ -165,10 +177,13 @@ export default function Home() {
       <SiteHeader current="home" />
 
       <main id="top">
-        <div className="wrap hero">
+        <div className="wrap hero hero-split">
+          <div className="hero-copy">
           <p className="pill-note">Free legality check · every country · no account needed</p>
           <h1>
-            <span>Before you do it,</span> <span className="two">check the law.</span>
+            <span>Before you do it,</span> <span className="two">
+              check <em>the law.</em>
+            </span>
           </h1>
           <p className="lead">
             Type an activity and pick a country. We read the current laws, including new acts and amendments, and tell you
@@ -190,7 +205,7 @@ export default function Home() {
               id="q"
               ref={inputRef}
               type="search"
-              placeholder="What do you want to do?"
+              placeholder="Type an activity"
               autoComplete="off"
               minLength={2}
               maxLength={200}
@@ -220,21 +235,21 @@ export default function Home() {
               </button>
             ))}
           </p>
-          <p className="sub-note">Ask about anything. Every answer cites the laws it’s based on.</p>
+          <p className="sub-note">Every answer cites the laws it’s based on, with links to the official text.</p>
+          </div>
+          <Evidence contrasts={contrasts} onPick={(a) => check(a.activity, a.country, a.activity + a.country)} />
         </div>
 
         <div className="wrap window-wrap" id="check" ref={windowRef}>
           <div className="window" role="group" aria-label="Legality report">
             <div className="win-bar">
-              <div className="dots" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-              </div>
-              <div className="win-title">
+              <div className="file-tab">
                 <b aria-hidden="true">§</b>Legality report
               </div>
-              <div className="win-hint">Researched from current law</div>
+              <div className="file-no">
+                Case file <span>{country}-{String(index?.countries[country] ?? 0).padStart(3, "0")}</span>
+              </div>
+              <div className="win-hint">Checked against official sources</div>
             </div>
             <div className="win-body">
               <div className="side">
@@ -278,6 +293,8 @@ export default function Home() {
             Missing an activity? <Link href="/contact">Suggest one</Link> and we’ll research it.
           </p>
         </div>
+
+        <Compare index={index} preferred={contrasts?.[0]?.activity} onPick={(a) => check(a.activity, a.country, a.activity + a.country)} />
 
         <section id="how">
           <div className="wrap">
