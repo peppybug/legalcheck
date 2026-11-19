@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { COUNTRIES } from "@/lib/countries";
+import { AVAILABLE } from "@/lib/available";
 
 export const CONTACT_EMAIL = "contactolivierjanssen@gmail.com";
 export const OWNER = "Olivier B Janssen";
@@ -105,7 +105,7 @@ export function SiteFooter() {
           </div>
         </div>
         <p className="fine">
-          © 2026 Legalcheck. Covers {COUNTRIES.length} countries. Answers are researched with AI from public sources; database
+          © 2026 Legalcheck. Covers {AVAILABLE.length} {AVAILABLE.length === 1 ? "country" : "countries"} so far. Answers are researched with AI from public sources; database
           answers are reviewed by a person, instant answers are not. Answers may be incomplete or out of date. Not legal advice.
         </p>
       </div>

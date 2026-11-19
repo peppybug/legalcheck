@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { COUNTRIES, countryName, inCountry } from "@/lib/countries";
+import { AVAILABLE, DEFAULT_COUNTRY, isAvailable } from "@/lib/available";
 import type { CheckResult } from "@/lib/verdict";
 import { SiteHeader, SiteFooter, CONTACT_EMAIL } from "@/components/SiteChrome";
 import { findAnswer, findOthers, type DbIndex } from "@/lib/match";
@@ -17,7 +18,7 @@ const LOOKUP_URL = process.env.NEXT_PUBLIC_LOOKUP_URL ?? "";
 
 const flagOf = (code: string) => COUNTRIES.find((c) => c.code === code)?.flag ?? "";
 
-const TRY = ["Wild camping", "Flying a drone", "Owning a pet fox"];
+const TRY = ["Drunk driving", "Recording a phone call", "Setting off fireworks"];
 
 const LABELS: Record<CheckResult["verdict"], string> = {
   legal: "Legal",
@@ -29,7 +30,7 @@ const LABELS: Record<CheckResult["verdict"], string> = {
 
 export default function Home() {
   const [activity, setActivity] = useState("");
-  const [country, setCountry] = useState("US");
+  const [country, setCountry] = useState(DEFAULT_COUNTRY);
   const [index, setIndex] = useState<DbIndex | null>(null);
   const [countryAnswers, setCountryAnswers] = useState<CheckResult[]>([]);
   const [categories, setCategories] = useState<Categories>({});
@@ -47,7 +48,7 @@ export default function Home() {
   useEffect(() => {
     document.documentElement.classList.add("js");
     const region = new Intl.Locale(navigator.language).maximize().region;
-    if (region && COUNTRIES.some((c) => c.code === region)) setCountry(region);
+    if (region && isAvailable(region)) setCountry(region);
 
     loadIndex().then(setIndex);
     loadJson<CountryDb>("countries").then(setSourcesDb).catch(() => {});
@@ -169,7 +170,7 @@ export default function Home() {
     const params = new URLSearchParams(location.search);
     const a = params.get("a");
     const c = params.get("c");
-    if (a && c && COUNTRIES.some((x) => x.code === c)) check(a, c, a + c);
+    if (a && c && isAvailable(c)) check(a, c, a + c);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
@@ -188,7 +189,6 @@ export default function Home() {
       <main id="top">
         <div className="wrap hero hero-split">
           <div className="hero-copy">
-          <p className="pill-note">Free legality check · every country · no account needed</p>
           <h1>
             <span>Before you do it,</span> <span className="two">
               check <em>the law.</em>
@@ -226,7 +226,7 @@ export default function Home() {
               Country
             </label>
             <select id="country" value={country} onChange={(e) => setCountry(e.target.value)}>
-              {COUNTRIES.map((c) => (
+              {AVAILABLE.map((c) => (
                 <option key={c.code} value={c.code}>
                   {c.flag} {c.name}
                 </option>
@@ -351,7 +351,9 @@ export default function Home() {
                   <p>Describe the activity in your own words and pick the country you’re in, or the one you’re travelling to.</p>
                   <ul>
                     <li>Any activity</li>
-                    <li>{COUNTRIES.length} countries</li>
+                    <li>
+                      {AVAILABLE.length} {AVAILABLE.length === 1 ? "country" : "countries"} so far
+                    </li>
                   </ul>
                 </li>
                 <li className="step" data-part="2">

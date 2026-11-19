@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { COUNTRIES, inCountry } from "@/lib/countries";
+import { inCountry } from "@/lib/countries";
+import { AVAILABLE, DEFAULT_COUNTRY, isAvailable } from "@/lib/available";
 import { loadJson, loadIndex, loadCountryAnswers, loadCountryLaws, type DbIndex, type CountryDb, type LawDb, type Categories } from "@/lib/db";
 import type { CheckResult } from "@/lib/verdict";
 
@@ -18,7 +19,7 @@ const answerHref = (a: { activity: string; country: string }) =>
   `/?a=${encodeURIComponent(a.activity)}&c=${a.country}#check`;
 
 export default function Library() {
-  const [country, setCountry] = useState("US");
+  const [country, setCountry] = useState(DEFAULT_COUNTRY);
   const [data, setData] = useState<{ index: DbIndex; countries: CountryDb; categories: Categories } | null>(null);
   const [answers, setAnswers] = useState<CheckResult[]>([]);
   const [laws, setLaws] = useState<LawDb["laws"]>([]);
@@ -27,7 +28,7 @@ export default function Library() {
   useEffect(() => {
     const fromUrl = new URLSearchParams(location.search).get("c");
     const region = fromUrl ?? new Intl.Locale(navigator.language).maximize().region;
-    if (region && COUNTRIES.some((c) => c.code === region)) setCountry(region);
+    if (region && isAvailable(region)) setCountry(region);
     Promise.all([loadIndex(), loadJson<CountryDb>("countries"), loadJson<Categories>("categories").catch(() => ({}))])
       .then(([index, countries, categories]) => setData({ index, countries, categories }))
       .catch(() => setError("Couldn’t load the library. Please refresh the page."));
@@ -76,10 +77,8 @@ export default function Library() {
       {totals && (
         <dl className="facts lib-totals">
           <div>
-            <dt>Countries with law sources</dt>
-            <dd>
-              {totals.countries} of {COUNTRIES.length}
-            </dd>
+            <dt>Countries covered</dt>
+            <dd>{AVAILABLE.length}</dd>
           </div>
           <div>
             <dt>Laws indexed</dt>
@@ -95,7 +94,7 @@ export default function Library() {
       <label className="lib-pick">
         <span>Country</span>
         <select value={country} onChange={(e) => pick(e.target.value)}>
-          {COUNTRIES.map((c) => (
+          {AVAILABLE.map((c) => (
             <option key={c.code} value={c.code}>
               {c.flag} {c.name}
             </option>
