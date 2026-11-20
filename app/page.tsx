@@ -10,7 +10,7 @@ import { findAnswer, findOthers, type DbIndex } from "@/lib/match";
 import { findCrime, crimeAnswer } from "@/lib/crimes";
 import { loadIndex, loadCountryAnswers, loadJson, type CountryDb, type Categories } from "@/lib/db";
 import { Evidence, Compare, findContrasts, type Contrast } from "@/components/Contrasts";
-import { Ticker, CoverageMap } from "@/components/Motion";
+import { WorldMap } from "@/components/Motion";
 import type { CountrySources } from "@/lib/sources";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -36,7 +36,6 @@ export default function Home() {
   const [countryAnswers, setCountryAnswers] = useState<CheckResult[]>([]);
   const [categories, setCategories] = useState<Categories>({});
   const [contrasts, setContrasts] = useState<Contrast[] | null>(null);
-  const [loaded, setLoaded] = useState<CheckResult[]>([]);
   const [loading, setLoading] = useState(false);
   const lookupId = useRef(0);
   const [sourcesDb, setSourcesDb] = useState<CountryDb | null>(null);
@@ -111,7 +110,6 @@ export default function Home() {
       .map(([c]) => c);
     Promise.all(codes.map((c) => loadCountryAnswers(c, index))).then((dbs) => {
       const all = dbs.flatMap((d) => d.answers);
-      setLoaded(all);
       setContrasts(findContrasts(all));
     });
   }, [index]);
@@ -255,8 +253,6 @@ export default function Home() {
           <Evidence contrasts={contrasts} onPick={(a) => check(a.activity, a.country, a.activity + a.country)} />
         </div>
 
-        <Ticker answers={loaded} categories={categories} onPick={(a) => check(a.activity, a.country, a.activity + a.country)} />
-
         <div className="wrap window-wrap" id="check" ref={windowRef}>
           <div className="window" role="group" aria-label="Legality report">
             <div className="win-bar">
@@ -313,7 +309,7 @@ export default function Home() {
 
         <Compare index={index} preferred={contrasts?.[0]?.activity} onPick={(a) => check(a.activity, a.country, a.activity + a.country)} />
 
-        <CoverageMap index={index} />
+        <WorldMap index={index} />
 
         <section id="how">
           <div className="wrap">
