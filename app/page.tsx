@@ -10,6 +10,7 @@ import { findAnswer, findOthers, type DbIndex } from "@/lib/match";
 import { findCrime, crimeAnswer } from "@/lib/crimes";
 import { loadIndex, loadCountryAnswers, loadJson, type CountryDb, type Categories } from "@/lib/db";
 import { Evidence, Compare, findContrasts, type Contrast } from "@/components/Contrasts";
+import { Ticker, CoverageMap } from "@/components/Motion";
 import type { CountrySources } from "@/lib/sources";
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -35,6 +36,7 @@ export default function Home() {
   const [countryAnswers, setCountryAnswers] = useState<CheckResult[]>([]);
   const [categories, setCategories] = useState<Categories>({});
   const [contrasts, setContrasts] = useState<Contrast[] | null>(null);
+  const [loaded, setLoaded] = useState<CheckResult[]>([]);
   const [loading, setLoading] = useState(false);
   const lookupId = useRef(0);
   const [sourcesDb, setSourcesDb] = useState<CountryDb | null>(null);
@@ -107,7 +109,11 @@ export default function Home() {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 12)
       .map(([c]) => c);
-    Promise.all(codes.map((c) => loadCountryAnswers(c, index))).then((dbs) => setContrasts(findContrasts(dbs.flatMap((d) => d.answers))));
+    Promise.all(codes.map((c) => loadCountryAnswers(c, index))).then((dbs) => {
+      const all = dbs.flatMap((d) => d.answers);
+      setLoaded(all);
+      setContrasts(findContrasts(all));
+    });
   }, [index]);
 
   // The sidebar and "surprising laws" show the selected country's answers.
@@ -249,6 +255,8 @@ export default function Home() {
           <Evidence contrasts={contrasts} onPick={(a) => check(a.activity, a.country, a.activity + a.country)} />
         </div>
 
+        <Ticker answers={loaded} categories={categories} onPick={(a) => check(a.activity, a.country, a.activity + a.country)} />
+
         <div className="wrap window-wrap" id="check" ref={windowRef}>
           <div className="window" role="group" aria-label="Legality report">
             <div className="win-bar">
@@ -305,6 +313,8 @@ export default function Home() {
 
         <Compare index={index} preferred={contrasts?.[0]?.activity} onPick={(a) => check(a.activity, a.country, a.activity + a.country)} />
 
+        <CoverageMap index={index} />
+
         <section id="how">
           <div className="wrap">
             <div className="sec-head rv">
@@ -317,15 +327,15 @@ export default function Home() {
               <div className="tour-visual rv" aria-hidden="true">
                 <div className="mini">
                   <div className="part m-search" data-part="1">
-                    <span>Wild camping · 🇳🇴 Norway</span>
+                    <span className="m-typed">Recording a phone call · 🇩🇪 Germany</span>
                     <em>Check the law</em>
                   </div>
                   <div className="part" data-part="2">
-                    <span className="verdict v-restricted">Legal with conditions</span>
-                    <div className="m-title">Yes, on uncultivated land, for up to two nights.</div>
+                    <span className="verdict v-illegal m-stamp">Illegal</span>
+                    <div className="m-title">No. Secretly recording someone’s private words is a crime, even in your own call.</div>
                     <div className="m-row">
                       <span>
-                        Keep <b>150 m from homes</b>
+                        Up to <b>3 years</b> or a fine
                       </span>
                       <span>
                         Confidence <b>High</b>
@@ -334,12 +344,11 @@ export default function Home() {
                   </div>
                   <div className="part" data-part="3">
                     <ul className="tags" style={{ margin: 0 }}>
-                      <li>Max 2 nights in one spot</li>
-                      <li>Uncultivated land only</li>
-                      <li>Leave no trace</li>
+                      <li>Allowed with consent</li>
+                      <li>Also covers sharing the recording</li>
                     </ul>
                     <p className="m-src" style={{ margin: "10px 0 0" }}>
-                      Law: <a href="#">Outdoor Recreation Act (Friluftsloven) 1957</a>
+                      Law: <a href="#">Strafgesetzbuch § 201</a>
                     </p>
                   </div>
                 </div>
