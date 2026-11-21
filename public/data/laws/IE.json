@@ -1,0 +1,154 @@
+{
+ "updatedAt": "2026-11-21T13:29:17.019Z",
+ "laws": [
+  {
+   "id": "IE:criminal justice corruption offences act 2018",
+   "country": "IE",
+   "name": "Criminal Justice (Corruption Offences) Act 2018",
+   "year": "2018",
+   "url": "https://revisedacts.lawreform.ie/eli/2018/act/9/revised/en/html",
+   "sections": [
+    "Section 5"
+   ],
+   "citedBy": [
+    {
+     "activity": "Bribing a police officer",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "IE:criminal justice theft and fraud offences act 2001",
+   "country": "IE",
+   "name": "Criminal Justice (Theft and Fraud Offences) Act 2001",
+   "year": "2001",
+   "url": "https://revisedacts.lawreform.ie/eli/2001/act/50/revised/en/html",
+   "sections": [
+    "Section 17 (handling) and section 18 (possession)",
+    "Section 4"
+   ],
+   "citedBy": [
+    {
+     "activity": "Buying stolen goods",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Theft",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "IE:criminal justice act 1990",
+   "country": "IE",
+   "name": "Criminal Justice Act 1990",
+   "year": "1990",
+   "url": "https://www.irishstatutebook.ie/eli/1990/act/16/section/2/enacted/en/html",
+   "sections": [
+    "Section 2"
+   ],
+   "citedBy": [
+    {
+     "activity": "Murder",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "IE:firearms and offensive weapons act 1990",
+   "country": "IE",
+   "name": "Firearms and Offensive Weapons Act 1990",
+   "year": "1990",
+   "url": "https://revisedacts.lawreform.ie/eli/1990/act/12/revised/en/html",
+   "sections": [
+    "Section 9"
+   ],
+   "citedBy": [
+    {
+     "activity": "Carrying a pocket knife",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "IE:misuse of drugs act 1977",
+   "country": "IE",
+   "name": "Misuse of Drugs Act 1977",
+   "year": "1977",
+   "url": "https://revisedacts.lawreform.ie/eli/1977/act/12/revised/en/html",
+   "sections": [
+    "Section 3 and section 27"
+   ],
+   "citedBy": [
+    {
+     "activity": "Possessing cannabis for personal use",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "IE:non fatal offences against the person act 1997",
+   "country": "IE",
+   "name": "Non-Fatal Offences Against the Person Act 1997",
+   "year": "1997",
+   "url": "https://revisedacts.lawreform.ie/eli/1997/act/26/revised/en/html",
+   "sections": [
+    "Section 2 (assault) and section 3 (assault causing harm)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Assault",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "IE:postal and telecommunications services act 1983",
+   "country": "IE",
+   "name": "Postal and Telecommunications Services Act 1983",
+   "year": "1983",
+   "url": "https://revisedacts.lawreform.ie/eli/1983/act/24/revised/en/html",
+   "sections": [
+    "Section 98"
+   ],
+   "citedBy": [
+    {
+     "activity": "Recording a phone call without telling the other person",
+     "verdict": "legal"
+    }
+   ]
+  },
+  {
+   "id": "IE:road traffic act 2006",
+   "country": "IE",
+   "name": "Road Traffic Act 2006",
+   "year": "2006",
+   "url": "https://revisedacts.lawreform.ie/eli/2006/act/23/revised/en/html",
+   "sections": [
+    "Section 3"
+   ],
+   "citedBy": [
+    {
+     "activity": "Using a phone hands-free while driving",
+     "verdict": "legal"
+    }
+   ]
+  },
+  {
+   "id": "IE:road traffic act 2010",
+   "country": "IE",
+   "name": "Road Traffic Act 2010",
+   "year": "2010",
+   "url": "https://revisedacts.lawreform.ie/eli/2010/act/25/revised/en/html",
+   "sections": [
+    "Section 4"
+   ],
+   "citedBy": [
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    }
+   ]
+  }
+ ]
+}

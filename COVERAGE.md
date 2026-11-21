@@ -2,7 +2,7 @@
 
 Every answer is checked against the official law text or an official government page and links to it.
 
-Sources by country: NL wetten.overheid.nl (XML repository), DE gesetze-im-internet.de, ES boe.es (consolidated-law API), FR service-public.gouv.fr (Légifrance blocks automated access), AT ris.bka.gv.at (RIS open-data API).
+Sources by country: NL wetten.overheid.nl (XML repository), DE gesetze-im-internet.de, ES boe.es (consolidated-law API), FR service-public.gouv.fr (Légifrance blocks automated access), AT ris.bka.gv.at (RIS open-data API), IE revisedacts.lawreform.ie and irishstatutebook.ie, SE data.riksdagen.se.
 Work goes country by country through the EU (largest first), then the rest of the world.
 
 | # | Country | Verified answers | Status |
@@ -16,16 +16,16 @@ Work goes country by country through the EU (largest first), then the rest of th
 | 7 | NL | 12 / 50 | in progress |
 | 8 | BE | 0 / 50 | to do |
 | 9 | CZ | 0 / 50 | to do |
-| 10 | SE | 0 / 50 | to do |
+| 10 | SE | 10 / 50 | in progress |
 | 11 | PT | 0 / 50 | to do |
 | 12 | GR | 0 / 50 | to do |
 | 13 | HU | 0 / 50 | to do |
-| 14 | AT | 9 / 50 | in progress |
+| 14 | AT | 10 / 50 | in progress |
 | 15 | BG | 0 / 50 | to do |
 | 16 | DK | 0 / 50 | to do |
 | 17 | FI | 0 / 50 | to do |
 | 18 | SK | 0 / 50 | to do |
-| 19 | IE | 0 / 50 | to do |
+| 19 | IE | 10 / 50 | in progress |
 | 20 | HR | 0 / 50 | to do |
 | 21 | LT | 0 / 50 | to do |
 | 22 | SI | 0 / 50 | to do |

@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-21T10:31:34.024Z",
+ "updatedAt": "2026-11-21T13:29:17.019Z",
  "laws": [
   {
    "id": "AT:führerscheingesetz fsg driving licence act",
@@ -82,12 +82,17 @@
    "year": "2026",
    "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40276965/NOR40276965.html",
    "sections": [
-    "§ 5 (0.8‰, impairment)"
+    "§ 5 (0.8‰, impairment)",
+    "§ 76"
    ],
    "citedBy": [
     {
      "activity": "Drunk driving",
      "verdict": "illegal"
+    },
+    {
+     "activity": "Jaywalking",
+     "verdict": "restricted"
     }
    ]
   },

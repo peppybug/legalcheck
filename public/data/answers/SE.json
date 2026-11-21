@@ -1,0 +1,275 @@
+{
+ "updatedAt": "2026-11-21T13:29:17.019Z",
+ "answers": [
+  {
+   "verdict": "illegal",
+   "headline": "No. Causing someone injury, illness or pain is assault, with up to 2 years in prison.",
+   "summary": "Causing another person bodily injury, illness or pain, or making them helpless, is assault. Minor assault is punished with a fine or up to 6 months; aggravated assault with 18 months to 7 years.",
+   "conditions": [],
+   "penalties": "Up to 2 years; minor cases a fine or up to 6 months.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Brottsbalk (1962:700) (Criminal Code)",
+     "section": "Chapter 3, sections 5 and 6",
+     "year": "1998",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Assault",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Brottsbalk, Riksdagen (consolidated, amended up to SFS 2026:1656)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Offering an employee or official, including a police officer, an improper benefit is a crime.",
+   "summary": "Giving, promising or offering an improper benefit to an employee or someone carrying out a public duty, for how they do their job, is giving a bribe (givande av muta).",
+   "conditions": [],
+   "penalties": "Up to 2 years in prison; more if aggravated.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Brottsbalk (1962:700) (Criminal Code)",
+     "section": "Chapter 10, sections 5 a–5 c",
+     "year": "2026",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Bribing a police officer",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Brottsbalk, Riksdagen (consolidated, amended up to SFS 2026:1656)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Dealing with stolen goods in a way that makes it harder to return them is a crime (häleri).",
+   "summary": "Handling something taken from someone through crime, in a way that makes it harder to recover, or profiting from someone else’s criminal gains, is handling stolen goods. Buying in a business or regularly, where it can reasonably be assumed to be stolen, is also covered.",
+   "conditions": [],
+   "penalties": "Up to 2 years in prison.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Brottsbalk (1962:700) (Criminal Code)",
+     "section": "Chapter 9, section 6",
+     "year": "2026",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Buying stolen goods",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Brottsbalk, Riksdagen (consolidated, amended up to SFS 2026:1656)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Carrying a knife in public is banned in Sweden, unless you have a justified reason.",
+   "summary": "Knives and other bladed weapons may not be carried in public places, at schools or in vehicles in public. The ban doesn’t apply if carrying it is justified, for example for work, fishing or outdoor activities, depending on the knife and the situation. Switchblades are banned for under-21s.",
+   "conditions": [
+    "Allowed only with a justified reason, e.g. work or outdoor activities"
+   ],
+   "penalties": "A fine or up to 1 year in prison; aggravated cases up to 2 years.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Lag (1988:254) om förbud beträffande knivar och andra farliga föremål",
+     "section": "Sections 1 and 4",
+     "year": "2000",
+     "url": "https://data.riksdagen.se/dokument/sfs-1988-254.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Carrying a pocket knife",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Knivlagen, Riksdagen (consolidated)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1988-254.html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Sweden’s limit is just 0.2‰, far lower than the 0.5‰ in the other countries we cover.",
+   "summary": "Driving a motor vehicle or tram with 0.2‰ alcohol in the blood or more (0.10 mg/l in breath) is drunk driving. Driving with any illegal drug still in the blood is also covered, unless it was prescribed.",
+   "conditions": [
+    "Limit: 0.2‰ blood (0.10 mg/l breath)",
+    "Any illegal drug in the blood"
+   ],
+   "penalties": "A fine or up to 6 months in prison; aggravated drunk driving up to 2 years.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Lag (1951:649) om straff för vissa trafikbrott",
+     "section": "Section 4",
+     "year": "",
+     "url": "https://data.riksdagen.se/dokument/sfs-1951-649.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Drunk driving",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Lag om straff för vissa trafikbrott, Riksdagen (consolidated)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1951-649.html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Murder is punished with 10 to 18 years or life imprisonment in Sweden.",
+   "summary": "Taking another person’s life is murder. Careful planning, cruelty, causing severe suffering or covering up another crime count towards a life sentence. Self-defence can be lawful in narrow circumstances.",
+   "conditions": [],
+   "penalties": "10 to 18 years in prison, or life.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Brottsbalk (1962:700) (Criminal Code)",
+     "section": "Chapter 3, section 1",
+     "year": "",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Murder",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Brottsbalk, Riksdagen (consolidated, amended up to SFS 2026:1656)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. In Sweden even using cannabis is a crime, not just possessing it.",
+   "summary": "Unlawfully possessing, using or otherwise handling any narcotic, including cannabis, is a drug offence. Small amounts for personal use usually count as a minor drug offence.",
+   "conditions": [],
+   "penalties": "Minor drug offence: a fine or up to 6 months; otherwise up to 3 years.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Narkotikastrafflag (1968:64)",
+     "section": "Section 1 and section 2",
+     "year": "2016",
+     "url": "https://data.riksdagen.se/dokument/sfs-1968-64.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Possessing cannabis for personal use",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Narkotikastrafflag, Riksdagen (consolidated)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1968-64.html"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes, if you take part in the conversation yourself.",
+   "summary": "Swedish law punishes secretly recording or listening in on private speech, conversations between others, or closed meetings that you don’t take part in. Recording a conversation you’re part of isn’t covered by this crime.",
+   "conditions": [
+    "You must take part in the conversation"
+   ],
+   "penalties": "Recording others: a fine or up to 2 years in prison.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Brottsbalk (1962:700) (Criminal Code)",
+     "section": "Chapter 4, section 9 a (olovlig avlyssning)",
+     "year": "1975",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Recording a phone call without telling the other person",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Brottsbalk, Riksdagen (consolidated, amended up to SFS 2026:1656)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Theft is a crime in Sweden, with up to 2 years in prison.",
+   "summary": "Unlawfully taking what belongs to someone else, intending to keep it, is theft when it causes loss. Petty theft and aggravated theft are separate offences with lower and higher penalties.",
+   "conditions": [],
+   "penalties": "Up to 2 years in prison.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Brottsbalk (1962:700) (Criminal Code)",
+     "section": "Chapter 8, section 1",
+     "year": "",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Theft",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Brottsbalk, Riksdagen (consolidated, amended up to SFS 2026:1656)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes. You may use a phone while driving as long as you don’t hold it and it doesn’t affect your driving.",
+   "summary": "Drivers may use a mobile phone and other communication equipment only if it doesn’t impair their driving, and may not hold it in their hand while doing so.",
+   "conditions": [
+    "Don’t hold the phone",
+    "Only if it doesn’t affect your driving"
+   ],
+   "penalties": "A fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Trafikförordning (1998:1276)",
+     "section": "Chapter 4, section 10 e",
+     "year": "2017",
+     "url": "https://data.riksdagen.se/dokument/sfs-1998-1276.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "SE",
+   "activity": "Using a phone hands-free while driving",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Trafikförordning, Riksdagen (consolidated)",
+     "url": "https://data.riksdagen.se/dokument/sfs-1998-1276.html"
+    }
+   ]
+  }
+ ]
+}

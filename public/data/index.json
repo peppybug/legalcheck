@@ -1,74 +1,101 @@
 {
- "updatedAt": "2026-11-21T10:31:34.024Z",
- "answerCount": 64,
- "lawCount": 34,
+ "updatedAt": "2026-11-21T13:29:17.019Z",
+ "answerCount": 85,
+ "lawCount": 48,
  "countries": {
-  "AT": 9,
+  "AT": 10,
   "DE": 22,
   "ES": 13,
   "FR": 8,
-  "NL": 12
+  "IE": 10,
+  "NL": 12,
+  "SE": 10
  },
  "activities": {
   "Assault": [
    "AT",
    "DE",
    "ES",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
   ],
   "Bribing a police officer": [
    "AT",
    "DE",
    "ES",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
   ],
   "Buying stolen goods": [
    "AT",
    "DE",
    "ES",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
   ],
   "Drunk driving": [
    "AT",
    "DE",
    "ES",
    "FR",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
+  ],
+  "Jaywalking": [
+   "AT",
+   "DE",
+   "ES"
   ],
   "Murder": [
    "AT",
    "DE",
    "ES",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
   ],
   "Possessing cannabis for personal use": [
    "AT",
    "DE",
    "ES",
    "FR",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
   ],
   "Recording a phone call without telling the other person": [
    "AT",
    "DE",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
   ],
   "Theft": [
    "AT",
    "DE",
    "ES",
    "FR",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
   ],
   "Using a phone hands-free while driving": [
    "AT",
    "DE",
    "ES",
    "FR",
-   "NL"
+   "IE",
+   "NL",
+   "SE"
   ],
   "Carrying a pocket knife": [
-   "DE"
+   "DE",
+   "IE",
+   "SE"
   ],
   "Downloading copyrighted films for personal use": [
    "DE",
@@ -79,10 +106,6 @@
   ],
   "Hitchhiking": [
    "DE"
-  ],
-  "Jaywalking": [
-   "DE",
-   "ES"
   ],
   "Leaving your engine running while parked": [
    "DE"

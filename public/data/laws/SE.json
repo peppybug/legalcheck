@@ -1,0 +1,110 @@
+{
+ "updatedAt": "2026-11-21T13:29:17.019Z",
+ "laws": [
+  {
+   "id": "SE:brottsbalk 1962 700 criminal code",
+   "country": "SE",
+   "name": "Brottsbalk (1962:700) (Criminal Code)",
+   "year": "2026",
+   "url": "https://data.riksdagen.se/dokument/sfs-1962-700.html",
+   "sections": [
+    "Chapter 3, sections 5 and 6",
+    "Chapter 10, sections 5 a–5 c",
+    "Chapter 9, section 6",
+    "Chapter 3, section 1",
+    "Chapter 4, section 9 a (olovlig avlyssning)",
+    "Chapter 8, section 1"
+   ],
+   "citedBy": [
+    {
+     "activity": "Assault",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Bribing a police officer",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Buying stolen goods",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Murder",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Recording a phone call without telling the other person",
+     "verdict": "legal"
+    },
+    {
+     "activity": "Theft",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "SE:lag 1951 649 om straff för vissa trafikbrott",
+   "country": "SE",
+   "name": "Lag (1951:649) om straff för vissa trafikbrott",
+   "year": "",
+   "url": "https://data.riksdagen.se/dokument/sfs-1951-649.html",
+   "sections": [
+    "Section 4"
+   ],
+   "citedBy": [
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "SE:lag 1988 254 om förbud beträffande knivar och andra farliga föremål",
+   "country": "SE",
+   "name": "Lag (1988:254) om förbud beträffande knivar och andra farliga föremål",
+   "year": "2000",
+   "url": "https://data.riksdagen.se/dokument/sfs-1988-254.html",
+   "sections": [
+    "Sections 1 and 4"
+   ],
+   "citedBy": [
+    {
+     "activity": "Carrying a pocket knife",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "SE:narkotikastrafflag 1968 64",
+   "country": "SE",
+   "name": "Narkotikastrafflag (1968:64)",
+   "year": "2016",
+   "url": "https://data.riksdagen.se/dokument/sfs-1968-64.html",
+   "sections": [
+    "Section 1 and section 2"
+   ],
+   "citedBy": [
+    {
+     "activity": "Possessing cannabis for personal use",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "SE:trafikförordning 1998 1276",
+   "country": "SE",
+   "name": "Trafikförordning (1998:1276)",
+   "year": "2017",
+   "url": "https://data.riksdagen.se/dokument/sfs-1998-1276.html",
+   "sections": [
+    "Chapter 4, section 10 e"
+   ],
+   "citedBy": [
+    {
+     "activity": "Using a phone hands-free while driving",
+     "verdict": "legal"
+    }
+   ]
+  }
+ ]
+}

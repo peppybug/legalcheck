@@ -1,0 +1,274 @@
+{
+ "updatedAt": "2026-11-21T13:29:17.019Z",
+ "answers": [
+  {
+   "verdict": "illegal",
+   "headline": "No. Even an assault without injury is a crime in Ireland; causing harm carries up to 10 years.",
+   "summary": "Intentionally or recklessly applying force to someone, or making them believe force is about to be used, without their consent, is assault. Ordinary everyday contact that isn’t meant to hurt doesn’t count. Assault causing harm is a separate, more serious offence.",
+   "conditions": [],
+   "penalties": "Assault: up to 6 months in prison and/or a fine. Assault causing harm: up to 10 years.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Non-Fatal Offences Against the Person Act 1997",
+     "section": "Section 2 (assault) and section 3 (assault causing harm)",
+     "year": "1997",
+     "url": "https://revisedacts.lawreform.ie/eli/1997/act/26/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Assault",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Non-Fatal Offences Against the Person Act 1997, revised act (Law Reform Commission, revised to 13 November 2024)",
+     "url": "https://revisedacts.lawreform.ie/eli/1997/act/26/revised/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Corruptly offering anyone, including a Garda, a gift or advantage is a crime.",
+   "summary": "Corruptly offering or giving a gift, consideration or advantage to anyone as an inducement or reward for doing something in their job is the offence of active corruption.",
+   "conditions": [],
+   "penalties": "Up to 10 years in prison, a fine, and forfeiture of the bribe.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Criminal Justice (Corruption Offences) Act 2018",
+     "section": "Section 5",
+     "year": "2018",
+     "url": "https://revisedacts.lawreform.ie/eli/2018/act/9/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Bribing a police officer",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Criminal Justice (Corruption Offences) Act 2018, revised act (Law Reform Commission, revised to 19 June 2025)",
+     "url": "https://revisedacts.lawreform.ie/eli/2018/act/9/revised/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Buying or keeping goods you know, or suspect, are stolen is a crime.",
+   "summary": "Handling stolen property covers receiving or helping dispose of goods knowing they were stolen, or being reckless about it. Simply possessing stolen goods with that knowledge is also an offence. Buying well below market value can be taken as evidence you knew or were reckless.",
+   "conditions": [],
+   "penalties": "Handling: up to 10 years. Possession: up to 5 years.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Criminal Justice (Theft and Fraud Offences) Act 2001",
+     "section": "Section 17 (handling) and section 18 (possession)",
+     "year": "2001",
+     "url": "https://revisedacts.lawreform.ie/eli/2001/act/50/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Buying stolen goods",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Criminal Justice (Theft and Fraud Offences) Act 2001, revised act (Law Reform Commission, revised to 23 July 2026)",
+     "url": "https://revisedacts.lawreform.ie/eli/2001/act/50/revised/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Carrying any knife or bladed article in public is an offence in Ireland, unless you have a good reason.",
+   "summary": "Having any knife or sharply pointed article in a public place is an offence. It’s a defence to prove a good reason or lawful authority, such as using it for work or a recreational purpose. Flick-knives are treated more strictly.",
+   "conditions": [
+    "Allowed only with a good reason, e.g. work or a hobby"
+   ],
+   "penalties": "Up to 12 months and/or €5,000 in the District Court; up to 5 years on indictment.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Firearms and Offensive Weapons Act 1990",
+     "section": "Section 9",
+     "year": "1990",
+     "url": "https://revisedacts.lawreform.ie/eli/1990/act/12/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Carrying a pocket knife",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Firearms and Offensive Weapons Act 1990, revised act (Law Reform Commission, revised to 4 October 2024)",
+     "url": "https://revisedacts.lawreform.ie/eli/1990/act/12/revised/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. The limit is 50 mg per 100 ml of blood, or 20 mg for learners, new and professional drivers.",
+   "summary": "Drivers may not drive with more than 50 mg of alcohol per 100 ml of blood. The limit is 20 mg for ‘specified persons’: learner drivers, drivers in the first two years of their first licence, and drivers of trucks, buses and taxis.",
+   "conditions": [
+    "General limit: 50 mg/100 ml blood",
+    "Learner, novice (first 2 years) and professional drivers: 20 mg/100 ml"
+   ],
+   "penalties": "Fines and a driving ban, rising with the alcohol level; prison for higher levels.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Road Traffic Act 2010",
+     "section": "Section 4",
+     "year": "2010",
+     "url": "https://revisedacts.lawreform.ie/eli/2010/act/25/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Drunk driving",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Road Traffic Act 2010, revised act (Law Reform Commission, revised to 23 December 2025)",
+     "url": "https://revisedacts.lawreform.ie/eli/2010/act/25/revised/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Murder carries a mandatory life sentence in Ireland.",
+   "summary": "Anyone convicted of murder must be sentenced to life imprisonment; the judge has no choice. Self-defence can be lawful in narrow circumstances.",
+   "conditions": [],
+   "penalties": "Life imprisonment (mandatory).",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Criminal Justice Act 1990",
+     "section": "Section 2",
+     "year": "1990",
+     "url": "https://www.irishstatutebook.ie/eli/1990/act/16/section/2/enacted/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Murder",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Irish Statute Book: Criminal Justice Act 1990, section 2",
+     "url": "https://www.irishstatutebook.ie/eli/1990/act/16/section/2/enacted/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Possessing cannabis is a crime, though first and second offences for personal use carry only a fine.",
+   "summary": "Possessing any controlled drug, including cannabis, is an offence. If the court accepts it was for personal use, the first and second offences are punished with a fine only; prison becomes possible from the third offence.",
+   "conditions": [],
+   "penalties": "Personal use: a fine for first and second offences; from the third, up to 12 months (summary) or more on indictment.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Misuse of Drugs Act 1977",
+     "section": "Section 3 and section 27",
+     "year": "1977",
+     "url": "https://revisedacts.lawreform.ie/eli/1977/act/12/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Possessing cannabis for personal use",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Misuse of Drugs Act 1977, revised act (Law Reform Commission, revised to 23 July 2026)",
+     "url": "https://revisedacts.lawreform.ie/eli/1977/act/12/revised/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes. Recording a call is allowed if one side of the call, including you, consents.",
+   "summary": "Intercepting a call is a crime, but the law’s definition of interception excludes listening or recording where either the caller or the person called has consented. So recording your own call isn’t interception. Data protection rules can still apply, especially for businesses.",
+   "conditions": [
+    "You, or the other side, must consent"
+   ],
+   "penalties": "",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Postal and Telecommunications Services Act 1983",
+     "section": "Section 98",
+     "year": "1983",
+     "url": "https://revisedacts.lawreform.ie/eli/1983/act/24/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Recording a phone call without telling the other person",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Postal and Telecommunications Services Act 1983, revised act (Law Reform Commission, revised to 20 July 2026)",
+     "url": "https://revisedacts.lawreform.ie/eli/1983/act/24/revised/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Theft is a crime in Ireland, with up to 10 years in prison.",
+   "summary": "Dishonestly taking property without the owner’s consent, intending to deprive them of it, is theft.",
+   "conditions": [],
+   "penalties": "Up to 10 years in prison and/or a fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Criminal Justice (Theft and Fraud Offences) Act 2001",
+     "section": "Section 4",
+     "year": "2001",
+     "url": "https://revisedacts.lawreform.ie/eli/2001/act/50/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Theft",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Criminal Justice (Theft and Fraud Offences) Act 2001, revised act (Law Reform Commission, revised to 23 July 2026)",
+     "url": "https://revisedacts.lawreform.ie/eli/2001/act/50/revised/en/html"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes. The law bans holding a mobile phone while driving, not using it hands-free.",
+   "summary": "It’s an offence to hold a mobile phone while driving a vehicle or a powered personal transporter such as an e-scooter in a public place. Hands-free use isn’t covered by this offence, but you must still drive safely.",
+   "conditions": [
+    "Don’t hold the phone"
+   ],
+   "penalties": "Holding a phone while driving: a fixed fine and penalty points.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Road Traffic Act 2006",
+     "section": "Section 3",
+     "year": "2006",
+     "url": "https://revisedacts.lawreform.ie/eli/2006/act/23/revised/en/html"
+    }
+   ],
+   "confidence": "high",
+   "country": "IE",
+   "activity": "Using a phone hands-free while driving",
+   "checkedAt": "2026-11-21T13:28:00Z",
+   "sources": [
+    {
+     "title": "Road Traffic Act 2006, revised act (Law Reform Commission, revised to 1 July 2026)",
+     "url": "https://revisedacts.lawreform.ie/eli/2006/act/23/revised/en/html"
+    }
+   ]
+  }
+ ]
+}
