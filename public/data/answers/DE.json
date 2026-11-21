@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
+ "updatedAt": "2026-11-21T10:31:34.024Z",
  "answers": [
   {
    "verdict": "illegal",
@@ -80,6 +80,108 @@
    ]
   },
   {
+   "verdict": "restricted",
+   "headline": "Ordinary pocket knives are fine, but one-handed locking knives and fixed blades over 12 cm aren’t allowed in public.",
+   "summary": "It’s banned to carry knives with a blade that locks with one hand, or fixed-blade knives over 12 cm, unless you have a legitimate reason such as work, sport or tradition, or they’re in a locked container. At public events, festivals, markets, cinemas and clubs, and on long-distance trains, buses and stations, carrying any knife is banned, with exceptions for things like work or restaurants.",
+   "conditions": [
+    "No one-handed locking knives or fixed blades over 12 cm without a legitimate reason",
+    "No knives at events or on long-distance public transport"
+   ],
+   "penalties": "A fine of up to €10,000.",
+   "regional_variation": "States and cities can set extra weapon and knife ban zones.",
+   "laws": [
+    {
+     "name": "Waffengesetz (WaffG, Weapons Act)",
+     "section": "§ 42a",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/waffg_2002/__42a.html"
+    },
+    {
+     "name": "Waffengesetz (WaffG, Weapons Act)",
+     "section": "§ 42 (4a) (events)",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/waffg_2002/__42.html"
+    },
+    {
+     "name": "Waffengesetz (WaffG, Weapons Act)",
+     "section": "§ 42b (long-distance transport)",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/waffg_2002/__42b.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Carrying a pocket knife",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Waffengesetz, official text (last amended 22 October 2026)",
+     "url": "https://www.gesetze-im-internet.de/waffg_2002/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. A private copy is only allowed from a source that isn’t obviously illegal.",
+   "summary": "German law allows individual copies for private use, but not when the source is obviously an illegal copy or illegally made available online. Downloading films from pirate sites or file sharing therefore isn’t covered and is copyright infringement.",
+   "conditions": [],
+   "penalties": "Up to 3 years in prison or a fine; in practice rights holders often send warning letters claiming damages.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Urheberrechtsgesetz (UrhG, Copyright Act)",
+     "section": "§ 53 (1) (private copies)",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/urhg/__53.html"
+    },
+    {
+     "name": "Urheberrechtsgesetz (UrhG, Copyright Act)",
+     "section": "§ 106 (penalty)",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/urhg/__106.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Downloading copyrighted films for personal use",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Urheberrechtsgesetz, official text (last amended 26 May 2026)",
+     "url": "https://www.gesetze-im-internet.de/urhg/"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes, for adults. Teenagers may drink beer and wine in public from 16, spirits only from 18.",
+   "summary": "There’s no national ban on drinking alcohol in public for adults. Shops and bars may not sell or allow beer and wine to under-16s (unless with a parent, from 14), or spirits and alcopops to under-18s.",
+   "conditions": [
+    "Beer and wine: 16+",
+    "Spirits: 18+"
+   ],
+   "penalties": "",
+   "regional_variation": "Some cities have local drinking bans in specific places, such as stations or squares.",
+   "laws": [
+    {
+     "name": "Jugendschutzgesetz (JuSchG, Youth Protection Act)",
+     "section": "§ 9",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/juschg/__9.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Drinking alcohol in public",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Jugendschutzgesetz, official text (last amended 6 October 2026)",
+     "url": "https://www.gesetze-im-internet.de/juschg/"
+    }
+   ]
+  },
+  {
    "verdict": "illegal",
    "headline": "No. The limit is 0.5‰ for drivers, and zero for new drivers and anyone under 21.",
    "summary": "Driving a motor vehicle with 0.5‰ or more alcohol in the blood (0.25 mg/l in breath) is an offence. During the probation period and before age 21, drivers may not drink any alcohol before or while driving. Anyone, including cyclists, who drives any vehicle while unable to do so safely because of alcohol or drugs commits a crime, even below these limits.",
@@ -122,6 +224,89 @@
     {
      "title": "Strafgesetzbuch, official text (last amended 20 March 2026)",
      "url": "https://www.gesetze-im-internet.de/stgb/"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Hitchhiking is allowed, but pedestrians may not walk onto the Autobahn.",
+   "summary": "No law bans hitchhiking itself. Pedestrians may not enter motorways (Autobahnen), so you can’t hitchhike on the motorway itself; service areas and slip roads before the motorway are where people usually stand.",
+   "conditions": [
+    "Not on the Autobahn itself"
+   ],
+   "penalties": "",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Straßenverkehrs-Ordnung (StVO, road traffic rules)",
+     "section": "§ 18 (9)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/__18.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Hitchhiking",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Straßenverkehrs-Ordnung, official text (last amended 30 January 2026)",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Crossing outside a crossing isn’t banned, but you must cross quickly and use a crossing when traffic requires it.",
+   "summary": "Pedestrians must cross the road quickly, by the shortest route and paying attention to traffic. When traffic density, speed or visibility require it, you must use a junction, traffic lights, a crossing aid or a zebra crossing. At junctions with a zebra crossing or marked lights, you must always use them.",
+   "conditions": [
+    "Cross quickly, by the shortest route",
+    "Use a crossing when traffic requires it"
+   ],
+   "penalties": "A small fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Straßenverkehrs-Ordnung (StVO, road traffic rules)",
+     "section": "§ 25 (3)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/__25.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Jaywalking",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Straßenverkehrs-Ordnung, official text (last amended 30 January 2026)",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Letting your engine run unnecessarily is banned in Germany.",
+   "summary": "Vehicle users must avoid unnecessary noise and avoidable exhaust fumes. The law names it explicitly: it’s banned to let an engine run unnecessarily, for example while waiting or warming up a parked car.",
+   "conditions": [],
+   "penalties": "A small fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Straßenverkehrs-Ordnung (StVO, road traffic rules)",
+     "section": "§ 30 (1)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/__30.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Leaving your engine running while parked",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Straßenverkehrs-Ordnung, official text (last amended 30 January 2026)",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/"
     }
    ]
   },
@@ -182,6 +367,66 @@
     {
      "title": "Personalausweisgesetz, official text (last amended 16 July 2026)",
      "url": "https://www.gesetze-im-internet.de/pauswg/"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes. Anyone may pick small amounts of wild flowers for personal use, outside protected areas.",
+   "summary": "Everyone may carefully take wild flowers, grasses, ferns, mosses, fruits, mushrooms, herbs and twigs from nature in small quantities for their own use, in places with no access ban. Protected species and nature reserves are excluded.",
+   "conditions": [
+    "Small amounts, for personal use",
+    "Not protected species",
+    "Not where access is banned (e.g. nature reserves)"
+   ],
+   "penalties": "",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Bundesnaturschutzgesetz (BNatSchG, Nature Conservation Act)",
+     "section": "§ 39 (3)",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/bnatschg_2009/__39.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Picking wild flowers in nature",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Bundesnaturschutzgesetz, official text (last amended 30 September 2026)",
+     "url": "https://www.gesetze-im-internet.de/bnatschg_2009/"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Yes, in small amounts for your own use, except protected species and closed-off areas.",
+   "summary": "The same rule as for wild flowers applies: you may carefully collect small quantities of wild mushrooms for personal use where access isn’t banned. Collecting commercially needs permission, and protected species may not be taken.",
+   "conditions": [
+    "Small amounts, for personal use",
+    "Not protected species",
+    "Not for sale without permission"
+   ],
+   "penalties": "",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Bundesnaturschutzgesetz (BNatSchG, Nature Conservation Act)",
+     "section": "§ 39 (3)",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/bnatschg_2009/__39.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Picking wild mushrooms",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Bundesnaturschutzgesetz, official text (last amended 30 September 2026)",
+     "url": "https://www.gesetze-im-internet.de/bnatschg_2009/"
     }
    ]
   },
@@ -376,6 +621,60 @@
     {
      "title": "Straßenverkehrs-Ordnung, official text (last amended 30 January 2026)",
      "url": "https://www.gesetze-im-internet.de/stvo_2013/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Drivers may not use or even carry a working radar detector or laser jammer.",
+   "summary": "Drivers may not use or carry ready for use any device meant to warn of or disrupt traffic enforcement, such as radar warners or laser jammers. On devices with other uses too, like phones or navigation systems, those warning functions may not be used while driving.",
+   "conditions": [],
+   "penalties": "A fine and penalty points; the device can be confiscated.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Straßenverkehrs-Ordnung (StVO, road traffic rules)",
+     "section": "§ 23 (1c)",
+     "year": "",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/__23.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Using a radar detector in a car",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Straßenverkehrs-Ordnung, official text (last amended 30 January 2026)",
+     "url": "https://www.gesetze-im-internet.de/stvo_2013/"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes, for adults. Selling e-cigarettes to under-18s and letting them vape in public is banned.",
+   "summary": "Tobacco products and other nicotine products, including e-cigarettes and their refills, may not be sold to or used in public by children and teenagers under 18.",
+   "conditions": [
+    "18+"
+   ],
+   "penalties": "",
+   "regional_variation": "Where you may vape indoors depends on state non-smoking laws and the venue’s house rules.",
+   "laws": [
+    {
+     "name": "Jugendschutzgesetz (JuSchG, Youth Protection Act)",
+     "section": "§ 10",
+     "year": "2026",
+     "url": "https://www.gesetze-im-internet.de/juschg/__10.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "DE",
+   "activity": "Vaping",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Jugendschutzgesetz, official text (last amended 6 October 2026)",
+     "url": "https://www.gesetze-im-internet.de/juschg/"
     }
    ]
   }

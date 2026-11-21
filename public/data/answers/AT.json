@@ -1,0 +1,266 @@
+{
+ "updatedAt": "2026-11-21T10:31:34.024Z",
+ "answers": [
+  {
+   "verdict": "illegal",
+   "headline": "No. Injuring someone is a crime in Austria, with up to a year in prison.",
+   "summary": "Injuring someone’s body or damaging their health is assault (Körperverletzung). Assaulting public transport staff, health workers or firefighters at work carries up to 2 years.",
+   "conditions": [],
+   "penalties": "Up to 1 year in prison or a fine of up to 720 daily rates.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 83 (Körperverletzung)",
+     "year": "2020",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40217848/NOR40217848.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Assault",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Offering a police officer or other official a benefit to break their duties is a crime.",
+   "summary": "Offering, promising or giving a public official an advantage for doing or not doing an official act against their duties is bribery (Bestechung). Higher amounts carry higher penalties.",
+   "conditions": [],
+   "penalties": "Up to 3 years in prison; more for larger amounts.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 307 (Bestechung)",
+     "year": "2023",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40254287/NOR40254287.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Bribing a police officer",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Buying something stolen is a crime (Hehlerei) in Austria.",
+   "summary": "Buying or otherwise acquiring a thing that someone obtained through a crime against property, or helping them hide or sell it, is handling stolen goods.",
+   "conditions": [],
+   "penalties": "Up to 6 months or a fine; up to 2 years above €5,000; 6 months to 5 years above €300,000 or as a business.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 164 (Hehlerei)",
+     "year": "2016",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40173669/NOR40173669.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Buying stolen goods",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. The limit is 0.5‰ for most drivers and 0.1‰ for new drivers in their probation period.",
+   "summary": "Motor vehicles may only be driven with less than 0.5‰ alcohol in the blood (0.25 mg/l in breath). During the probation period the limit is 0.1‰, and new drivers may not drink while driving. From 0.8‰ a driver always counts as impaired, and anyone impaired by alcohol or drugs may not drive any vehicle.",
+   "conditions": [
+    "General limit: 0.5‰ blood (0.25 mg/l breath)",
+    "Probation period: 0.1‰ (0.05 mg/l breath)"
+   ],
+   "penalties": "Fines, licence withdrawal and a retraining course, rising with the alcohol level.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Führerscheingesetz (FSG, Driving Licence Act)",
+     "section": "§ 14 (8) (0.5‰)",
+     "year": "2026",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40277402/NOR40277402.html"
+    },
+    {
+     "name": "Führerscheingesetz (FSG, Driving Licence Act)",
+     "section": "§ 4 (7) (probation, 0.1‰)",
+     "year": "2026",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40277333/NOR40277333.html"
+    },
+    {
+     "name": "Straßenverkehrsordnung 1960 (StVO)",
+     "section": "§ 5 (0.8‰, impairment)",
+     "year": "2026",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40276965/NOR40276965.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Drunk driving",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Killing someone is punished with 10 to 20 years or life imprisonment in Austria.",
+   "summary": "Austrian law calls any intentional killing murder (Mord). Self-defence can be lawful in narrow circumstances.",
+   "conditions": [],
+   "penalties": "10 to 20 years in prison, or life.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 75 (Mord)",
+     "year": "1975",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR12029618/NOR12029618.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Murder",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. It’s a crime, but for personal use prosecutors usually drop the case under conditions.",
+   "summary": "Acquiring or possessing cannabis is a crime under the Narcotics Act. If it’s only for personal use, the penalty is lower, and the public prosecutor must provisionally withdraw from prosecution for a probation period of one to two years when the legal conditions are met, for example a health assessment.",
+   "conditions": [],
+   "penalties": "Personal use: up to 6 months in prison or a fine of up to 360 daily rates; usually a conditional withdrawal instead.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Suchtmittelgesetz (SMG, Narcotics Act)",
+     "section": "§ 27 (1) and (2)",
+     "year": "2016",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40180743/NOR40180743.html"
+    },
+    {
+     "name": "Suchtmittelgesetz (SMG, Narcotics Act)",
+     "section": "§ 35 (withdrawal from prosecution)",
+     "year": "2016",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40180744/NOR40180744.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Possessing cannabis for personal use",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes, if you take part in the call. Sharing or publishing the recording without consent is a crime.",
+   "summary": "Austrian law punishes using a recording device to hear words that aren’t meant for you. Recording your own conversation isn’t covered, but giving the recording to someone it wasn’t meant for, or publishing it, without the speaker’s consent is a crime.",
+   "conditions": [
+    "You must be part of the conversation",
+    "Don’t share or publish it without consent"
+   ],
+   "penalties": "Recording others or sharing without consent: up to 1 year in prison or a fine of up to 720 daily rates.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 120 (Missbrauch von Tonaufnahme- oder Abhörgeräten)",
+     "year": "2016",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40173636/NOR40173636.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Recording a phone call without telling the other person",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Theft is a crime in Austria, with up to 6 months in prison or a fine.",
+   "summary": "Taking someone else’s movable property, intending to enrich yourself or someone else unlawfully, is theft (Diebstahl). Higher values, breaking in or using violence are punished more heavily.",
+   "conditions": [],
+   "penalties": "Up to 6 months in prison or a fine of up to 360 daily rates.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Strafgesetzbuch (StGB, Criminal Code)",
+     "section": "§ 127 (Diebstahl)",
+     "year": "1988",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR12029671/NOR12029671.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Theft",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  },
+  {
+   "verdict": "legal",
+   "headline": "Yes, with a hands-free kit. Any other phone use while driving is banned, except as a mounted navigation device.",
+   "summary": "While driving, it’s banned to make calls without a hands-free system, or to use the phone in any other way, except as a navigation system mounted inside the car.",
+   "conditions": [
+    "Use a hands-free kit",
+    "Navigation only if the phone is mounted"
+   ],
+   "penalties": "A fine; repeated offences count for licence penalties.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Kraftfahrgesetz 1967 (KFG)",
+     "section": "§ 102 (3)",
+     "year": "2026",
+     "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40279609/NOR40279609.html"
+    }
+   ],
+   "confidence": "high",
+   "country": "AT",
+   "activity": "Using a phone hands-free while driving",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Rechtsinformationssystem des Bundes (RIS), consolidated federal law",
+     "url": "https://www.ris.bka.gv.at/"
+    }
+   ]
+  }
+ ]
+}

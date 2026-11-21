@@ -1,73 +1,124 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
- "answerCount": 36,
- "lawCount": 19,
+ "updatedAt": "2026-11-21T10:31:34.024Z",
+ "answerCount": 64,
+ "lawCount": 34,
  "countries": {
-  "DE": 12,
-  "ES": 8,
-  "FR": 6,
-  "NL": 10
+  "AT": 9,
+  "DE": 22,
+  "ES": 13,
+  "FR": 8,
+  "NL": 12
  },
  "activities": {
   "Assault": [
+   "AT",
    "DE",
    "ES",
    "NL"
   ],
   "Bribing a police officer": [
+   "AT",
    "DE",
    "ES",
    "NL"
   ],
   "Buying stolen goods": [
+   "AT",
    "DE",
    "ES",
    "NL"
   ],
   "Drunk driving": [
+   "AT",
    "DE",
    "ES",
    "FR",
    "NL"
   ],
   "Murder": [
+   "AT",
    "DE",
    "ES",
    "NL"
   ],
-  "Not carrying ID": [
-   "DE",
-   "FR"
-  ],
   "Possessing cannabis for personal use": [
+   "AT",
    "DE",
+   "ES",
    "FR",
    "NL"
   ],
   "Recording a phone call without telling the other person": [
+   "AT",
    "DE",
    "NL"
-  ],
-  "Setting off fireworks": [
-   "DE",
-   "NL"
-  ],
-  "Swearing in public": [
-   "DE"
   ],
   "Theft": [
+   "AT",
    "DE",
    "ES",
    "FR",
    "NL"
   ],
   "Using a phone hands-free while driving": [
+   "AT",
    "DE",
    "ES",
    "FR",
    "NL"
   ],
+  "Carrying a pocket knife": [
+   "DE"
+  ],
+  "Downloading copyrighted films for personal use": [
+   "DE",
+   "FR"
+  ],
+  "Drinking alcohol in public": [
+   "DE"
+  ],
+  "Hitchhiking": [
+   "DE"
+  ],
+  "Jaywalking": [
+   "DE",
+   "ES"
+  ],
+  "Leaving your engine running while parked": [
+   "DE"
+  ],
+  "Not carrying ID": [
+   "DE",
+   "ES",
+   "FR",
+   "NL"
+  ],
+  "Picking wild flowers in nature": [
+   "DE"
+  ],
+  "Picking wild mushrooms": [
+   "DE"
+  ],
+  "Setting off fireworks": [
+   "DE",
+   "NL"
+  ],
+  "Swearing in public": [
+   "DE",
+   "NL"
+  ],
+  "Using a radar detector in a car": [
+   "DE",
+   "ES"
+  ],
+  "Vaping": [
+   "DE"
+  ],
   "Driving with headphones on": [
+   "ES",
+   "FR"
+  ],
+  "Smoking in a bar or restaurant": [
    "ES",
    "FR"
   ]

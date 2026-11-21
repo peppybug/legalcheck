@@ -1,0 +1,112 @@
+{
+ "updatedAt": "2026-11-21T10:31:34.024Z",
+ "laws": [
+  {
+   "id": "AT:führerscheingesetz fsg driving licence act",
+   "country": "AT",
+   "name": "Führerscheingesetz (FSG, Driving Licence Act)",
+   "year": "2026",
+   "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40277402/NOR40277402.html",
+   "sections": [
+    "§ 14 (8) (0.5‰)",
+    "§ 4 (7) (probation, 0.1‰)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "AT:kraftfahrgesetz 1967 kfg",
+   "country": "AT",
+   "name": "Kraftfahrgesetz 1967 (KFG)",
+   "year": "2026",
+   "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40279609/NOR40279609.html",
+   "sections": [
+    "§ 102 (3)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Using a phone hands-free while driving",
+     "verdict": "legal"
+    }
+   ]
+  },
+  {
+   "id": "AT:strafgesetzbuch stgb criminal code",
+   "country": "AT",
+   "name": "Strafgesetzbuch (StGB, Criminal Code)",
+   "year": "2023",
+   "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40217848/NOR40217848.html",
+   "sections": [
+    "§ 83 (Körperverletzung)",
+    "§ 307 (Bestechung)",
+    "§ 164 (Hehlerei)",
+    "§ 75 (Mord)",
+    "§ 120 (Missbrauch von Tonaufnahme- oder Abhörgeräten)",
+    "§ 127 (Diebstahl)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Assault",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Bribing a police officer",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Buying stolen goods",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Murder",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Recording a phone call without telling the other person",
+     "verdict": "legal"
+    },
+    {
+     "activity": "Theft",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "AT:straßenverkehrsordnung 1960 stvo",
+   "country": "AT",
+   "name": "Straßenverkehrsordnung 1960 (StVO)",
+   "year": "2026",
+   "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40276965/NOR40276965.html",
+   "sections": [
+    "§ 5 (0.8‰, impairment)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Drunk driving",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "AT:suchtmittelgesetz smg narcotics act",
+   "country": "AT",
+   "name": "Suchtmittelgesetz (SMG, Narcotics Act)",
+   "year": "2016",
+   "url": "https://ogd.ris.bka.gv.at/Dokumente/Bundesnormen/NOR40180743/NOR40180743.html",
+   "sections": [
+    "§ 27 (1) and (2)",
+    "§ 35 (withdrawal from prosecution)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Possessing cannabis for personal use",
+     "verdict": "illegal"
+    }
+   ]
+  }
+ ]
+}

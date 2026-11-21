@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
+ "updatedAt": "2026-11-21T10:31:34.024Z",
  "answers": [
   {
    "verdict": "illegal",
@@ -151,6 +151,40 @@
    ]
   },
   {
+   "verdict": "illegal",
+   "headline": "No. From age 14 you must show a valid ID when police ask, so in practice you need to carry it.",
+   "summary": "Everyone aged 14 and over must show a valid identity document (passport, ID card, driving licence or residence document) when asked by a police officer or certain enforcement officers. Not doing so is an offence.",
+   "conditions": [
+    "From age 14"
+   ],
+   "penalties": "A fine of up to the 2nd category (€5,500); in practice a fixed fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wet op de identificatieplicht",
+     "section": "Art. 1 and 2",
+     "year": "2013",
+     "url": "https://wetten.overheid.nl/BWBR0006297"
+    },
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 447e",
+     "year": "2020",
+     "url": "https://wetten.overheid.nl/BWBR0001854"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Not carrying ID",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Wet op de identificatieplicht, official consolidated text",
+     "url": "https://wetten.overheid.nl/BWBR0006297"
+    }
+   ]
+  },
+  {
    "verdict": "restricted",
    "headline": "Technically illegal, but possessing up to 5 grams for personal use isn’t prosecuted.",
    "summary": "Possessing cannabis is banned under the Opium Act, but under the official toleration policy (gedoogbeleid) the public prosecutor doesn’t prosecute possession of up to 5 grams for personal use. Coffeeshops may sell up to 5 grams per person per day, only to adults, and in most places only to residents of the Netherlands. Growing and supplying cannabis are not tolerated.",
@@ -263,6 +297,32 @@
     {
      "title": "Vuurwerkbesluit, official consolidated text",
      "url": "https://wetten.overheid.nl/BWBR0013360"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Swearing itself isn’t a crime, but insulting someone is.",
+   "summary": "General bad language isn’t punished, but deliberately insulting a person, in public, to their face or in writing, is simple insult (eenvoudige belediging). Opinions about matters of public interest that don’t go further than needed aren’t punishable.",
+   "conditions": [],
+   "penalties": "Up to 3 months in prison or a 2nd category fine (€5,500).",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Wetboek van Strafrecht (Criminal Code)",
+     "section": "Art. 266 (eenvoudige belediging)",
+     "year": "1984",
+     "url": "https://wetten.overheid.nl/jci1.3:c:BWBR0001854&boek=Tweede&titeldeel=XVI&artikel=266"
+    }
+   ],
+   "confidence": "high",
+   "country": "NL",
+   "activity": "Swearing in public",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Wetboek van Strafrecht, official consolidated text",
+     "url": "https://wetten.overheid.nl/BWBR0001854"
     }
    ]
   },

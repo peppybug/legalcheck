@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
+ "updatedAt": "2026-11-21T10:31:34.024Z",
  "laws": [
   {
    "id": "ES:código penal criminal code",
@@ -40,6 +40,75 @@
     },
     {
      "activity": "Theft",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "ES:ley 28 2005 de medidas sanitarias frente al tabaquismo",
+   "country": "ES",
+   "name": "Ley 28/2005 de medidas sanitarias frente al tabaquismo",
+   "year": "2011",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2005-21261#a7",
+   "sections": [
+    "Art. 7 (u)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Smoking in a bar or restaurant",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "ES:ley orgánica 4 2015 de protección de la seguridad ciudadana",
+   "country": "ES",
+   "name": "Ley Orgánica 4/2015 de protección de la seguridad ciudadana",
+   "year": "2015",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-3442#a9",
+   "sections": [
+    "Art. 9",
+    "Art. 36.16 and art. 39"
+   ],
+   "citedBy": [
+    {
+     "activity": "Not carrying ID",
+     "verdict": "restricted"
+    },
+    {
+     "activity": "Possessing cannabis for personal use",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "ES:real decreto legislativo 6 2015 ley sobre tráfico",
+   "country": "ES",
+   "name": "Real Decreto Legislativo 6/2015 (Ley sobre Tráfico)",
+   "year": "2022",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a13",
+   "sections": [
+    "Art. 13.6"
+   ],
+   "citedBy": [
+    {
+     "activity": "Using a radar detector in a car",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "ES:reglamento general de circulación",
+   "country": "ES",
+   "name": "Reglamento General de Circulación",
+   "year": "2026",
+   "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a124",
+   "sections": [
+    "Art. 124"
+   ],
+   "citedBy": [
+    {
+     "activity": "Jaywalking",
      "verdict": "illegal"
     }
    ]

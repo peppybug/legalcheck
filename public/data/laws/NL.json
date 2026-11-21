@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
+ "updatedAt": "2026-11-21T10:31:34.024Z",
  "laws": [
   {
    "id": "NL:om aanwijzing opiumwet prosecution guideline",
@@ -96,6 +96,22 @@
    ]
   },
   {
+   "id": "NL:wet op de identificatieplicht",
+   "country": "NL",
+   "name": "Wet op de identificatieplicht",
+   "year": "2013",
+   "url": "https://wetten.overheid.nl/BWBR0006297",
+   "sections": [
+    "Art. 1 and 2"
+   ],
+   "citedBy": [
+    {
+     "activity": "Not carrying ID",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
    "id": "NL:wetboek van strafrecht criminal code",
    "country": "NL",
    "name": "Wetboek van Strafrecht (Criminal Code)",
@@ -108,8 +124,10 @@
     "Art. 417bis (schuldheling)",
     "Art. 289 (moord)",
     "Art. 287 (doodslag)",
+    "Art. 447e",
     "Art. 139a (conversations)",
     "Art. 139c (calls and data not meant for you)",
+    "Art. 266 (eenvoudige belediging)",
     "Art. 310 (diefstal)"
    ],
    "citedBy": [
@@ -130,8 +148,16 @@
      "verdict": "illegal"
     },
     {
+     "activity": "Not carrying ID",
+     "verdict": "illegal"
+    },
+    {
      "activity": "Recording a phone call without telling the other person",
      "verdict": "legal"
+    },
+    {
+     "activity": "Swearing in public",
+     "verdict": "restricted"
     },
     {
      "activity": "Theft",

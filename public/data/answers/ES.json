@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
+ "updatedAt": "2026-11-21T10:31:34.024Z",
  "answers": [
   {
    "verdict": "illegal",
@@ -146,6 +146,32 @@
   },
   {
    "verdict": "illegal",
+   "headline": "No. Where there’s a pedestrian crossing, you must use it, not cross nearby.",
+   "summary": "In areas with pedestrian crossings, pedestrians must cross the road at the crossing itself and not close to it. At crossings with lights, they must follow the pedestrian lights.",
+   "conditions": [],
+   "penalties": "A traffic fine.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Reglamento General de Circulación",
+     "section": "Art. 124",
+     "year": "2026",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a124"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Jaywalking",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Reglamento General de Circulación, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
    "headline": "No. Killing someone is punished with 10 to 25 years in prison in Spain, and up to life in the worst cases.",
    "summary": "Killing someone is homicide (homicidio). It becomes murder (asesinato) with treachery, for payment, with cruelty, or to commit or hide another crime. Some murders, for example of a child under 16 or a vulnerable person, carry reviewable life imprisonment. Self-defence can be lawful in narrow circumstances.",
    "conditions": [],
@@ -179,6 +205,87 @@
     {
      "title": "Código Penal, consolidated text (BOE)",
      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1995-25444"
+    }
+   ]
+  },
+  {
+   "verdict": "restricted",
+   "headline": "Everyone in Spain over 14 must have a DNI and show it when police ask.",
+   "summary": "The national identity card (DNI) is compulsory from age 14. Its holder must keep it valid, look after it, and show it when required by the authorities. Foreigners need their own valid identity document.",
+   "conditions": [
+    "From age 14",
+    "Show it when police ask"
+   ],
+   "penalties": "",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Ley Orgánica 4/2015 de protección de la seguridad ciudadana",
+     "section": "Art. 9",
+     "year": "2015",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-3442#a9"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Not carrying ID",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Ley Orgánica 4/2015, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-3442"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "Not in public: using or carrying cannabis in public places is fined from €601.",
+   "summary": "Using or possessing illegal drugs, including cannabis, in public places, on the street, in public establishments or on public transport is a serious offence under the Public Safety Act, even if it isn’t for selling. Private use at home isn’t covered by this offence. Dealing is a crime under the Criminal Code.",
+   "conditions": [],
+   "penalties": "A fine of €601 to €30,000.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Ley Orgánica 4/2015 de protección de la seguridad ciudadana",
+     "section": "Art. 36.16 and art. 39",
+     "year": "2015",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-3442#a36"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Possessing cannabis for personal use",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Ley Orgánica 4/2015, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-3442"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Smoking is banned in all enclosed bars and restaurants in Spain.",
+   "summary": "Since 2011, smoking is banned in bars, restaurants and other enclosed food and drink establishments, as well as in workplaces, public buildings, and enclosed cinemas and theatres.",
+   "conditions": [],
+   "penalties": "",
+   "regional_variation": "The autonomous communities can add more smoke-free places.",
+   "laws": [
+    {
+     "name": "Ley 28/2005 de medidas sanitarias frente al tabaquismo",
+     "section": "Art. 7 (u)",
+     "year": "2011",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2005-21261#a7"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Smoking in a bar or restaurant",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Ley 28/2005, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2005-21261"
     }
    ]
   },
@@ -234,6 +341,32 @@
     {
      "title": "Reglamento General de Circulación, consolidated text (BOE)",
      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Radar detectors and jammers are banned in vehicles. Apps that show known camera locations are allowed.",
+   "summary": "It’s banned to install or carry radar jammers, radar detectors or any device meant to evade traffic enforcement. Warning systems that only show the position of speed cameras are excluded from the ban.",
+   "conditions": [],
+   "penalties": "A traffic fine and points off your licence.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Real Decreto Legislativo 6/2015 (Ley sobre Tráfico)",
+     "section": "Art. 13.6",
+     "year": "2022",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a13"
+    }
+   ],
+   "confidence": "high",
+   "country": "ES",
+   "activity": "Using a radar detector in a car",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Ley sobre Tráfico, consolidated text (BOE)",
+     "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722"
     }
    ]
   }

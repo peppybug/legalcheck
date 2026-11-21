@@ -1,6 +1,22 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
+ "updatedAt": "2026-11-21T10:31:34.024Z",
  "laws": [
+  {
+   "id": "FR:code de la propriété intellectuelle",
+   "country": "FR",
+   "name": "Code de la propriété intellectuelle",
+   "year": "",
+   "url": "",
+   "sections": [
+    "Art. L331-19 to L331-24 and R335-5"
+   ],
+   "citedBy": [
+    {
+     "activity": "Downloading copyrighted films for personal use",
+     "verdict": "illegal"
+    }
+   ]
+  },
   {
    "id": "FR:code de la route highway code",
    "country": "FR",
@@ -33,11 +49,16 @@
    "year": "",
    "url": "",
    "sections": [
-    "Art. L3421-1"
+    "Art. L3421-1",
+    "Art. L3512-8 and R3512-2 to R3512-9"
    ],
    "citedBy": [
     {
      "activity": "Possessing cannabis for personal use",
+     "verdict": "illegal"
+    },
+    {
+     "activity": "Smoking in a bar or restaurant",
      "verdict": "illegal"
     }
    ]

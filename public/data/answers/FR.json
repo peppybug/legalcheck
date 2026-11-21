@@ -1,6 +1,32 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
+ "updatedAt": "2026-11-21T10:31:34.024Z",
  "answers": [
+  {
+   "verdict": "illegal",
+   "headline": "No. Downloading or sharing pirated films is illegal, and Arcom tracks peer-to-peer sharing.",
+   "summary": "Copying is only allowed from legally acquired works. Arcom monitors illegal peer-to-peer sharing and sends warnings to the internet subscriber: an email, then a registered letter, then a notice that the case may go to court.",
+   "conditions": [],
+   "penalties": "If it reaches court for negligence in securing your connection: up to €1,500.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la propriété intellectuelle",
+     "section": "Art. L331-19 to L331-24 and R335-5",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "medium",
+   "country": "FR",
+   "activity": "Downloading copyrighted films for personal use",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Téléchargement illégal (Arcom) (vérifié le 16 janvier 2025)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F32108"
+    }
+   ]
+  },
   {
    "verdict": "illegal",
    "headline": "No. Since July 2015 it’s banned to drive with earphones, an earpiece or a headset in your ear.",
@@ -111,6 +137,32 @@
     {
      "title": "Service-public.fr: Que risque-t-on en cas d'usage de drogue ? (vérifié le 21 août 2026)",
      "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F33341"
+    }
+   ]
+  },
+  {
+   "verdict": "illegal",
+   "headline": "No. Smoking is banned in enclosed places open to the public, including bars and restaurants.",
+   "summary": "Smoking is banned in enclosed, covered places for collective use, such as cafés, restaurants, shopping centres and nightclubs, except in a compliant smoking room. It’s also banned in a car with a minor inside.",
+   "conditions": [],
+   "penalties": "Up to €750 for the smoker; the venue can also be fined.",
+   "regional_variation": "",
+   "laws": [
+    {
+     "name": "Code de la santé publique (Public Health Code)",
+     "section": "Art. L3512-8 and R3512-2 to R3512-9",
+     "year": "",
+     "url": ""
+    }
+   ],
+   "confidence": "high",
+   "country": "FR",
+   "activity": "Smoking in a bar or restaurant",
+   "checkedAt": "2026-11-21T10:30:10Z",
+   "sources": [
+    {
+     "title": "Service-public.fr: Interdiction de fumer (vérifié le 1 avril 2026)",
+     "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F160"
     }
    ]
   },

@@ -1,6 +1,26 @@
 {
- "updatedAt": "2026-11-20T14:58:50.571Z",
+ "updatedAt": "2026-11-21T10:31:34.024Z",
  "laws": [
+  {
+   "id": "DE:bundesnaturschutzgesetz bnatschg nature conservation act",
+   "country": "DE",
+   "name": "Bundesnaturschutzgesetz (BNatSchG, Nature Conservation Act)",
+   "year": "2026",
+   "url": "https://www.gesetze-im-internet.de/bnatschg_2009/__39.html",
+   "sections": [
+    "§ 39 (3)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Picking wild flowers in nature",
+     "verdict": "legal"
+    },
+    {
+     "activity": "Picking wild mushrooms",
+     "verdict": "restricted"
+    }
+   ]
+  },
   {
    "id": "DE:erste verordnung zum sprengstoffgesetz 1 sprengv",
    "country": "DE",
@@ -16,6 +36,27 @@
     {
      "activity": "Setting off fireworks",
      "verdict": "restricted"
+    }
+   ]
+  },
+  {
+   "id": "DE:jugendschutzgesetz juschg youth protection act",
+   "country": "DE",
+   "name": "Jugendschutzgesetz (JuSchG, Youth Protection Act)",
+   "year": "2026",
+   "url": "https://www.gesetze-im-internet.de/juschg/__9.html",
+   "sections": [
+    "§ 9",
+    "§ 10"
+   ],
+   "citedBy": [
+    {
+     "activity": "Drinking alcohol in public",
+     "verdict": "legal"
+    },
+    {
+     "activity": "Vaping",
+     "verdict": "legal"
     }
    ]
   },
@@ -110,14 +151,34 @@
    "country": "DE",
    "name": "Straßenverkehrs-Ordnung (StVO, road traffic rules)",
    "year": "",
-   "url": "https://www.gesetze-im-internet.de/stvo_2013/__23.html",
+   "url": "https://www.gesetze-im-internet.de/stvo_2013/__18.html",
    "sections": [
-    "§ 23 (1a)"
+    "§ 18 (9)",
+    "§ 25 (3)",
+    "§ 30 (1)",
+    "§ 23 (1a)",
+    "§ 23 (1c)"
    ],
    "citedBy": [
     {
+     "activity": "Hitchhiking",
+     "verdict": "restricted"
+    },
+    {
+     "activity": "Jaywalking",
+     "verdict": "restricted"
+    },
+    {
+     "activity": "Leaving your engine running while parked",
+     "verdict": "illegal"
+    },
+    {
      "activity": "Using a phone hands-free while driving",
      "verdict": "legal"
+    },
+    {
+     "activity": "Using a radar detector in a car",
+     "verdict": "illegal"
     }
    ]
   },
@@ -135,6 +196,41 @@
     {
      "activity": "Drunk driving",
      "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "DE:urheberrechtsgesetz urhg copyright act",
+   "country": "DE",
+   "name": "Urheberrechtsgesetz (UrhG, Copyright Act)",
+   "year": "2026",
+   "url": "https://www.gesetze-im-internet.de/urhg/__53.html",
+   "sections": [
+    "§ 53 (1) (private copies)",
+    "§ 106 (penalty)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Downloading copyrighted films for personal use",
+     "verdict": "illegal"
+    }
+   ]
+  },
+  {
+   "id": "DE:waffengesetz waffg weapons act",
+   "country": "DE",
+   "name": "Waffengesetz (WaffG, Weapons Act)",
+   "year": "2026",
+   "url": "https://www.gesetze-im-internet.de/waffg_2002/__42a.html",
+   "sections": [
+    "§ 42a",
+    "§ 42 (4a) (events)",
+    "§ 42b (long-distance transport)"
+   ],
+   "citedBy": [
+    {
+     "activity": "Carrying a pocket knife",
+     "verdict": "restricted"
     }
    ]
   }
